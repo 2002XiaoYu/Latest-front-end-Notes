@@ -1,10 +1,12 @@
 # TypeScript基础笔记(小满版本)
 
-> ### 作者：925 -- 小余同学
+> ### 作者：小余同学
 
 # 基础类型(TS -- 1)
 
-> 我认为这个TypeScript跟C语言是很像的，对语言的定义都有严格的规范。
+> 我认为这个TypeScript跟C语言
+>
+> 是很像的，对语言的定义都有严格的规范。
 
 ```typescript
 let str:string = "这是字符串类型"
@@ -77,7 +79,7 @@ isDone= undefined
 let big: bigint =  100n;
 big = null
 big= undefined
-复制代码
+
 ```
 
 如果你在 tsconfig.json 指定了 `"strictNullChecks":true` ，`null` 和 `undefined` 只能赋值给 `void` 和它们各自的类型。
@@ -91,7 +93,6 @@ let big: bigint =  100n;
 let num: number = 6;
 big = num;
 num = big;
-复制代码
 ```
 
 会抛出一个类型不兼容的 ts (2322) 错误。
@@ -124,9 +125,9 @@ anys = Symbol('666')
 
 ## unknown类型
 
-> unknow类型比any类型更安全
+> unknown类型比any类型更安全
 >
-> 就像所有类型都可以被归为 `any`，所有类型也都可以被归为 `unknown`。这使得 `unknown` 成为 TypeScript 类型系统的另一种顶级类型（另一种的`any`
+> 就像所有类型都可以被归为 `any`，所有类型也都可以被归为 `unknown`。这使得 `unknown` 成为 TypeScript 类型系统的另一种顶级类型（另一种的`any`）
 
 ```typescript
 let unknow:unknown = {a:():number =>123}
@@ -226,6 +227,97 @@ let p:B{
 }
 ```
 
+# Object与object{} -- 加餐环节
+
+## 前置知识点补充
+
+| 原始数据类型（基础数据类型） | 中文称呼 | 引用数据类型 | 中文称呼 |
+| ---------------------------- | -------- | ------------ | -------- |
+| Undefined                    | 未定义   | {}           | 对象     |
+| Null                         | 空值     | function     | 函数     |
+| Boolean                      | 布尔值   | []           | 数组     |
+| Number                       | 数字     |              |          |
+| String                       | 字符串   |              |          |
+
+###  存储位置不同
+
+`原始数据类型`：直接存储在栈（stack）中的简单数据段，占据空间小，大小固定，属于被频繁使用的数据，所以存储在栈中；
+
+`引用数据类型`：存储在堆（heap）中的对象，占据空间大，大小不固定，如果存储在栈中，将会影响程序运行的性能。引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址，当解释器寻找引用值时，会首先检索其在栈中的地址，取得地址后，从堆中获得实体。
+
+### 传值方式不同
+
+- **基本数据类型：按值传递**
+
+不可变 (immutable) 性质：
+
+基本类型是不可变的 (immutable)，只有对象是可变的 (mutable). 有时我们会尝试 “改变” 字符串的内容，但在 JS 中，任何看似对 string 值的 "修改" 操作，实际都是创建新的 string 值。任何方法都无法改变一个基本类型的值(在下面的字面量类型中会再次强调)
+
+- **引用类型：按引用传递**
+
+引用类型的值是可变的
+
+引用类型的值是同时保存在栈内存和堆内存中的对象。javascript 和其他语言不同，其不允许直接访问内存中的位置，也就是说不能直接操作对象的内存空间，那我们操作啥呢？ 实际上，是操作对象的引用，引用类型的值是按引用访问的。
+
+> `object`、`Object` 以及 `{} 这三个类型(第三个类型为空对象字面量模式)大家可能不太理解`
+>
+> 这集加餐环节就是进行补充，一个冷门但是不邪门的知识点
+
+## Object类型
+
+```typescript
+//这个类型是跟原型链有关的原型链顶层就是 Object，所以值类型和引用类型最终都指向 Object，所以在TypeScript中Object他包含所有类型。就可以等于任何一个值
+//1.数字类型
+let a:Object = 123
+//字符串类型
+let b:Object = "小满今天没穿裤子"
+//数组类型
+let c:Object = [1314,520]
+//对象类型
+let d:Object = {name:"草莓",sex:"女",address:"小满微信一群"}
+//any或者function
+let e:Object = ()=> "学姐贴贴"
+```
+
+`Object` 类型是所有 `Object` 类的实例的类型。 由以下两个接口来定义：
+
+- `Object` 接口定义了 `Object.prototype` 原型对象上的属性；
+- `ObjectConstructor` 接口定义了 Object 类的属性， 如上面提到的 `Object.create()`。
+
+## object类型
+
+> object 代表所有非值类型(非原始类型)的类型，例如 数组 对象 函数等，常用于泛型约束
+>
+> 所有原始类型都不支持，所有引用类型都支持
+
+```typescript
+//错误 原始类型(字符串)
+let f:object = '努力会获得回报的'
+//错误 原始类型(数字)
+let g:object = 123
+//错误 原始类型(布尔值类型)
+let h:object = true
+//正确 引用类型(数组类型)
+let i:object = [123,"学姐学习Vue3",true]
+//正确 引用类型(对象类型)
+let j:object = {name:"小满",identity:['B站UP主','二次元','京东员工','全栈开发工程师'],sex:"女"}
+//正确 引用类型(函数类型)
+let k:object = ()=>"不要对自己pua，相信自己是最棒的，尊重自己，人生更精彩"
+```
+
+## {}字面量类型
+
+> 看起来很别扭的一个东西 你可以把他理解成 new Object 就和我们的第一个 Object 基本一样 包含所有类型
+
+```typescript
+//与Object类型一样
+let l:{} = 123//等等，就不写了，跟Object一样
+//补充--字面量模式
+//这个虽然可以赋值任意类型，赋值结束后，是没办法进行一个修改和增加的操作的
+```
+
+
+
 # 数组类型(TS -- 4)
 
 > 普通的声明方式
@@ -264,7 +356,7 @@ let arr4:Array<Array<number>> = [[123],[456]]
 > 是所有参数的一个集合
 
 ```typescript
-function Arr(...args:any):void{//...args为ES6的解构方式，任意类型，不能有返回值
+function Arr(...args:any):void{//...args为ES6的解构方式，任意类型，voidwei不能有返回值
     console.log(arguments)//输出{'0':4,'1':56,'2':789}
     
     let arr:number[] = arguments//会报错，报缺少类型number[]的以下属性：pop,push,concat,join
@@ -1687,14 +1779,14 @@ interface Person {
 }
 const sem: Person = { name: "semlinker", age: 30 };
 type Sem = typeof sem; // type Sem = Person
-复制代码
+
 ```
 
 在上面代码中，我们通过 `typeof` 操作符获取 sem 变量的类型并赋值给 Sem 类型变量，之后我们就可以使用 Sem 类型：
 
 ```js
 const lolo: Sem = { name: "lolo", age: 5 }
-复制代码
+
 ```
 
 你也可以对嵌套对象执行相同的操作：
@@ -1719,7 +1811,7 @@ type message = typeof Message;
     };
 }
 */
-复制代码
+
 ```
 
 此外，`typeof` 操作符除了可以获取对象的结构类型之外，它也可以用来获取函数对象的类型，比如：
@@ -1729,7 +1821,7 @@ function toArray(x: number): Array<number> {
   return [x];
 }
 type Func = typeof toArray; // -> (x: number) => number[]
-复制代码
+
 ```
 
 ### 2.keyof
@@ -1745,7 +1837,7 @@ interface Person {
 type K1 = keyof Person; // "name" | "age"
 type K2 = keyof Person[]; // "length" | "toString" | "pop" | "push" | "concat" | "join" 
 type K3 = keyof { [x: string]: Person };  // string | number
-复制代码
+
 ```
 
 在 TypeScript 中支持两种索引签名，数字索引和字符串索引：
@@ -1760,7 +1852,7 @@ interface StringArray1 {
   // 数字索引 -> keyof StringArray1 => number
   [index: number]: string;
 }
-复制代码
+
 ```
 
 为了同时支持两种索引类型，就得要求数字索引的返回值必须是字符串索引返回值的子类。**其中的原因就是当使用数值索引时，JavaScript 在执行索引操作时，会先把数值索引先转换为字符串索引**。所以 `keyof { [x: string]: Person }` 的结果会返回 `string | number`。
@@ -1771,7 +1863,7 @@ keyof 也支持基本数据类型：
 let K1: keyof boolean; // let K1: "valueOf"
 let K2: keyof number; // let K2: "toString" | "toFixed" | "toExponential" | ...
 let K3: keyof symbol; // let K1: "valueOf"
-复制代码
+
 ```
 
 #### keyof 的作用
@@ -1782,7 +1874,7 @@ JavaScript 是一种高度动态的语言。有时在静态类型系统中捕获
 function prop(obj, key) {
   return obj[key];
 }
-复制代码
+
 ```
 
 该函数接收 obj 和 key 两个参数，并返回对应属性的值。对象上的不同属性，可以具有完全不同的类型，我们甚至不知道 obj 对象长什么样。
@@ -1793,14 +1885,14 @@ function prop(obj, key) {
 function prop(obj: object, key: string) {
   return obj[key];
 }
-复制代码
+
 ```
 
 在上面代码中，为了避免调用 prop 函数时传入错误的参数类型，我们为 obj 和 key 参数设置了类型，分别为 `{}` 和 `string` 类型。然而，事情并没有那么简单。针对上述的代码，TypeScript 编译器会输出以下错误信息：
 
 ```js
 Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
-复制代码
+
 ```
 
 元素隐式地拥有 `any` 类型，因为 `string` 类型不能被用于索引 `{}` 类型。要解决这个问题，你可以使用以下非常暴力的方案：
@@ -1809,7 +1901,7 @@ Element implicitly has an 'any' type because expression of type 'string' can't b
 function prop(obj: object, key: string) {
   return (obj as any)[key];
 }
-复制代码
+
 ```
 
 很明显该方案并不是一个好的方案，我们来回顾一下 `prop` 函数的作用，该函数用于获取某个对象中指定属性的属性值。因此我们期望用户输入的属性是对象上已存在的属性，那么如何限制属性名的范围呢？这时我们可以利用本文的主角 `keyof` 操作符：
@@ -1818,7 +1910,7 @@ function prop(obj: object, key: string) {
 function prop<T extends object, K extends keyof T>(obj: T, key: K) {
   return obj[key];
 }
-复制代码
+
 ```
 
 在以上代码中，我们使用了 TypeScript 的泛型和泛型约束。**首先定义了 T 类型并使用 `extends` 关键字约束该类型必须是 object 类型的子类型，然后使用 `keyof` 操作符获取 T 类型的所有键，其返回类型是联合类型，最后利用 `extends` 关键字约束 K 类型必须为 `keyof T` 联合类型的子类型。** 是骡子是马拉出来遛遛就知道了，我们来实际测试一下：
@@ -1843,21 +1935,21 @@ function prop<T extends object, K extends keyof T>(obj: T, key: K) {
 const id = prop(todo, "id"); // const id: number
 const text = prop(todo, "text"); // const text: string
 const done = prop(todo, "done"); // const done: boolean
-复制代码
+
 ```
 
 很明显使用泛型，重新定义后的 `prop<T extends object, K extends keyof T>(obj: T, key: K)` 函数，已经可以正确地推导出指定键对应的类型。那么当访问 todo 对象上不存在的属性时，会出现什么情况？比如：
 
 ```js
 const date = prop(todo, "date");
-复制代码
+
 ```
 
 对于上述代码，TypeScript 编译器会提示以下错误：
 
 ```js
 Argument of type '"date"' is not assignable to parameter of type '"id" | "text" | "done"'.
-复制代码
+
 ```
 
 这就阻止我们尝试读取不存在的属性。
@@ -1872,7 +1964,7 @@ type Keys = "a" | "b" | "c"
 type Obj =  {
   [p in Keys]: any
 } // -> { a: any, b: any, c: any }
-复制代码
+
 ```
 
 ### 4.infer
@@ -1883,7 +1975,7 @@ type Obj =  {
 type ReturnType<T> = T extends (
   ...args: any[]
 ) => infer R ? R : any;
-复制代码
+
 ```
 
 以上代码中 `infer R` 就是声明一个变量来承载传入函数签名的返回值类型，简单说就是用它取到函数返回值的类型方便之后使用。
@@ -1901,21 +1993,21 @@ function loggingIdentity<T extends Lengthwise>(arg: T): T {
   console.log(arg.length);
   return arg;
 }
-复制代码
+
 ```
 
 现在这个泛型函数被定义了约束，因此它不再是适用于任意类型：
 
 ```js
 loggingIdentity(3);  // Error, number doesn't have a .length property
-复制代码
+
 ```
 
 这时我们需要传入符合约束类型的值，必须包含 length 属性：
 
 ```js
 loggingIdentity({length: 10, value: 3});
-复制代码
+
 ```
 
 ### 索引类型
@@ -1934,7 +2026,7 @@ function getValues(person: any, keys: string[]) {
 
 console.log(getValues(person, ['name', 'age'])) // ['musion', 35]
 console.log(getValues(person, ['gender'])) // [undefined]
-复制代码
+
 ```
 
 在上述例子中，可以看到 getValues (persion, ['gender']) 打印出来的是 [undefined]，但是 ts 编译器并没有给出报错信息，那么如何使用 ts 对这种模式进行类型约束呢？这里就要用到了索引类型，改造一下 getValues 函数，通过 **索引类型查询**和 **索引访问** 操作符：
@@ -1959,7 +2051,7 @@ getValues(person, ['gender']) // 报错：
 // Argument of Type '"gender"[]' is not assignable to parameter of type '("name" | "age")[]'.
 // Type "gender" is not assignable to type "name" | "age".
 
-复制代码
+
 ```
 
 编译器会检查传入的值是否是 Person 的一部分。通过下面的概念来理解上面的代码：
@@ -1974,7 +2066,7 @@ class Person {
  }
  type MyType = Person['name'];  //Person中name的类型为string type MyType = string
 
-复制代码
+
 ```
 
 介绍完概念之后，应该就可以理解上面的代码了。首先看泛型，这里有 T 和 K 两种类型，根据类型推断，第一个参数 person 就是 person，类型会被推断为 Person。而第二个数组参数的类型推断（K extends keyof T），keyof 关键字可以获取 T，也就是 Person 的所有属性名，即 ['name', 'age']。而 extends 关键字让泛型 K 继承了 Person 的所有属性名，即 ['name', 'age']。这三个特性组合保证了代码的动态性和准确性，也让代码提示变得更加丰富了
@@ -1983,7 +2075,7 @@ class Person {
 getValues(person, ['gender']) // 报错：
 // Argument of Type '"gender"[]' is not assignable to parameter of type '("name" | "age")[]'.
 // Type "gender" is not assignable to type "name" | "age".
-复制代码
+
 ```
 
 ### 映射类型
@@ -1997,7 +2089,7 @@ interface TestInterface{
     name:string,
     age:number
 }
-复制代码
+
 ```
 
 我们把上面定义的接口里面的属性全部变成可选
@@ -2014,7 +2106,7 @@ type newTestInterface = OptionalTestInterface<TestInterface>
 //    name?:string,
 //    age?:number
 // }
-复制代码
+
 ```
 
 比如我们再加上只读
@@ -2029,7 +2121,7 @@ type newTestInterface = OptionalTestInterface<TestInterface>
 //   readonly name?:string,
 //   readonly age?:number
 // }
-复制代码
+
 ```
 
 由于生成只读属性和可选属性比较常用，所以 TS 内部已经给我们提供了现成的实现 Readonly / Partial, 会面内置的工具类型会介绍.
@@ -2046,7 +2138,7 @@ type newTestInterface = OptionalTestInterface<TestInterface>
 type Partial<T> = {
   [P in keyof T]?: T[P];
 };
-复制代码
+
 ```
 
 在以上代码中，首先通过 `keyof T` 拿到 `T` 的所有属性名，然后使用 `in` 进行遍历，将值赋给 `P`，最后通过 `T[P]` 取得相应的属性值的类。中间的 `?` 号，用于将所有属性变为可选。
@@ -2062,7 +2154,7 @@ interface UserInfo {
 const xiaoming: UserInfo = {
     name: 'xiaoming'
 }
-复制代码
+
 ```
 
 使用  `Partial<T>`
@@ -2072,7 +2164,7 @@ type NewUserInfo = Partial<UserInfo>;
 const xiaoming: NewUserInfo = {
     name: 'xiaoming'
 }
-复制代码
+
 ```
 
 这个  NewUserInfo 就相当于
@@ -2082,7 +2174,7 @@ interface NewUserInfo {
     id?: string;
     name?: string;
 }
-复制代码
+
 ```
 
 但是 `Partial<T>` 有个局限性，就是只支持处理第一层的属性，如果我的接口定义是这样的
@@ -2106,7 +2198,7 @@ const xiaoming: NewUserInfo = {
         orangeNumber: 1,
     }
 }
-复制代码
+
 ```
 
 可以看到，第二层以后就不会处理了，如果要处理多层，就可以自己实现
@@ -2122,7 +2214,7 @@ type DeepPartial<T> = {
 };
 
 type PartialedWindow = DeepPartial<T>; // 现在T上所有属性都变成了可选啦
-复制代码
+
 ```
 
 ### Required
@@ -2135,7 +2227,7 @@ type PartialedWindow = DeepPartial<T>; // 现在T上所有属性都变成了可�
 type Required<T> = { 
     [P in keyof T]-?: T[P] 
 };
-复制代码
+
 ```
 
 其中 `-?` 是代表移除 `?` 这个 modifier 的标识。再拓展一下，除了可以应用于 `?` 这个 modifiers ，还有应用在 `readonly` ，比如 `Readonly<T>` 这个类型
@@ -2144,7 +2236,7 @@ type Required<T> = {
 type Readonly<T> = {
     readonly [p in keyof T]: T[p];
 }
-复制代码
+
 ```
 
 ### Readonly
@@ -2157,7 +2249,7 @@ type Readonly<T> = {
 type Readonly<T> = {
  readonly [P in keyof T]: T[P];
 };
-复制代码
+
 ```
 
 #### 举例说明
@@ -2172,7 +2264,7 @@ const todo: Readonly<Todo> = {
 };
 
 todo.title = "Hello"; // Error: cannot reassign a readonly property
-复制代码
+
 ```
 
 ### Pick
@@ -2185,7 +2277,7 @@ todo.title = "Hello"; // Error: cannot reassign a readonly property
 type Pick<T, K extends keyof T> = {
     [P in K]: T[P];
 };
-复制代码
+
 ```
 
 #### 举例说明
@@ -2203,7 +2295,7 @@ const todo: TodoPreview = {
   title: "Clean room",
   completed: false,
 };
-复制代码
+
 ```
 
 可以看到 NewUserInfo 中就只有个 name 的属性了。
@@ -2218,7 +2310,7 @@ const todo: TodoPreview = {
 type Record<K extends keyof any, T> = {
     [P in K]: T;
 };
-复制代码
+
 ```
 
 #### 举例说明
@@ -2235,7 +2327,7 @@ const x: Record<Page, PageInfo> = {
   contact: { title: "contact" },
   home: { title: "home" },
 };
-复制代码
+
 ```
 
 ### ReturnType
@@ -2250,7 +2342,7 @@ type ReturnType<T extends (...args: any[]) => any> = T extends (
 ) => infer R
   ? R
   : any;
-复制代码
+
 ```
 
 `infer` 在这里用于提取函数类型的返回值类型。`ReturnType<T>` 只是将 infer R 从参数位置移动到返回值位置，因此此时 R 即是表示待推断的返回值类型。
@@ -2260,7 +2352,7 @@ type ReturnType<T extends (...args: any[]) => any> = T extends (
 ```js
 type Func = (value: number) => string;
 const foo: ReturnType<Func> = "1";
-复制代码
+
 ```
 
 `ReturnType` 获取到 `Func` 的返回值类型为 `string`，所以，`foo` 也就只能被赋值为字符串了。
@@ -2273,7 +2365,7 @@ const foo: ReturnType<Func> = "1";
 
 ```js
 type Exclude<T, U> = T extends U ? never : T;
-复制代码
+
 ```
 
 如果 `T` 能赋值给 `U` 类型的话，那么就会返回 `never` 类型，否则返回 `T` 类型。最终实现的效果就是将 `T` 中某些属于 `U` 的类型移除掉。
@@ -2284,7 +2376,7 @@ type Exclude<T, U> = T extends U ? never : T;
 type T0 = Exclude<"a" | "b" | "c", "a">; // "b" | "c"
 type T1 = Exclude<"a" | "b" | "c", "a" | "b">; // "c"
 type T2 = Exclude<string | number | (() => void), Function>; // string | number
-复制代码
+
 ```
 
 ### Extract
@@ -2295,7 +2387,7 @@ type T2 = Exclude<string | number | (() => void), Function>; // string | number
 
 ```js
 type Extract<T, U> = T extends U ? T : never;
-复制代码
+
 ```
 
 #### 举例说明
@@ -2303,7 +2395,7 @@ type Extract<T, U> = T extends U ? T : never;
 ```js
 type T0 = Extract<"a" | "b" | "c", "a" | "f">; // "a"
 type T1 = Extract<string | number | (() => void), Function>; // () =>void
-复制代码
+
 ```
 
 ### Omit
@@ -2314,7 +2406,7 @@ type T1 = Extract<string | number | (() => void), Function>; // () =>void
 
 ```js
 type Omit<T, K extends keyof any> = Pick<T, Exclude<keyof T, K>>;
-复制代码
+
 ```
 
 #### 举例说明
@@ -2332,7 +2424,7 @@ const todo: TodoPreview = {
   title: "Clean room",
   completed: false,
 };
-复制代码
+
 ```
 
 ### NonNullable
@@ -2343,7 +2435,7 @@ const todo: TodoPreview = {
 
 ```js
 type NonNullable<T> = T extendsnull | undefined ? never : T;
-复制代码
+
 ```
 
 #### 举例说明
@@ -2351,7 +2443,7 @@ type NonNullable<T> = T extendsnull | undefined ? never : T;
 ```js
 type T0 = NonNullable<string | number | undefined>; // string | number
 type T1 = NonNullable<string[] | null | undefined>; // string[]
-复制代码
+
 ```
 
 ### Parameters
@@ -2363,7 +2455,7 @@ type T1 = NonNullable<string[] | null | undefined>; // string[]
 ```js
 type Parameters<T extends (...args: any) => any> = T extends (...args: infer P) => any
 ? P : never;
-复制代码
+
 ```
 
 #### 举例说明
@@ -2373,7 +2465,7 @@ type A = Parameters<() =>void>; // []
 type B = Parameters<typeofArray.isArray>; // [any]
 type C = Parameters<typeofparseInt>; // [string, (number | undefined)?]
 type D = Parameters<typeofMath.max>; // number[]
-复制代码
+
 ```
 
 # tsconfig.json配置文件(TS -- 15)
@@ -2513,7 +2605,7 @@ type D = Parameters<typeofMath.max>; // number[]
   }
 }
 
-复制代码
+
 ```
 
 ### 常用的配置
@@ -2831,10 +2923,10 @@ console.log(A);
 > 当使用`第三方库`时，我们需要引用它的声明文件，才能获得对应的代码补全、接口提示等功能。
 
 ```typescript
-declare var 声明全局变量
-declare function 声明全局方法
-declare class 声明全局类
-declare enum 声明全局枚举类型
+declare var       声明全局变量
+declare function  声明全局方法
+declare class     声明全局类
+declare enum      声明全局枚举类型
 declare namespace 声明（含有子属性的）全局对象
 interface 和 type 声明全局类型
 /// <reference /> 三斜线指令
@@ -3521,18 +3613,18 @@ class Dispatch implements Event{//通过implements来约束这个类(Evenet)
         this.on(name,de)//第一个还是名字，第二个临时函数
     }
 }
-
+ 
 const o = new Dispatch()//初始化
-
+ 
 o.on('post',()=>{//post作为key
     console.log(66);
 })//第一个参数是事件名称，第二个是回调函数
-
+ 
 o.on('post',(...args:Array<any>)=>{
     console.log(99,args)
     //这里我们对第二个回调函数传入了...args，也就是收到了o.emit除了第一个参数后面那些乱七八糟的东西(因为我们设定了any，对接收的类型并没有限制，所以收到什么乱七八糟的东西都不奇怪)，并在控制台打印了出来
 })
-
+ 
 const fn = (...args:Array<any>) => {
     console.log(args,2)
 }
@@ -3544,7 +3636,7 @@ o.off('post',fn)//将fn删掉
 o.once('post',(...args:Array<any>)=>{
     console.log(args,'once')
 })
-
+ 
 o.emit('post',1,false,{name:"小满"})//除了第一个参数一样是事件，后面参数是不限制个数的，而且传什么都行
 o.emit('post',2,false,{name:"小满"})//这里如果收到就是有问题的，因为我们在上面使用once了，只调用一次
 ```
