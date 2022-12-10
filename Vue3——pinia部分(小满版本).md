@@ -1,5 +1,11 @@
 # Vue3——pinia部分(小满版本)
 
+> ## 作者：小余同学
+>
+> 如果你觉得笔记不错的话，可以在GitHub帮作者点个Star吗？这对作者是极大的鼓励和动力，每过一段时间可以上去看看有没有新的优质笔记产出，都是原创且最新的的哦，PDF版本还有markdown版本都会进行上传，如果PDF的没有上传就是说明内容太大传输不了，但可以自行将现有的markdown文档进行转换
+>
+> GitHub地址：[2002小余 (github.com)](https://github.com/2002XiaoYu)
+
 > 一颗可爱的小菠萝，乍一看是不是很像海绵宝宝的家呢？他就是pinia~ 具体做什么的，你很快就会了解到了，他是VueX的后继者，已经把VueX拍死在了沙滩上了，通常你叫他商店store也行
 
 <img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221106014220939.png" alt="image-20221106014220939" style="zoom:50%;" />

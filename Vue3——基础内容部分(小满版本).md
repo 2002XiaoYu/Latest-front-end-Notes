@@ -3,6 +3,10 @@
 > ## 作者：小余同学
 >
 > 此笔记有借鉴部分小满的CSDN
+>
+> 如果你觉得笔记不错的话，可以在GitHub帮作者点个Star吗？这对作者是极大的鼓励和动力，每过一段时间可以上去看看有没有新的优质笔记产出，都是原创且最新的的哦，PDF版本还有markdown版本都会进行上传，如果PDF的没有上传就是说明内容太大传输不了，但可以自行将现有的markdown文档进行转换
+>
+> GitHub地址：[2002小余 (github.com)](https://github.com/2002XiaoYu)
 
 # 第二章 — 构建 vite 项目
 
@@ -2624,7 +2628,7 @@ const data = reactive<TreeList[]>([
 >   	<Tree v-if="item?.children?.length" :data="item?.children"></Tree>
 >   //因为item?.children的children是数组，数组永远等于true，所以我们要判断它的length
 >   </div>
->                     
+>                       
 >   const clickTap =(item,e)=>{//我们能通过vue提供的一个$event在事件中来获取event元素，进行一些我们想要的操作
 >       console.log(item)
 >   }
