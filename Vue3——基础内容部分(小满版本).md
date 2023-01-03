@@ -2,11 +2,24 @@
 
 > ## 作者：小余同学
 >
-> 此笔记有借鉴部分小满的CSDN
+> 此笔记有借鉴部分小满的CSDN and 掘金
 >
 > 如果你觉得笔记不错的话，可以在GitHub帮作者点个Star吗？这对作者是极大的鼓励和动力，每过一段时间可以上去看看有没有新的优质笔记产出，都是原创且最新的的哦，PDF版本还有markdown版本都会进行上传，如果PDF的没有上传就是说明内容太大传输不了，但可以自行将现有的markdown文档进行转换
 >
+> 此笔记会**持续更新**(小满出新则动态更新)，平时会根据水友的意见进行修改其中的细节错误，**关注我在GitHub上面这个项目可以随时获取到最新的笔记**
+>
 > GitHub地址：[2002小余 (github.com)](https://github.com/2002XiaoYu)
+>
+> 小满的QQ群：**855139333**	小满的微信：**a1195566313**(想加入微信群请加小满，让小满拉你)
+>
+> 欢迎你加入小满的群聊和小满一起探讨技术上的问题，一个人只能闭门造车，一起探讨难点才能走得更远(记得视频多刷刷弹幕)
+>
+> 笔记在跨年前一天2022年12月31号与小满第5章Diff算法视频重录新增最长递增子序列 同时完成，祝你学习愉快，未来可期~
+
+# 第一章 课程导读
+
+- 这章节是小满的自我介绍，还有介绍学习课程前需要的前置技术栈，祝你学习路程愉快
+- 然后就是没事的话**多发弹幕**，可以将你在小满视频中遇到的问题的解决方法发在弹幕中，给后来者提供一些道路，学习的氛围也会更好
 
 # 第二章 — 构建 vite 项目
 
@@ -181,7 +194,9 @@ nrm 是一个 npm 源管理器，允许你快速地在 npm 源间切换。(其�
   | vite.cmd | windows系统                    |
   | vite.ps1 | 跨平台的，Linux和windows都可以 |
 
-# 第四章 — 模板语法 && Vue指令
+# 第四章 — 模板语法 && Vue指令(代号-伊丽莎白)
+
+> 这个代号为什么叫伊丽莎白我也不知道，但小满说起这个那就这个啦
 
 | data()方法  | 返回组件所需要的数据                                         |
 | ----------- | ------------------------------------------------------------ |
@@ -199,9 +214,487 @@ nrm 是一个 npm 源管理器，允许你快速地在 npm 源间切换。(其�
 | v-show      | 与v-if不一样的是渲染逻辑不一样，v-show指令不管条件是真是假，当前元素都会被渲染。v-if如果是假，则不会渲染 |
 | v-for       | 将数组中的数据渲染为列表视图，与index配合的话，index的索引值从0开始。第一个参数为遍历的对象中的属性的值，第二个参数为遍历的对象中的属性的名字，第三个参数为遍历的索引 |
 
-# 第五章 — 虚拟DOM和VueKeyDiff算法
+## 书写风格
 
-> 查看虚拟DOM上面属性的方法
+### option API的书写风格
+
+```vue
+<script>
+export default{
+    data(){
+        return{
+            age:18
+        }
+    },
+    methods: {
+        xiaoyu(){
+
+        }
+    },
+}
+</script>
+```
+
+### setup函数模式
+
+```vue
+<template>
+    <div>
+		{{a}}
+    </div>
+</template>
+
+<script>
+export default{
+	setup(){
+        //所有东西都在这里面定义
+        const a = "小满开了个免费的知识星球，免费的"
+        //要手动return出去
+        return a
+    }
+}
+</script>
+```
+
+### setup语法糖模式
+
+```vue
+<template>
+  <div>
+    <!-- 支持数字运算 -->
+    {{ zs }}，{{ num + 5 }}
+  </div>
+  <div>
+    <!-- 支持三元表达式 -->
+    {{ num ? "true" : "false" }}
+  </div>
+  <div>
+    <!-- API运算 -->
+    {{ _API.map(v => { num: v }) }}
+  </div>
+</template>
+
+<script setup lang="ts">
+//也支持运算
+const num: number = 1
+//API运算
+const _API: number[] = [1, 2, 3, 4, 5]
+const zs: string = "小余祝大家2023年会越来越好"
+</script>
+```
+
+## 各种Vue指令用法
+
+### v-text
+
+```vue
+<template>
+  <div v-text="zs">
+
+  </div>
+</template>
+
+<script setup lang="ts">
+const zs: string = "小余祝大家2023年会越来越好"
+</script>
+```
+
+### v-html
+
+```vue
+<template>
+  <div v-html="zs">
+
+  </div>
+</template>
+
+<script setup lang="ts">
+    //使用v-html，外面一层要是section
+const zs: string = '<section style="color:red">小红帽班花姐姐</section>'
+</script>
+```
+
+![image-20221226232858145](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221226232858145.png)
+
+### v-if
+
+```vue
+<template>
+  <div v-if="num">
+  <!-- 显示 -->
+    <h1>小余在不在，不在我进来了</h1>
+  </div>
+</template>
+
+<script setup lang="ts">
+//也支持运算
+const num: number = 1
+</script>
+------------------------------------------
+<template>
+  <div v-if="num">
+  <!-- 隐藏，是会将div块内的东西给注释掉，通过F12可以看到被注释节点 -->
+    <h1>小余在不在，不在我进来了</h1>
+  </div>
+</template>
+
+<script setup lang="ts">
+//也支持运算
+const num: number = 0
+</script>
+```
+
+#### 
+
+> 当值为true的时候，if显示，else隐藏。反之亦然
+
+```vue
+<template>
+  <div v-if="bol">
+    <!-- 显示 -->
+    <h1>小余在不在，不在我进来了</h1>
+  </div>
+  <div v-else="bol">
+    <!-- 显示 -->
+    <h1>小余在不在，不在我进来了，看来不在，进去看看有没有洛洛的私房照</h1>
+  </div>
+</template>
+
+<script setup lang="ts">
+const bol: boolean = false
+</script>
+```
+
+#### v-if配合v-else-if和v-else使用
+
+```vue
+<template>
+  <div v-if="num == '小余在家' ">
+    <!-- 不显示 -->
+    <h1>小余在不在，不在我进来了，原来你在啊，为什么不说话</h1>
+  </div>
+  <div v-else-if="num == '小余不在家' ">
+    <!-- 不显示 -->
+    <h1>小余在不在，不在我进来了，看来不在，进去看看有没有洛洛的私房照</h1>
+  </div>
+  <div v-else>
+    <!-- 显示 -->
+    <h1>小余去找小满串门了</h1>
+  </div>
+</template>
+
+<script setup lang="ts">
+//也支持运算
+const num: string = "小余去找小满串门了"
+</script>
+
+```
+
+### v-show
+
+> 跟v-if的功能有那么一点像，但是比v-if的性能更高一点，因为v-show是将CSS样式的display调整成none，只切换了一下CSS
+>
+> - 而v-if会把整个节点变成一个注释节点，怎么想工作量都会更大一点
+
+```vue
+<template>
+  <div v-if="bol">
+    <!-- 显示 -->
+    <h1>小余在不在，不在我进来了</h1>
+  </div>
+</template>
+
+<script setup lang="ts">
+//也支持运算
+const bol: boolean = true
+</script>
+-----------------------------------------------------------------
+<template>
+  <div v-if="bol">
+    <!-- 显示 -->
+    <h1>小余在不在，不在我进来了</h1>
+  </div>
+</template>
+
+<script setup lang="ts">
+//也支持运算
+const bol: boolean = false
+</script>
+```
+
+### v-on
+
+> `v-on:`可以简写为`@`，没错，剩一个冒号了
+
+```vue
+<template>
+  <div>
+    <button v-on:click="love()">请尽情的吩咐小满吧</button>
+  </div>
+</template>
+
+<script setup lang="ts">
+const love = ()=>{
+  console.log("吩咐+1");
+}
+</script>
+------------------------------------------------------------------------
+<!-- 动态事件切换并且简写-->
+<template>
+  <div>
+    <button @[xiaoman]="love()">请尽情的吩咐小满吧</button>
+  </div>
+</template>
+
+<script setup lang="ts">
+const xiaoman = "click"
+const love = ()=>{
+  console.log("吩咐+1");
+}
+</script>
+------------------------------------------------------------------------
+<!--修饰符，触发冒泡 点击parent，父级也跟着触发，通常情况下我们会设置禁止这种行为-->
+<template>
+  <div @click="parent">
+    <button @[xiaoman]="love()">请尽情的吩咐小满吧</button>
+  </div>
+</template>
+
+<script setup lang="ts">
+const xiaoman = "click"
+const parent = ()=>{
+  console.log("我是父级");
+  
+}
+const love = ()=>{
+  console.log("吩咐+1");
+  
+}
+</script>
+-------------------------------------------------------------------------------
+<!-- 禁止父级冒泡，只需要加上一个stop即可-->
+<div @click="parent">
+<button @[xiaoman].stop="love()">请尽情的吩咐小满吧</button>
+</div>
+```
+
+### v-bind
+
+```vue
+<template>
+  <div>
+      <!-- 简写:	没错，简写就一个冒号，这里是绑定了对象里的值，能够成功使用-->
+    <h1 :style="style1">小满现在什么色</h1>
+  </div>
+</template>
+
+<script setup lang="ts">
+const style1 = {
+  color:"green",
+  border:"2px soild #red"
+}
+</script>
+-----------------------------------------------------------
+<template>
+  <div>
+      <!-- 简写:	没错，简写就一个冒号，当然你也可以绑定css，或者css的各种变种 -->
+    <h1 :class="['a','b']">小满现在什么色</h1>
+  </div>
+</template>
+
+<script setup lang="ts">
+
+</script>
+
+<style>
+.a{
+  color: aqua;
+}
+.b{
+  border: 1px solid #ccc;
+}
+</style>
+-----------------------------------------------------------
+<!-- 进阶，加上条件判断-->
+<template>
+  <div class="c" :class="[Cls ? 'a' : 'b' ]">
+    小满现在什么色，取决在你手里
+  </div>
+</template>
+
+<script setup lang="ts">
+const Cls :boolean= true//一个条件判断，没错。除了支持动态的之外，他还能同时支持一个静态class，一动一静，别整多了，整多就报错了
+</script>
+
+<style >
+.a{
+  color: green;
+}
+.b{
+  color:yellow;
+}
+.c{
+  font-size: 50px;
+}
+</style>
+```
+
+### v-model
+
+> ref和reactive后面我们会详细讲解的暂时可以先理解只要包裹就是响应式的
+
+```vue
+<template>
+  <div>
+    <div>{{ a }}</div>
+    <input type="text" v-model="a">
+  </div>
+</template>
+
+<script setup lang="ts">
+import {ref} from "vue"
+const a = ref('小满')
+</script>
+```
+
+### v-for
+
+```vue
+<template>
+  <div>
+      <!--基础用法 -->
+    <div v-for="item in arr">{{ item }}</div>
+  </div>
+</template>
+
+<script setup lang="ts">
+const arr = ['小满','学姐','小余','班花姐姐','菜菜哥','草莓']
+</script>
+----------------------------------------------------------------------
+<!--第二个参数则是索引index，这是一个唯一值，从0开始计数-->
+<template>
+  <div>
+    <div v-for="(item,index) in arr">{{index}} - {{ item }}</div>
+  </div>
+</template>
+
+<script setup lang="ts">
+const arr:string[] = ['小满','学姐','小余','班花姐姐','菜菜哥','草莓']
+</script>
+```
+
+### 提升性能
+
+#### v-once
+
+> 只渲染元素和组件一次，并跳过之后的更新。其实就是只执行一次，后面都不执行了，所以性能会有所提升
+>
+> - 这里我们将刚刚小满写过的案例进行一个组合
+> - 我在h1的位置加上了v-once，证明了他只执行了一次，那就是在渲染出来的时候，所以当我们点击按钮的时候，数字没有跳到，因为已经跳过更新了，将v-once删除掉，我们界面上的数字就能继续跳动了
+
+```vue
+<template>
+  <div>
+    <button @click="click1" v-text="strawberry"></button>
+    <h1 v-once>成功偷走 {{ state.count }} 枚，还剩{{200000-state.count}}枚金币，请谨慎偷取，不然被草莓发现你偷拿她的金币的时候，只有决一死战了</h1>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { reactive } from 'vue';
+const strawberry:string = "请从草莓身上偷走金币"
+const state = reactive({count:0})
+const click1 = function(){
+  state.count++
+}
+</script>
+```
+
+#### v-memo
+
+> ### 用法(摘录自小满掘金)
+>
+> 在组件和元素都可以使用，主要是可以`缓存` 期望的类型是个数组`any[]`，该指令需要传入一个固定长度的依赖值数组进行比较。如果数组里的每个值都与最后一次的渲染相同，那么他的更新将会被跳过，甚至虚拟 DOM 的 vnode 创建也将被跳过，提升了性能。
+>
+> tips：如果`v-memo="[]"` 传入的是一个空数组，那么他的效果和`v-once` 一样
+>
+> ```vue
+> <div v-memo="[val]"></div>
+> ```
+>
+> `v-memo` 仅用于性能至上场景中的微小优化，应该很少需要。最常见的情况可能是有助于渲染海量 `v-for` 列表 (长度超过 1000 的情况)
+>
+> ### 配合v-for
+>
+> 配合v-for 属于最常见的情况，但是只有助于大数据量的情况例如`（1000条以上）`。
+>
+> tips:   当搭配 `v-for` 使用 `v-memo`，确保两者都绑定在同一个元素上。**`v-memo` 不能用在 `v-for` 内部。**
+>
+> 测试代码 `未加v-memo 一万条数据`
+>
+> 当组件的 `selected` 状态改变，默认会重新创建大量的 vnode，尽管绝大部分都跟之前是一模一样的。`v-memo` 用在这里本质上是在说“只有当该项的被选中状态改变时才需要更新”。这使得每个选中状态没有变的项能完全重用之前的 vnode 并跳过差异比较。
+>
+> ### 总结
+>
+> 如果你的项目对性能要求非常严格可以使用，但也只是小部分提升性能，如果你的项目平时没有那么大的数据量，感觉没什么有用。
+
+```vue
+<!--这是一个数组，如果数组里面什么都不填入的话，就跟v-once是一样的效果-->
+<template>
+  <div>
+    <div @click="select(item.id)"   :key="item.id" v-for="(item) in arr">
+      {{ item.id }} - selected： {{ item.id == active }}
+    </div>
+  </div>
+</template>
+
+<script setup lang='ts'>
+import { ref, reactive } from 'vue'
+
+const arr = reactive<any[]>([])
+for (let i = 0; i < 10000; i++) {
+  arr.push({
+    id: i + 1,
+    name: "test"
+  })
+}
+
+const active = ref(1)
+
+const select = async (index: number) => {
+  active.value = index;
+  console.time()
+  await Promise.resolve()
+  console.timeEnd()
+}
+
+</script>
+
+<style scoped lang='less'>
+
+</style>
+```
+
+**优化前后端对比**：
+
+![image-20221227024614768](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\JavaScript高级笔记(coderwhy) -- 原创\coderwhy-images\image-20221227024614768.png)![image-20221227024650122](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\JavaScript高级笔记(coderwhy) -- 原创\coderwhy-images\image-20221227024650122.png)
+
+# 第五章 — 虚拟DOM和VueKeyDiff算法(代号：巴别塔)
+
+## 前置了解
+
+- Diff算法是面试的高频问答点，在很多的语言中也会去使用
+  - `TypeScript` 转 `JavaScript`的转换过程也会进行AST转换
+  - 插件babel，ES6语法转ES5的时候也会经过抽象语法树的一个转换
+  - js走V8引擎转字节码的时候，也会经过AST
+
+## 介绍虚拟DOM
+
+[Vue Template Explorer ](https://vue-next-template-explorer.netlify.app/#eyJzcmMiOiI8ZGl2PlxyXG4gICAgPGRpdj4gXHJcbiAgICAgICAgIDxzZWN0aW9uPnRlc3Q8L3NlY3Rpb24+XHJcbiAgICAgIDwvZGl2PiAgXHJcbjwvZGl2PiIsIm9wdGlvbnMiOnt9fQ==)
+
+- 就是通过JS来生成一个AST节点树
+
+> 查看虚拟DOM上面属性的方法，将下方代码块复制在控制台
 
 ```javascript
 let div = document.createElement('div')
@@ -212,7 +705,7 @@ for (const key in div) {
 console.log(str)
 ```
 
-- 这上面的属性是非常多的，所以直接操作DOM非常浪费性能
+- 这上面的属性是非常多的，所以直接操作DOM非常浪费性能	(这就是为什么我们不直接去操作这个DOM，而是使用js去描述DOM对象的原因)
 
 - 解决方案就是 我们可以用 `JS` 的计算性能来换取操作 `DOM` 所消耗的性能，既然我们逃不掉操作 `DOM` 这道坎，但是我们可以尽可能少的操作 `DOM`
 
@@ -222,9 +715,493 @@ console.log(str)
 
 Vue3 源码地址[ https://github.com/vuejs/core](https://github.com/vuejs/core)
 
-> diff算法
+## Diff算法
 
-<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20221001092144329.png" alt="image-20221001092144329" style="zoom:50%;" />
+- 先来看看图片的描述
+
+![image-20221231162001284](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221231162001284.png)
+
+![image-20221231184348742](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221231184348742.png)
+
+### 没有key的diff算法
+
+> 一共3步
+>
+> <img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\JavaScript高级笔记(coderwhy) -- 原创\coderwhy-images\image-20221231164920117.png" alt="image-20221231164920117" style="zoom:67%;" />
+>
+> 1. 无key，patch的时候会替换
+> 2. 新增
+> 3. 删除
+>
+> - 情况1：
+>   - 当替换结束之后，发现有多于的出来就会进行新增的操作，然后diff算法结束
+> - 情况2：
+>   - 当替换结束之后，发现bew Vnode有变少就会对old Vnode进行删除的操作，然后diff算法结束
+>
+> ---
+>
+> - 在上图中，相同的其实不必替换，需要替换的只有一个DDD，相同的我们可以进行复用，想要进行这个复用的操作的话，我们就要进行一个标记，也就`key`，有key才可以复用，那就得到有key的diff算法去啦
+
+```typescript
+  const patchUnkeyedChildren = (
+    c1: VNode[],
+    c2: VNodeArrayChildren,
+    container: RendererElement,
+    anchor: RendererNode | null,
+    parentComponent: ComponentInternalInstance | null,
+    parentSuspense: SuspenseBoundary | null,
+    isSVG: boolean,
+    slotScopeIds: string[] | null,
+    optimized: boolean
+  ) => {
+    c1 = c1 || EMPTY_ARR
+    c2 = c2 || EMPTY_ARR
+    const oldLength = c1.length
+    const newLength = c2.length
+    const commonLength = Math.min(oldLength, newLength)
+    let i
+    ////首先通过for循环去patch重新渲染我们的元素
+    for (i = 0; i < commonLength; i++) {
+      const nextChild = (c2[i] = optimized
+        ? cloneIfMounted(c2[i] as VNode)
+        : normalizeVNode(c2[i]))
+      patch(
+        c1[i],
+        nextChild,
+        container,
+        null,
+        parentComponent,
+        parentSuspense,
+        isSVG,
+        slotScopeIds,
+        optimized
+      )
+    }
+      //判断
+    if (oldLength > newLength) {
+      // remove old
+      unmountChildren(
+        c1,
+        parentComponent,
+        parentSuspense,
+        true,
+        false,
+        commonLength
+      )
+    } else {
+      // mount new	新增
+      mountChildren(
+        c2,
+        container,
+        anchor,
+        parentComponent,
+        parentSuspense,
+        isSVG,
+        slotScopeIds,
+        optimized,
+        commonLength
+      )
+    }
+  }
+```
+
+### 有key的diff算法
+
+> 有key的diff算法一共是分为5步，也是新旧虚拟DOM进行一个对比
+
+#### 第一步：前序算法
+
+#### 第二步：后序算法
+
+```typescript
+  // can be all-keyed or mixed
+  const patchKeyedChildren = (
+    c1: VNode[],
+    c2: VNodeArrayChildren,
+    container: RendererElement,
+    parentAnchor: RendererNode | null,
+    parentComponent: ComponentInternalInstance | null,
+    parentSuspense: SuspenseBoundary | null,
+    isSVG: boolean,
+    slotScopeIds: string[] | null,
+    optimized: boolean
+  ) => {
+    let i = 0
+    const l2 = c2.length
+    let e1 = c1.length - 1 // prev ending index
+    let e2 = l2 - 1 // next ending index
+	//前序算法，只对比前面的
+    // 1. sync from start
+    // (a b) c
+    // (a b) d e
+    while (i <= e1 && i <= e2) {
+      const n1 = c1[i]
+      const n2 = (c2[i] = optimized
+        ? cloneIfMounted(c2[i] as VNode)
+        : normalizeVNode(c2[i]))
+      if (isSameVNodeType(n1, n2)) {
+        patch(
+          n1,
+          n2,
+          container,
+          null,
+          parentComponent,
+          parentSuspense,
+          isSVG,
+          slotScopeIds,
+          optimized
+        )
+      } else {
+          //当旧VNode与新VNode对比着对比着发现不一样的时候，就跳出循环
+        break
+      }
+      i++//前序算法从前面开始往后推，是i++，如果是尾序算法的话就从后面开始往前进，是i--
+        //其实都差不多
+    }
+```
+
+> 进入isSameVNode Type(n1,n2)内进行一探究竟
+>
+> 下方的type是什么？
+>
+> - 例如我们现在渲染div这个元素，那type就等于这个div
+>
+> 下方的key是什么？
+>
+> - 是我们在for循环中绑定的key，唯一值
+
+```typescript
+export function isSameVNodeType(n1: VNode, n2: VNode): boolean {
+  if (
+    __DEV__ &&
+    n2.shapeFlag & ShapeFlags.COMPONENT &&
+    hmrDirtyComponents.has(n2.type as ConcreteComponent)
+  ) {
+    // HMR only: if the component has been hot-updated, force a reload.
+    return false
+  }
+  //判断type 和 key是不是一样的，如果是一样的，他才会进行一个复用
+  return n1.type === n2.type && n1.key === n2.key
+}
+```
+
+```javascript
+<template>
+  <div>
+    <!-- key是唯一值，通常后端返回，类似item.id的形式 -->
+    <div :key="item" v-for="(item) in Arr">{{ item }}</div>
+  </div>
+</template>
+ 
+ 
+ 
+<script setup lang="ts">
+const Arr: Array<string> = ['A', 'B', 'C', 'D']
+Arr.splice(2,0,'DDD')
+</script>
+ 
+ 
+<style>
+</style>
+```
+
+#### 第三步：处理新节点
+
+> 如果有的话，没有就跳过
+
+```typescript
+// 3. common sequence + mount
+// (a b)
+// (a b) c
+// i = 2, e1 = 1, e2 = 2
+// (a b)
+// c (a b)
+// i = 0, e1 = -1, e2 = 0
+if (i > e1) {
+  if (i <= e2) {
+    const nextPos = e2 + 1
+    const anchor = nextPos < l2 ? (c2[nextPos] as VNode).el : parentAnchor
+    while (i <= e2) {
+      patch(
+        null,//patch的参数为null的话就是新增
+        (c2[i] = optimized
+          ? cloneIfMounted(c2[i] as VNode)
+          : normalizeVNode(c2[i])),
+        container,
+        anchor,
+        parentComponent,
+        parentSuspense,
+        isSVG,
+        slotScopeIds,
+        optimized
+      )
+      i++
+    }
+  }
+}
+```
+
+#### 第四步：卸载
+
+> 跟第三步一样，如果有的话，没有就跳过
+
+```typescript
+// 4. common sequence + unmount
+// (a b) c
+// (a b)
+// i = 2, e1 = 2, e2 = 1
+// a (b c)
+// (b c)
+// i = 0, e1 = 0, e2 = -1
+else if (i > e2) {
+  while (i <= e1) {
+    unmount(c1[i], parentComponent, parentSuspense, true)
+    i++
+  }
+}
+```
+
+#### 第五步：特殊情况乱序
+
+> 也是最难的一步，有可能是做了位移，或者新增、删除、位移、更新同时发生，主要为不可控的一些情况
+>
+> 源码将其分为3小节去处理
+>
+> - 构建新节点映射关系案例
+>
+> ```typescript
+> key  1 2 3 4 5
+> 索引  0 1 2 3 4
+> sort
+> key 5 4 3 2 1
+> 索引 0 1 2 3 4
+> 5=>0 4=>1 3=>2 2=>3 1=>4(构建成map关系)
+> ```
+>
+> 
+
+```typescript
+    // 5. unknown sequence
+    // [i ... e1 + 1]: a b [c d e] f g
+    // [i ... e2 + 1]: a b [e d c h] f g
+    // i = 2, e1 = 4, e2 = 5
+    else {//构建新旧节点的映射关系
+      const s1 = i // prev starting index
+      const s2 = i // next starting index
+
+      // 5.1 build key:index map for newChildren
+      const keyToNewIndexMap: Map<string | number | symbol, number> = new Map()
+      for (i = s2; i <= e2; i++) {
+        const nextChild = (c2[i] = optimized
+          ? cloneIfMounted(c2[i] as VNode)
+          : normalizeVNode(c2[i]))
+        if (nextChild.key != null) {
+          if (__DEV__ && keyToNewIndexMap.has(nextChild.key)) {
+            warn(
+              `Duplicate keys found during update:`,
+              JSON.stringify(nextChild.key),
+              `Make sure keys are unique.`
+            )
+          }
+          keyToNewIndexMap.set(nextChild.key, i)
+        }
+      }
+
+      // 5.2 loop through old children left to be patched and try to patch
+      // matching nodes & remove nodes that are no longer present
+      let j
+      let patched = 0
+      const toBePatched = e2 - s2 + 1
+      let moved = false
+      // used to track whether any node has moved
+      let maxNewIndexSoFar = 0
+      // works as Map<newIndex, oldIndex>
+      // Note that oldIndex is offset by +1
+      // and oldIndex = 0 is a special value indicating the new node has
+      // no corresponding old node.
+      // used for determining longest stable subsequence
+      //记录新节点在旧节点中的位置数组
+      //[5,4,3,2,1]
+      const newIndexToOldIndexMap = new Array(toBePatched)
+      for (i = 0; i < toBePatched; i++) newIndexToOldIndexMap[i] = 0
+
+      for (i = s1; i <= e1; i++) {
+        const prevChild = c1[i]
+        if (patched >= toBePatched) {
+          // all new children have been patched so this can only be a removal
+            //多余的旧节点会进行删除
+          unmount(prevChild, parentComponent, parentSuspense, true)
+          continue
+        }
+        let newIndex
+        if (prevChild.key != null) {
+          newIndex = keyToNewIndexMap.get(prevChild.key)
+        } else {
+          // key-less node, try to locate a key-less node of the same type
+          for (j = s2; j <= e2; j++) {
+            if (
+              newIndexToOldIndexMap[j - s2] === 0 &&
+              isSameVNodeType(prevChild, c2[j] as VNode)
+            ) {
+              newIndex = j
+              break
+            }
+          }
+        }
+          //如果新节点不包含旧节点里面了，也会进行删除操作
+        if (newIndex === undefined) {
+          unmount(prevChild, parentComponent, parentSuspense, true)
+        } else {
+          newIndexToOldIndexMap[newIndex - s2] = i + 1
+          if (newIndex >= maxNewIndexSoFar) {
+            maxNewIndexSoFar = newIndex
+          } else {
+            //节点出现交叉，说明是移动要去求最长递增子序列
+            moved = true
+          }
+          patch(
+            prevChild,
+            c2[newIndex] as VNode,
+            container,
+            null,
+            parentComponent,
+            parentSuspense,
+            isSVG,
+            slotScopeIds,
+            optimized
+          )
+          patched++
+        }
+      }
+
+      // 5.3 move and mount
+      // generate longest stable subsequence only when nodes have moved(仅当节点发生移动时生成最长稳定子序列)
+        //求最长递增子序列升序
+      const increasingNewIndexSequence = moved
+        ? getSequence(newIndexToOldIndexMap)
+        : EMPTY_ARR
+      j = increasingNewIndexSequence.length - 1
+      // looping backwards so that we can use last patched node as anchor(反向循环，以便我们可以使用最后打补丁的节点作为锚点)
+      for (i = toBePatched - 1; i >= 0; i--) {
+        const nextIndex = s2 + i
+        const nextChild = c2[nextIndex] as VNode
+        const anchor =
+          nextIndex + 1 < l2 ? (c2[nextIndex + 1] as VNode).el : parentAnchor
+        if (newIndexToOldIndexMap[i] === 0) {
+          // mount new
+          patch(
+            null,
+            nextChild,
+            container,
+            anchor,
+            parentComponent,
+            parentSuspense,
+            isSVG,
+            slotScopeIds,
+            optimized
+          )
+        } else if (moved) {
+          // move if:
+          // There is no stable subsequence (e.g. a reverse)
+          // OR current node is not among the stable sequence(或者当前节点不在稳定序列中)
+            //如果当前遍历的这个节点不在子序列，说明要进行移动
+          if (j < 0 || i !== increasingNewIndexSequence[j]) {
+            move(nextChild, container, anchor, MoveType.REORDER)
+          } else {
+            j--//如果节点在子序列中直接跳过
+          }
+        }
+      }
+    }
+  }
+```
+
+##### getSequence函数内部
+
+> 这是第五步中处理的第三小节，最长递增子序列其中处理的算法，由贪心算法和二分查找组成
+
+```typescript
+function getSequence(arr: number[]): number[] {
+  const p = arr.slice()
+  const result = [0]
+  let i, j, u, v, c
+  const len = arr.length
+  for (i = 0; i < len; i++) {
+    const arrI = arr[i]
+    if (arrI !== 0) {
+      j = result[result.length - 1]
+      if (arr[j] < arrI) {
+        p[i] = j
+        result.push(i)
+        continue
+      }
+      u = 0
+      v = result.length - 1
+      while (u < v) {
+        c = (u + v) >> 1
+        if (arr[result[c]] < arrI) {
+          u = c + 1
+        } else {
+          v = c
+        }
+      }
+      if (arrI < arr[result[u]]) {
+        if (u > 0) {
+          p[i] = result[u - 1]
+        }
+        result[u] = i
+      }
+    }
+  }
+  u = result.length
+  v = result[u - 1]
+  while (u-- > 0) {
+    result[u] = v
+    v = p[v]
+  }
+  return result
+}
+```
+
+### diff算法源码
+
+```typescript
+    // fast path
+    if (patchFlag > 0) {
+      if (patchFlag & PatchFlags.KEYED_FRAGMENT) {
+        // this could be either fully-keyed or mixed (some keyed some not)
+        // presence of patchFlag means children are guaranteed to be arrays
+        //有key的diff算法
+        patchKeyedChildren(
+          c1 as VNode[],
+          c2 as VNodeArrayChildren,
+          container,
+          anchor,
+          parentComponent,
+          parentSuspense,
+          isSVG,
+          slotScopeIds,
+          optimized
+        )
+        return
+      } else if (patchFlag & PatchFlags.UNKEYED_FRAGMENT) {
+        // unkeyed(没有key的diff算法)
+        patchUnkeyedChildren(
+            //c1、c2都是由虚拟DOM生成的 
+          c1 as VNode[],//c1是旧的Vnode
+          c2 as VNodeArrayChildren,//c2是指新的Vnode
+          container,
+          anchor,
+          parentComponent,
+          parentSuspense,
+          isSVG,
+          slotScopeIds,
+          optimized
+        )
+        return
+      }
+    }
+```
 
 > 乱序的对比，为了防止浪费性能，前面对比一下，后面对比一下，能够有效的分辨出是刚开始就不一样了还是最后不一样。最后面往前移，直到遇到不一样了之后在开始进行下一步的排序复用
 
@@ -475,8 +1452,6 @@ const obj = MyRef<string>('customRef小余')
 - 然后每个属性去做一下toRef，然后把这个内容做一个返回。也判断了一下是不是Proxy对象
 
 #### toRaw部分
-
-1. 
 
 - 根据一个 Vue 创建的代理返回其原始对象。
 - 这是一个可以用于临时读取而不引起代理访问 / 跟踪开销，或是写入而不触发更改的特殊方法。不建议保存对原始对象的持久引用，请谨慎使用。
@@ -2628,7 +3603,7 @@ const data = reactive<TreeList[]>([
 >   	<Tree v-if="item?.children?.length" :data="item?.children"></Tree>
 >   //因为item?.children的children是数组，数组永远等于true，所以我们要判断它的length
 >   </div>
->                       
+>                                         
 >   const clickTap =(item,e)=>{//我们能通过vue提供的一个$event在事件中来获取event元素，进行一些我们想要的操作
 >       console.log(item)
 >   }
@@ -10609,8 +11584,6 @@ defineProps<{
 
 # 第四十六章 —Vue3（Proxy跨域）-永恒之歌
 
-> 此章节内容来自小满zs的CSND，[传送门][https://xiaoman.blog.csdn.net/article/details/128081558]
->
 > 小满给这个章节取绰号叫做`永恒之歌`，但看他没用写上去，估计是不好意思，觉得还是太中二了，没关系，我替他完成这个想法
 
 ## 1.什么是跨域
@@ -10629,7 +11602,9 @@ defineProps<{
 
 ## 2.如何解决跨域
 
-jsonp 这种方式在之前很常见，他实现的基本原理是利用了HTML里script元素标签没有跨域限制 动态创建script标签，将src作为服务器地址，服务器返回一个callback接受返回的参数
+jsonp 这种方式在之前很常见，他实现的基本原理是利用了HTML里script元素标签没有跨域限制 **动态创建script标签**，将src作为服务器地址，服务器返回一个callback接受返回的参数(百度就在使用这种方式)
+
+> script标签只能使用GET请求，因为他是没办法去发送POST请求的
 
 ```ts
 function clickButton() {
@@ -10646,7 +11621,7 @@ function myFunc(myObj)  {
 }
 ```
 
-> cors 设置 CORS 允许跨域资源共享 需要后端设置
+> cors 设置 CORS 允许跨域资源共享 需要后端设置，前端设置不了
 
 ```ts
 {
@@ -10656,9 +11631,10 @@ function myFunc(myObj)  {
 {
   "Access-Control-Allow-Origin": "*" //也可以使用通配符 任何地址都能访问 安全性不高
 }
+//后端有时候需要存session，存session的时候会往前端去存一个cookie，如果设置为星号，则无法存
 ```
 
-> 使用Vite proxy 或者 node代理 或者 webpack proxy 他们三种方式都是代理
+> 使用Vite proxy 或者 node代理 或者 webpack proxy 他们三种方式都是代理(**常用**)
 >
 > 我们先创建一个接口使用express简单构建一下
 
@@ -10667,7 +11643,7 @@ const express = require('express')
 const app = express()
  
 //创建get请求
-app.get('/xm',(req,res)=>{
+app.get('/xm',(req,res)=>{//request为接收参数，response返回参数
      res.json({
         code:200,
         message:"请求成功"
@@ -10677,7 +11653,7 @@ app.get('/xm',(req,res)=>{
 app.listen(9001)
 ```
 
-> 我们使用vite项目的fetch 请求一下
+> 我们使用vite项目的fetch 请求一下(前端启动一下)
 
 ```js
 <script lang="ts" setup>
@@ -10698,27 +11674,36 @@ export default defineConfig({
   server:{
      proxy:{
         '/api':{
-            target:"http://localhost:9001/", //跨域地址
+            target:"http://localhost:9001/", //指向跨域地址
             changeOrigin:true, //支持跨域
-            rewrite:(path) => path.replace(/^\/api/, "")//重写路径,替换/api
+            rewrite:(path) => path.replace(/^\/api/, "")//使用正则替换匹配路径,替换/api，因为我们后端并没有/api这个地址的，而是http://localhost:9999，所以这么写当我们匹配到/api就会自己去做一个替换
         }
      }
   }
 })
 ```
 
-> fetch 替换/api 他会截取/api 替换成 target地址
+> fetch 替换/api 他会截取/api 替换成 target地址。或者去后台将get请求我们手动加上/api
 
 ```js
 <script lang="ts" setup>
 import {ref,reactive } from 'vue'
 fetch('/api/xm')
 </script>
+---------------------------------------------------------
+    //后台手动加上/api
+//创建get请求
+app.get('/api/xm',(req,res)=>{//request为接收参数，response返回参数
+     res.json({
+        code:200,
+        message:"请求成功"
+     })
+})
 ```
 
 ![image-20221203034721309](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221203034721309.png)
 
-> webpack proxy 和 node proxy 用法都类似
+> webpack proxy 和 node proxy 用法都类似，且**proxy代理只适合dev环境**，上线之后这段代码是无效的，因为上线之后没人给你起node服务，上线之后可能使用的是Nginx，Tomcat或者apache之类都可能，到时候就需要通过它们的代理再去做一个转发
 
 ## 3.vite proxy 原理解析
 
@@ -10736,7 +11721,7 @@ if (proxy) {
 
 > [vite](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fvitejs%2Fvite%2Ftree%2Fd76db0cae645beaecd970d95b4819158c5dd568a)/[packages](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fvitejs%2Fvite%2Ftree%2Fd76db0cae645beaecd970d95b4819158c5dd568a%2Fpackages)/[vite](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fvitejs%2Fvite%2Ftree%2Fd76db0cae645beaecd970d95b4819158c5dd568a%2Fpackages%2Fvite)/[src](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fvitejs%2Fvite%2Ftree%2Fd76db0cae645beaecd970d95b4819158c5dd568a%2Fpackages%2Fvite%2Fsrc)/[node](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fvitejs%2Fvite%2Ftree%2Fd76db0cae645beaecd970d95b4819158c5dd568a%2Fpackages%2Fvite%2Fsrc%2Fnode)/[server](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fvitejs%2Fvite%2Ftree%2Fd76db0cae645beaecd970d95b4819158c5dd568a%2Fpackages%2Fvite%2Fsrc%2Fnode%2Fserver)/[middlewares](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fvitejs%2Fvite%2Ftree%2Fd76db0cae645beaecd970d95b4819158c5dd568a%2Fpackages%2Fvite%2Fsrc%2Fnode%2Fserver%2Fmiddlewares)/**proxy.ts**
 >
-> 找到 proxyMiddleware 发现他是调用了 http-proxy这个库
+> 找到 **proxyMiddleware** 发现他是调用了 http-proxy这个库
 
 ```ts
 import httpProxy from 'http-proxy'
@@ -10749,9 +11734,11 @@ export function proxyMiddleware(
 const proxy = httpProxy.createProxyServer(opts) as HttpProxy.Server
 ```
 
-> http-proxy npm地址 www.npmjs.com/package/htt…
+> http-proxy npm地址 [http-proxy - npm (npmjs.com)](https://www.npmjs.com/package/http-proxy)
 >
 > http-proxy 模块用于转发 http 请求，其实现的大致原理为使用 http 或 https 模块搭建 node 代理服务器，将客户端发送的请求数据转发到目标服务器，再将响应输送到客户端
+>
+> 跟小满写的其实大差不差都是差不多的
 
 ```js
 const http = require('http')
@@ -10787,7 +11774,7 @@ app.get('/xm',(req,res)=>{
 app.listen(9001)
 ```
 
-> 成功代理 访问8888端口代理9001的请求
+> 成功代理 访问8888端口代理9001的请求，成功跨域请求
 
 ![image-20221203035020508](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221203035020508.png)
 
@@ -10796,6 +11783,3 @@ app.listen(9001)
 ​	到这里，你就已经学完了Vue3基础的内容
 
 ​	小余祝你在编程的道路上一路顺风，少有bug，志向远大的你一定可以在这条路渐行渐远，如果不开心的话就睡一觉，实在难受也可以来小满的微信群或者QQ群找我聊天，大家都是很热情的啦，包括UP主小满本人也是哦~
-
-[[https://babeljs.io]: 
-[[https://babeljs.io/]: 
