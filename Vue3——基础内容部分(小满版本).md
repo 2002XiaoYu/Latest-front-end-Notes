@@ -14,7 +14,7 @@
 >
 > 欢迎你加入小满的群聊和小满一起探讨技术上的问题，一个人只能闭门造车，一起探讨难点才能走得更远(记得视频多刷刷弹幕)
 >
-> 笔记在跨年前一天2022年12月31号与小满第5章Diff算法视频重录新增最长递增子序列 同时完成，祝你学习愉快，未来可期~
+> 小余祝你学习愉快，未来可期~
 
 # 第一章 课程导读
 
@@ -344,7 +344,7 @@ const num: number = 0
 </script>
 ```
 
-#### 
+#### v-if配合v-else
 
 > 当值为true的时候，if显示，else隐藏。反之亦然
 
@@ -395,6 +395,7 @@ const num: string = "小余去找小满串门了"
 > 跟v-if的功能有那么一点像，但是比v-if的性能更高一点，因为v-show是将CSS样式的display调整成none，只切换了一下CSS
 >
 > - 而v-if会把整个节点变成一个注释节点，怎么想工作量都会更大一点
+> - `v-show` 不支持在 `<template>` 元素上使用，也不能和 `v-else` 搭配使用
 
 ```vue
 <template>
@@ -420,6 +421,25 @@ const bol: boolean = true
 //也支持运算
 const bol: boolean = false
 </script>
+----------------------------------------------------------------------
+<template>
+<div>
+  <!-- v-show的展示部分 -->
+  <h1 v-show="switch_luo">我是洛洛</h1>
+  <!-- v-show隐藏部分 -->
+  <h2 v-show="switch_yu">我是小余</h2>
+</div>
+</template>
+
+<script setup lang='ts'>
+const switch_luo = true
+const switch_yu = false
+
+</script>
+
+<style scoped lang='less'>
+
+</style>
 ```
 
 ### v-on
@@ -1119,42 +1139,54 @@ else if (i > e2) {
 ##### getSequence函数内部
 
 > 这是第五步中处理的第三小节，最长递增子序列其中处理的算法，由贪心算法和二分查找组成
+>
+> - 由小满提供注释
 
 ```typescript
-function getSequence(arr: number[]): number[] {
+function getSequence (arr) {
   const p = arr.slice()
   const result = [0]
   let i, j, u, v, c
   const len = arr.length
   for (i = 0; i < len; i++) {
     const arrI = arr[i]
+    // 排除等于 0 的情况
     if (arrI !== 0) {
       j = result[result.length - 1]
+      // 与最后一项进行比较
       if (arr[j] < arrI) {
+        // 存储在 result 更新前的最后一个索引的值
         p[i] = j
         result.push(i)
         continue
       }
       u = 0
       v = result.length - 1
+      // 二分搜索，查找比 arrI 小的节点，更新 result 的值
       while (u < v) {
-        c = (u + v) >> 1
+        // 取整得到当前位置
+        c = ((u + v) / 2) | 0
         if (arr[result[c]] < arrI) {
           u = c + 1
-        } else {
+        }
+        else {
           v = c
         }
       }
       if (arrI < arr[result[u]]) {
         if (u > 0) {
+          // 正确的结果
           p[i] = result[u - 1]
         }
+        // 有可能替换会导致结果不正确，需要一个新数组 p 记录正确的结果
         result[u] = i
       }
     }
   }
   u = result.length
   v = result[u - 1]
+
+  // 回溯数组 p，找到最终的索引
   while (u-- > 0) {
     result[u] = v
     v = p[v]
@@ -3603,7 +3635,7 @@ const data = reactive<TreeList[]>([
 >   	<Tree v-if="item?.children?.length" :data="item?.children"></Tree>
 >   //因为item?.children的children是数组，数组永远等于true，所以我们要判断它的length
 >   </div>
->                                         
+>                                                 
 >   const clickTap =(item,e)=>{//我们能通过vue提供的一个$event在事件中来获取event元素，进行一些我们想要的操作
 >       console.log(item)
 >   }
@@ -7079,7 +7111,7 @@ export declare interface DirectiveBinding<V = any> {
 
 ![image-20221027001014931](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20221027001014931.png)
 
-## 4. 函数简写
+## 4. 函数简写(指令鉴权-代号：斯塔缇可电刃)
 
 > 你可能想在 `mounted` 和 `updated` 时触发相同行为，而不关心其他的钩子函数。那么你可以通过将这个函数模式实现
 
@@ -7107,6 +7139,56 @@ const vMove: Directive = (el:HTMLElement, binding: DirectiveBinding<Dir>) => {//
  
  
 <style>
+</style>
+```
+
+### 鉴权事件
+
+> 这就是通过后端给出的权限信息来对按钮动态的鉴定当前用户是否拥有权限
+>
+> - 无权限
+>   - 将其绑定的元素CSS设置为disply:none，进行隐藏
+> - 有权限
+>   - 什么都不做，正常显示
+
+```vue
+<template>
+  <div class="btns">
+    <button v-has-show="'shop:create'">创建</button>
+
+    <button v-has-show="'shop:edit'">编辑</button>
+
+    <button v-has-show="'shop:delete'">删除</button>
+  </div>
+</template>
+
+<script setup lang='ts'>
+// import {ref,reactive} from "vue"
+import type {Directive} from "vue"
+//permission
+localStorage.setItem('userid','xiaoyu')
+
+//mock后台返回的数据
+const permission = [
+  '用户ID:shop:edit',//shop:信息；edit:权限
+  'xiaoyu:shop:create',//很显然我们xiaoyu的权限只有这个创建，所以屏幕中应该只有这个按钮
+  'xiaoman:shop:delete'//这些都是字符串，所以我们在底下vHasShow中的第二个参数推断为字符串
+]
+
+const userid = localStorage.getItem('userid') as String
+const vHasShow:Directive<HTMLElement,String> = (el,binding)=>{//el是我们绑定的元素，bingding包含详细信息。将Directive泛型推断成一个元素，方便写代码的时候有提示
+  // console.log(el,binding);
+  if(!permission.includes(userid+":"+binding.value)){
+    el.style.display = 'none'
+  }
+}
+
+</script>
+
+<style scoped lang='less'>
+.btns{
+  margin: 10px;
+}
 </style>
 ```
 
@@ -7203,23 +7285,27 @@ const vMove: Directive<any,void> = {//定义类型为Directive，如果没有返
 
 ##### **鼠标事件**
 
-click 当用户点击某个对象时调用的事件句柄。
-contextmenu 在用户点击鼠标右键打开上下文菜单时触发
-dblclick 当用户双击某个对象时调用的事件句柄。
-mousedown 鼠标按钮被按下。
-mouseenter 当鼠标指针移动到元素上时触发。
-mouseleave 当鼠标指针移出元素时触发
-mousemove 鼠标被移动。
-mouseover 鼠标移到某元素之上。
-mouseout 鼠标从某元素移开。
-mouseup 鼠标按键被松开。
+| click       | 当用户点击某个对象时调用的事件句柄。   |
+| ----------- | -------------------------------------- |
+| contextmenu | 在用户点击鼠标右键打开上下文菜单时触发 |
+| dblclick    | 当用户双击某个对象时调用的事件句柄     |
+| mousedown   | 鼠标按钮被按下                         |
+| mouseenter  | 当鼠标指针移动到元素上时触发           |
+| mouseleave  | 当鼠标指针移出元素时触发               |
+| mousemove   | 鼠标被移动。                           |
+| mouseover   | 鼠标移到某元素之上。                   |
+| mouseout    | 鼠标从某元素移开                       |
+| mouseup     | 鼠标按键被松开                         |
 
 ##### **键盘事件**
 
-属性 描述 DOM
-keydown 某个键盘按键被按下。
-keypress 某个键盘按键被按下并松开。
-keyup 某个键盘按键被松开。
+| 属性     | 描述 DOM                 |
+| -------- | ------------------------ |
+| keydown  | 某个键盘按键被按下       |
+| keypress | 某个键盘按键被按下并松开 |
+| keyup    | 某个键盘按键被松开       |
+
+
 
 ##### **框架 / 对象（Frame/Object）事件**
 
@@ -7232,7 +7318,7 @@ pageshow 该事件在用户访问页面时触发
 pagehide 该事件在用户离开当前网页跳转到另外一个页面时触发
 resize 窗口或框架被重新调整大小。
 scroll 当文档被滚动时发生的事件。
-unload 用户退出页面。 (和)
+unload 用户退出页面
 
 ##### **表单事件**
 
@@ -8520,7 +8606,7 @@ createApp(App).use(vant).$mount('#app)
 >
 > 就需要用到样式穿透
 >
-> scoped 的原理
+> - scoped 的原理
 >
 > vue 中的 scoped 通过在 DOM 结构以及 css 样式上加唯一不重复的标记:data-v-[hash](https://so.csdn.net/so/search?q=hash&spm=1001.2101.3001.7020) 的方式，以保证唯一（而这个工作是由过 PostCSS 转译实现的），达到样式私有化模块化的目的。
 >
@@ -8529,12 +8615,49 @@ createApp(App).use(vant).$mount('#app)
 > 1. 给 HTML 的 DOM 节点加一个不重复 data 属性 (形如：data-v-123) 来表示他的唯一性
 > 2. 在每句 css 选择器的末尾（编译后的生成的 css 语句）加一个当前组件的 data 属性选择器（如 [data-v-123]）来私有化样式
 > 3. 如果组件内部包含有其他组件，只会给其他组件的最外层标签加上当前组件的 data 属性
+>
+> 视频中出现的代码展示：
+>
+> ```vue
+> <!--App.vue文件-->
+> <template>
+>   <main>
+>     <el-input placeholder="测试代码" class="ipt"></el-input>
+>   </main>
+> </template>
+> 
+> <script setup lang='ts'>
+> 
+> 
+> </script>
+> 
+> <style scoped lang='less'>
+> .ipt{
+>   width: 300px;
+>   margin: 100px 400px;
+> }
+> </style>
+> <!--main.ts文件,记得导入element plus组件库-->
+> import { createApp } from 'vue'
+> import ElementPlus from 'element-plus'
+> import 'element-plus/dist/index.css'
+> import App from './App.vue'
+> 
+> const app = createApp(App)
+> 
+> app.use(ElementPlus)
+> app.mount('#app')
+> ```
+>
+> ![image-20230106115531991](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20230106115531991.png)
 
 > `PostCSS` 会给一个组件中的所有 dom 添加了一个独一无二的动态属性 data-v-xxxx，然后，给 CSS 选择器额外添加一个对应的属性选择器来选择该组件中 dom，这种做法使得样式只作用于含有该属性的 dom—— 组件内部 dom, 从而达到了 ' 样式模块化 ' 的效果.
 
-## 案例修改 Element ui Input 样式
+## 案例修改 Element Plus Input 样式
 
 > 发现没有生效，属性选择器在父级上面了
+>
+> 这里小满重录了，笔记已经更新
 
 <img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20221028010957470.png" alt="image-20221028010957470" style="zoom:50%;" />
 
@@ -8547,8 +8670,276 @@ createApp(App).use(vant).$mount('#app)
 > Vue 提供了样式穿透`:deep ()` 他的作用就是用来改变 属性选择器的位置 =>这是Vue3的写法
 >
 > 在Vue2中是通过`/deep/`
+>
+> ```vue
+> <style scoped lang='less'>
+> .ipt{
+>   width: 300px;
+>   margin: 100px 400px;
+>   :deep(.el-input__inner){
+>     background: green;
+>   }
+> }
+> </style>
+> ```
 
-<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20221028011055850.png" alt="image-20221028011055850" style="zoom:50%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20221028011116281.png" alt="image-20221028011116281" style="zoom:40%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20221028011055850.png" alt="image-20221028011055850" style="zoom:50%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20230106120442069.png" alt="image-20230106120442069" style="zoom:67%;" />
+
+## 源码解析
+
+> 位于源码的：core > packages > compiler-sfc > src > compileStyle.ts
+>
+> - compiler-sfc的sfc什么意思？
+>   - 就是帮我们处理.vue文件(单文件组件)的 。一共由三部分组成(专门写了3个解析器)
+>     - template(第一部分模板)
+>     - script
+>     - style
+>   - ![image-20230106121235367](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20230106121235367.png)
+
+```typescript
+ //compileStyle文件
+  const shortId = id.replace(/^data-v-/, '')
+  const longId = `data-v-${shortId}`
+
+  const plugins = (postcssPlugins || []).slice()
+  plugins.unshift(cssVarsPlugin({ id: shortId, isProd }))
+  if (trim) {
+    plugins.push(trimPlugin())
+  }
+  //如果scoped = true 就向postCss 。PostCss = 是一个用JavaScript工具和插件转换CSS代码的工具
+  if (scoped) {
+    plugins.push(scopedPlugin(longId))
+  }
+  let cssModules: Record<string, string> | undefined
+  if (modules) {
+    if (__GLOBAL__ || __ESM_BROWSER__) {
+      throw new Error(
+        '[@vue/compiler-sfc] `modules` option is not supported in the browser build.'
+      )
+    }
+    if (!options.isAsync) {
+      throw new Error(
+        '[@vue/compiler-sfc] `modules` option can only be used with compileStyleAsync().'
+      )
+    }
+    plugins.push(
+      postcssModules({
+        ...modulesOptions,
+        getJSON: (_cssFileName: string, json: Record<string, string>) => {
+          cssModules = json
+        }
+      })
+    )
+  }
+```
+
+```typescript
+//stylePluginScoped.ts文件
+//PostCss插件
+//PostCss 接收一个CSS文件并提供一个API来分析、修改它的规则(通过把CSS规则转换成一个抽象语法树的方式)
+//跟babel类似的 babel是做js的AST postCss是做Css的，一样转化成抽象语法树
+const scopedPlugin: PluginCreator<string> = (id = '') => {
+  const keyframes = Object.create(null)
+  const shortId = id.replace(/^data-v-/, '')
+
+  return {
+    //定义插件名称
+    postcssPlugin: 'vue-sfc-scoped',
+    //处理Css的AST
+    Rule(rule) {
+      processRule(id, rule)
+    },
+    //处理@相关的Css 例如media keyframes
+    AtRule(node) {
+      if (
+        /-?keyframes$/.test(node.name) &&
+        !node.params.endsWith(`-${shortId}`)
+      ) {
+        // register keyframes
+        keyframes[node.params] = node.params = node.params + '-' + shortId
+      }
+    },
+    //最后执行而且只处理一次
+    OnceExit(root) {
+      if (Object.keys(keyframes).length) {
+        // If keyframes are found in this <style>, find and rewrite animation names
+        // in declarations.
+        // Caveat: this only works for keyframes and animation rules in the same
+        // <style> element.
+        // individual animation-name declaration
+        root.walkDecls(decl => {
+          if (animationNameRE.test(decl.prop)) {
+            decl.value = decl.value
+              .split(',')
+              .map(v => keyframes[v.trim()] || v.trim())
+              .join(',')
+          }
+          // shorthand
+          if (animationRE.test(decl.prop)) {
+            decl.value = decl.value
+              .split(',')
+              .map(v => {
+                const vals = v.trim().split(/\s+/)
+                const i = vals.findIndex(val => keyframes[val])
+                if (i !== -1) {
+                  vals.splice(i, 1, keyframes[vals[i]])
+                  return vals.join(' ')
+                } else {
+                  return v
+                }
+              })
+              .join(',')
+          }
+        })
+      }
+    }
+  }
+}
+
+const processedRules = new WeakSet<Rule>()
+//做缓存
+function processRule(id: string, rule: Rule) {
+  if (
+    processedRules.has(rule) ||//这里的rule就是通过CSS转化后的一个AST
+    (rule.parent &&
+      rule.parent.type === 'atrule' &&
+      /-?keyframes$/.test((rule.parent as AtRule).name))
+  ) {
+    return
+  }
+  processedRules.add(rule)
+  //遍历AST节点
+  rule.selector = selectorParser(selectorRoot => {
+    selectorRoot.each(selector => {
+      //重写选择器
+      rewriteSelector(id, selector, selectorRoot)
+    })
+  }).processSync(rule.selector)
+}
+
+function rewriteSelector(
+  id: string,
+  selector: selectorParser.Selector,
+  selectorRoot: selectorParser.Root,
+  slotted = false
+) {
+  let node: selectorParser.Node | null = null
+  let shouldInject = true
+  // find the last child node to insert attribute selector
+  selector.each(n => {
+    // DEPRECATED ">>>" and "/deep/" combinator
+    //废弃改用:deep()做样式穿透
+    if (
+      n.type === 'combinator' &&
+      (n.value === '>>>' || n.value === '/deep/')
+    ) {
+      n.value = ' '
+      n.spaces.before = n.spaces.after = ''
+      warn(
+        `the >>> and /deep/ combinators have been deprecated. ` +
+          `Use :deep() instead.`
+      )
+      return false
+    }
+
+    if (n.type === 'pseudo') {//判断类型是否为pseudo
+      const { value } = n
+      // deep: inject [id] attribute at the node before the ::v-deep
+      // combinator.
+      if (value === ':deep' || value === '::v-deep') {//判断是否类型为pseudo的基础上看是否有:deep。然后做样式穿透
+        if (n.nodes.length) {
+            //.foo .bar[xxxxxx]这就是加在选择器末尾的独一无二的那个
+          // .foo ::v-deep(.bar) -> .foo[xxxxxxx] .bar
+          // replace the current node with ::v-deep's inner selector，下面这一段就是为了挪动属性选择器的位置
+          let last: selectorParser.Selector['nodes'][0] = n
+          n.nodes[0].each(ss => {
+            selector.insertAfter(last, ss)
+            last = ss
+          })
+          // insert a space combinator before if it doesn't already have one
+          const prev = selector.at(selector.index(n) - 1)
+          if (!prev || !isSpaceCombinator(prev)) {
+            selector.insertAfter(
+              n,
+              selectorParser.combinator({
+                value: ' '
+              })
+            )
+          }
+          selector.removeChild(n)
+        } else {
+          // DEPRECATED usage
+          // .foo ::v-deep .bar -> .foo[xxxxxxx] .bar
+          warn(
+            `::v-deep usage as a combinator has ` +
+              `been deprecated. Use :deep(<inner-selector>) instead.`
+          )
+          const prev = selector.at(selector.index(n) - 1)
+          if (prev && isSpaceCombinator(prev)) {
+            selector.removeChild(prev)
+          }
+          selector.removeChild(n)
+        }
+        return false
+      }
+
+      // slot: use selector inside `::v-slotted` and inject [id + '-s']
+      // instead.
+      // ::v-slotted(.foo) -> .foo[xxxxxxx-s]
+      if (value === ':slotted' || value === '::v-slotted') {
+        rewriteSelector(id, n.nodes[0], selectorRoot, true /* slotted */)
+        let last: selectorParser.Selector['nodes'][0] = n
+        n.nodes[0].each(ss => {
+          selector.insertAfter(last, ss)
+          last = ss
+        })
+        // selector.insertAfter(n, n.nodes[0])
+        selector.removeChild(n)
+        // since slotted attribute already scopes the selector there's no
+        // need for the non-slot attribute.
+        shouldInject = false
+        return false
+      }
+
+      // global: replace with inner selector and do not inject [id].
+      // ::v-global(.foo) -> .foo
+      if (value === ':global' || value === '::v-global') {
+        selectorRoot.insertAfter(selector, n.nodes[0])
+        selectorRoot.removeChild(selector)
+        return false
+      }
+    }
+      
+  //Vue3新增的穿透slot
+  // slot: use selector inside `::v-slotted` and inject [id + '-s']
+  // instead.
+  // ::v-slotted(.foo) -> .foo[xxxxxxx-s]
+  if (value === ':slotted' || value === '::v-slotted') {
+    rewriteSelector(id, n.nodes[0], selectorRoot, true /* slotted */)
+    let last: selectorParser.Selector['nodes'][0] = n
+    n.nodes[0].each(ss => {
+      selector.insertAfter(last, ss)
+      last = ss
+    })
+    // selector.insertAfter(n, n.nodes[0])
+    selector.removeChild(n)
+    // since slotted attribute already scopes the selector there's no
+    // need for the non-slot attribute.
+    shouldInject = false
+    return false
+  }
+      
+      //全局穿透
+  // global: replace with inner selector and do not inject [id].
+  // ::v-global(.foo) -> .foo
+  if (value === ':global' || value === '::v-global') {
+    selectorRoot.insertAfter(selector, n.nodes[0])
+    selectorRoot.removeChild(selector)
+    return false
+  }
+```
+
+
 
 # 第三十三章 — css Style 完整新特性
 
