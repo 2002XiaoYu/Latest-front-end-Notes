@@ -16,6 +16,8 @@
 >
 > 小余祝你学习愉快，未来可期~
 
+[TOC]
+
 # 第一章 课程导读
 
 - 这章节是小满的自我介绍，还有介绍学习课程前需要的前置技术栈，祝你学习路程愉快
@@ -3635,7 +3637,7 @@ const data = reactive<TreeList[]>([
 >   	<Tree v-if="item?.children?.length" :data="item?.children"></Tree>
 >   //因为item?.children的children是数组，数组永远等于true，所以我们要判断它的length
 >   </div>
->                                                 
+>                                                   
 >   const clickTap =(item,e)=>{//我们能通过vue提供的一个$event在事件中来获取event元素，进行一些我们想要的操作
 >       console.log(item)
 >   }

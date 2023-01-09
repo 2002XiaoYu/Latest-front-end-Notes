@@ -4,7 +4,15 @@
 >
 > 如果你觉得笔记不错的话，可以在GitHub帮作者点个Star吗？这对作者是极大的鼓励和动力，每过一段时间可以上去看看有没有新的优质笔记产出，都是原创且最新的的哦，PDF版本还有markdown版本都会进行上传，如果PDF的没有上传就是说明内容太大传输不了，但可以自行将现有的markdown文档进行转换
 >
+> 此笔记会**持续更新**(小满出新则动态更新)，平时会根据水友的意见进行修改其中的细节错误，**关注我在GitHub上面这个项目可以随时获取到最新的笔记**
+>
 > GitHub地址：[2002小余 (github.com)](https://github.com/2002XiaoYu)
+>
+> 小满的QQ群：**855139333**	小满的微信：**a1195566313**(想加入微信群请加小满，让小满拉你)
+>
+> 欢迎你加入小满的群聊和小满一起探讨技术上的问题，一个人只能闭门造车，一起探讨难点才能走得更远(记得视频多刷刷弹幕)
+
+[TOC]
 
 # 基础类型(TS -- 1)
 
@@ -225,7 +233,7 @@ interface B extends A{
     age:number
 }
 
-let p:B{
+let p:B = {
     name:"有看到小满的裤子吗？"
     age:88//两种类型都要写
 }
@@ -1407,18 +1415,18 @@ let s:symbol = Symbol('小满')
 let num:symbol = Symbol('小满')
 
 let obj = {
-    [num] = "value"//Symbol
-    [s] = "草莓"//Symbol
-	name:"小满"
+    [num] : "value",//Symbol
+    [s] : "草莓",//Symbol
+	name:"小满",
 	sex:"男"
 }
 
-console.log(obj.[num])//取到value
+console.log(obj[num])//取到value
 console.log(s,num)//返回Symbol(小满)Symbol(小满)
 console.log(s === num)//false
 //这个值看似一样，其实因为内存地址指针位置不同，所以是唯一值
 
-for(let key in boj){
+for(let key in obj){
     console.log(key)
 }//只会打印出name跟sex，[num]与[s]将打印不出来
 

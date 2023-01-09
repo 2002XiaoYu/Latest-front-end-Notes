@@ -4,7 +4,17 @@
 >
 > 如果你觉得笔记不错的话，可以在GitHub帮作者点个Star吗？这对作者是极大的鼓励和动力，每过一段时间可以上去看看有没有新的优质笔记产出，都是原创且最新的的哦，PDF版本还有markdown版本都会进行上传，如果PDF的没有上传就是说明内容太大传输不了，但可以自行将现有的markdown文档进行转换
 >
+> 此笔记会**持续更新**(小满出新则动态更新)，平时会根据水友的意见进行修改其中的细节错误，**关注我在GitHub上面这个项目可以随时获取到最新的笔记**
+>
 > GitHub地址：[2002小余 (github.com)](https://github.com/2002XiaoYu)
+>
+> 小满的QQ群：**855139333**	小满的微信：**a1195566313**(想加入微信群请加小满，让小满拉你)
+>
+> 欢迎你加入小满的群聊和小满一起探讨技术上的问题，一个人只能闭门造车，一起探讨难点才能走得更远(记得视频多刷刷弹幕)
+
+---
+
+[toc]
 
 >  Vue 路由允许我们通过不同的 URL 访问不同的内容。通过 Vue 可以实现多视图的单页 Web 应用
 
@@ -20,15 +30,15 @@
 
 ​		1、后端路由： 
 
-​				1）理解：value 是 function, 用于处理客户端提交的请求。 
+​				（1）理解：value 是 function, 用于处理客户端提交的请求。 
 
-​				2）工作过程：服务器接收到一个请求时, 根据**请求路径**找到匹配的**函数** 来处理请求, 返回响应数据。 
+​				（2）工作过程：服务器接收到一个请求时, 根据**请求路径**找到匹配的**函数** 来处理请求, 返回响应数据。 
 
 ​		2、前端路由： 
 
-​				1）理解：value 是 component，用于展示页面内容。 
+​				（1）理解：value 是 component，用于展示页面内容。 
 
-​				2）工作过程：当浏览器的路径改变时, 对应的组件就会显示。
+​				（2）工作过程：当浏览器的路径改变时, 对应的组件就会显示。
 
 ## 第一章节(上)——入门（安装及配置）
 
@@ -53,9 +63,9 @@ npm i vue-router --save
 
 - 在`router`文件夹下的`index.js`中我们进行引入路由，然后创建一个路由器，在路由器中配置路由
 - 然后要在`main.js`中进行引入router并进行使用
-- 在App.vue中使用<router-view><router-view/>进行存放路由，这个是一个容器(内置组件，可以写在任何位置)
+- 在App.vue中使用`<router-view><router-view/>`进行存放路由，这个是一个容器(内置组件，可以写在任何位置)
 - 有了容器我们就可以往里面放东西了，还记得我们在index.js配置的路由信息吗？
-  - 使用<router-link to="/"><router-link>，`to`决定了我们要跳向哪个位置，to里面填写的内容就是我们填在路由器中的路由的path。通过点击触发path路径然后激活component进行路由跳转。请注意这这个`router-link`是一个a标签
+  - 使用`<router-link to="/"><router-link>，`to`决定了我们要跳向哪个位置，to里面填写的内容就是我们填在路由器中的路由的path。通过点击触发path路径然后激活component进行路由跳转。请注意这这个`router-link`是一个a标签
 
 2. RouteRecordRaw属性通过源码可以看出联合了`RouteRecordSingleView`，`RouteRecordMultipleViews`，`RouteRecordRedirect`这三个类型，在继续往下，我们可以看到很多个配置，其中`path`与`component`是必填的
 
@@ -1039,12 +1049,13 @@ scrollBehavior 返回滚动位置的对象信息，长这样：
 
 ```js
 const router = createRouter({
-  history: createWebHistory(),
-  scrollBehavior: (to, from, savePosition) => {
-    return {
-       top:200//这个就是跟随心意的写法了，不进行if判断，直接根据自己喜好返回距离顶部的距离
+    history: createWebHistory(),
+    scrollBehavior: (to, from, savePosition) => {
+        return {
+            top: 200//这个就是跟随心意的写法了，不进行if判断，直接根据自己喜好返回距离顶部的距离
+        }
     }
-  },
+})
 ```
 
 # 第十二章——动态路由
@@ -1173,4 +1184,3 @@ app.listen(9999, () => {
  
 })
 ```
-
