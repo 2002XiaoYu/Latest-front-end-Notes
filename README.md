@@ -15,7 +15,8 @@
 > 如果对你有帮助 请给作者一个star，作者会继续努力产出的
 ## 前端
 
-### markdown文档系列
+### B站UP主小满zs全系列笔记
+#### markdown文档系列
 ---
 
 [Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(markdown文档-小满版本)](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/Vue3——基础内容部分(小满版本).md)
@@ -26,7 +27,7 @@
 
 [前端常用英语词汇的汇总-(markdown文档-小满版本)](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/前端常用英语汇总.md)
 
-### PDF电子书系列
+#### PDF电子书系列
 ---
 
 Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本) => 目前正在等小满最后一集Vue视频的录制即可完结，后续分上下部的方式上传(一次性上传超过40MB，无法上传)
@@ -39,8 +40,11 @@ Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本)
 
 > 上述中的前端常用英语在Github上面无法直接浏览是因为里面的前端单词会触发效果，导致不全，所以还请下载下来观看
 
+<br/>
 
+### coderwhy系列课程笔记
 
+#### JavaScript高级系列笔记(coderwhy版本)
 ### 接下来的规划是JavaScript的高级内容笔记(来自coderwhy王红元课程)，正在撰写中(目前4w字左右，预计总和加起来10w字-15w字左右(超详细)，为了防止出现打包成PDF占据内存过大上传不了的问题，将会进行拆分)
 
 ## 后端
