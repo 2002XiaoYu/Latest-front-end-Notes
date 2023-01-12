@@ -25,6 +25,8 @@
 
 [Vue3-Pinia-(markdown文档-小满版本)](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/Vue3——pinia部分(小满版本).md)
 
+[Vue3-Router4-(markdown文档-小满版本)](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/Vue3%E2%80%94%E2%80%94Router4%E6%95%99%E7%A8%8B(%E5%B0%8F%E6%BB%A1%E7%89%88%E6%9C%AC).md)
+
 [前端常用英语词汇的汇总-(markdown文档-小满版本)](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/前端常用英语汇总.md)
 
 #### PDF电子书系列
@@ -35,6 +37,8 @@ Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本)
 [TypeScript笔记-(PDF文档-小满版本)](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/TypeScript基础笔记(小满版本).pdf)
 
 [Vue3-Pinia-(PDF文档-小满版本)](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/Vue3——pinia部分(小满版本).pdf)
+
+[Vue3-Rouer4-(PDF文档-小满版本)](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/Vue3%E2%80%94%E2%80%94Router4%E6%95%99%E7%A8%8B(%E5%B0%8F%E6%BB%A1%E7%89%88%E6%9C%AC).pdf)
 
 [前端常用英语词汇的汇总-(PDF文档-小满版本)](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/前端常用英语汇总.pdf)
 
