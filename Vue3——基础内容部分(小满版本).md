@@ -3637,7 +3637,7 @@ const data = reactive<TreeList[]>([
 >   	<Tree v-if="item?.children?.length" :data="item?.children"></Tree>
 >   //因为item?.children的children是数组，数组永远等于true，所以我们要判断它的length
 >   </div>
->                                                   
+>                                                     
 >   const clickTap =(item,e)=>{//我们能通过vue提供的一个$event在事件中来获取event元素，进行一些我们想要的操作
 >       console.log(item)
 >   }
@@ -10364,7 +10364,7 @@ const createWindow = () => {
         }
     })
     if (app.isPackaged) {//打完包后应该去走静态文件
-        win.loadFile(path.join(__dirname, "../index.html"));
+        win.loadFile(path.join(__dirname, "../dist/index.html"));
     } else {
 //VITE_DEV_SERVER_HOST 如果是undefined 换成  VITE_DEV_SERVER_HOSTNAME
         win.loadURL(`http://${process.env['VITE_DEV_SERVER_HOST']}:${process.env['VITE_DEV_SERVER_PORT']}`)
