@@ -48,8 +48,61 @@ Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本)
 
 ### coderwhy系列课程笔记
 
-#### JavaScript高级系列笔记(coderwhy版本)
-### 接下来的规划是JavaScript的高级内容笔记(来自coderwhy王红元课程)，正在撰写中(目前4w字左右，预计总和加起来10w字-15w字左右(超详细)，为了防止出现打包成PDF占据内存过大上传不了的问题，将会进行拆分)
+#### JavaScript高级系列笔记(coderwhy版本) --markdown版本
 
+[内存管理和内存泄露(闭包、作用域链)](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E7%9A%84JS%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E5%92%8C%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2(%E9%97%AD%E5%8C%85%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE).md)
+
+[JS中函数的this指向](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E7%9A%84JS%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0/JS%E4%B8%AD%E5%87%BD%E6%95%B0%E7%9A%84this%E6%8C%87%E5%90%91.md)
+
+[函数柯里化之实现apply、call、bind](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E7%9A%84JS%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96.md)
+
+[对象字面量和对象的封装(结合柯里化)](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E7%9A%84JS%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0/%E5%AF%B9%E8%B1%A1%E5%AD%97%E9%9D%A2%E9%87%8F%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B0%81%E8%A3%85(%E7%BB%93%E5%90%88%E6%9F%AF%E9%87%8C%E5%8C%96).md)
+
+[深入JS面向对象](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E7%9A%84JS%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%85%A5JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(%E5%8E%9F%E5%9E%8B-%E7%BB%A7%E6%89%BF).md)
+
+### 接下来的规划是JavaScript的高级内容笔记(来自coderwhy王红元课程)，正在撰写中(目前5w字左右(已上传)，预计总和加起来12w字-15w字左右(超详细)，为了防止出现打包成PDF占据内存过大上传不了的问题，将会在写完后进行拆分)
+
+<br/><br/>
 ## 后端
 **正在规划中(暂且保密~)**
+
+> **已有C语言、数据结构(C语言实现)连环笔记 => 来自中国慕课MOOC的翁恺与陈越老师**
+
+### C语言程序与设计--浙江大学翁恺(3w字)
+
+---
+
+[c语言设计(翁恺慕课markdown版本)](https://github.com/2002XiaoYu/C-and-DataStructure-Notes/blob/main/C%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0(%E7%BF%81%E6%81%BA%E7%89%88%E6%9C%AC).md)
+
+[c语言设计(翁恺慕课PDF版本)](https://github.com/2002XiaoYu/C-and-DataStructure-Notes/blob/main/C%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0(%E7%BF%81%E6%81%BA%E7%89%88%E6%9C%AC).pdf)
+
+<br/>
+
+### 数据结构--浙江大学陈越(10w字)
+
+---
+
+[数据结构第一周笔记——基本概念(慕课浙大版本--XiaoYu)](https://github.com/2002XiaoYu/C-and-DataStructure-Notes/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%80%E5%91%A8%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5(%E6%85%95%E8%AF%BE%E6%B5%99%E5%A4%A7%E7%89%88%E6%9C%AC--XiaoYu).md)
+
+[数据结构第二周笔记——线性结构(慕课浙大版本--XiaoYu)](https://github.com/2002XiaoYu/C-and-DataStructure-Notes/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E5%91%A8%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84(%E6%85%95%E8%AF%BE%E6%B5%99%E5%A4%A7%E7%89%88%E6%9C%AC--XiaoYu).md)
+
+[数据结构第三周笔记——树(上)(慕课浙大版本--XiaoYu)](https://github.com/2002XiaoYu/C-and-DataStructure-Notes/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E5%91%A8%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%A0%91(%E4%B8%8A)(%E6%85%95%E8%AF%BE%E6%B5%99%E5%A4%A7%E7%89%88%E6%9C%AC--XiaoYu).md)
+
+[数据结构第四周笔记——树(中)(慕课浙大版本--XiaoYu)](https://github.com/2002XiaoYu/C-and-DataStructure-Notes/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E5%9B%9B%E5%91%A8%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%A0%91(%E4%B8%AD)(%E6%85%95%E8%AF%BE%E6%B5%99%E5%A4%A7%E7%89%88%E6%9C%AC--XiaoYu).md)
+
+[数据结构第五周笔记——树(下)(慕课浙大版本--XiaoYu)](https://github.com/2002XiaoYu/C-and-DataStructure-Notes/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%94%E5%91%A8%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%A0%91(%E4%B8%8B)(%E6%85%95%E8%AF%BE%E6%B5%99%E5%A4%A7%E7%89%88%E6%9C%AC--XiaoYu).md)
+
+[数据结构第六周笔记——图(上)(慕课浙大版本--XiaoYu)](https://github.com/2002XiaoYu/C-and-DataStructure-Notes/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E5%85%AD%E5%91%A8%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%9B%BE(%E4%B8%8A)(%E6%85%95%E8%AF%BE%E6%B5%99%E5%A4%A7%E7%89%88%E6%9C%AC--XiaoYu).md)
+
+[数据结构第七周笔记——图(中)(慕课浙大版本--XiaoYu)](https://github.com/2002XiaoYu/C-and-DataStructure-Notes/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%83%E5%91%A8%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%9B%BE(%E4%B8%AD)(%E6%85%95%E8%AF%BE%E6%B5%99%E5%A4%A7%E7%89%88%E6%9C%AC--XiaoYu).md)
+
+[数据结构第八周笔记——图(下)(慕课浙大版本--XiaoYu)](https://github.com/2002XiaoYu/C-and-DataStructure-Notes/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E5%85%AB%E5%91%A8%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%9B%BE(%E4%B8%8B)(%E6%85%95%E8%AF%BE%E6%B5%99%E5%A4%A7%E7%89%88%E6%9C%AC--XiaoYu).md)
+
+[数据结构第九周笔记——排序(上)(慕课浙大版本--XiaoYu)](https://github.com/2002XiaoYu/C-and-DataStructure-Notes/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B9%9D%E5%91%A8%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%8E%92%E5%BA%8F(%E4%B8%8A)(%E6%85%95%E8%AF%BE%E6%B5%99%E5%A4%A7%E7%89%88%E6%9C%AC--XiaoYu).md)
+
+[数据结构第十周笔记——排序(下)(慕课浙大版本--XiaoYu)](https://github.com/2002XiaoYu/C-and-DataStructure-Notes/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E5%8D%81%E5%91%A8%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%8E%92%E5%BA%8F(%E4%B8%8B)(%E6%85%95%E8%AF%BE%E6%B5%99%E5%A4%A7%E7%89%88%E6%9C%AC--XiaoYu).md)
+
+[数据结构第十一周笔记—— 散列查找 (慕课浙大版本--XiaoYu)](https://github.com/2002XiaoYu/C-and-DataStructure-Notes/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E5%8D%81%E4%B8%80%E5%91%A8%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%20%E6%95%A3%E5%88%97%E6%9F%A5%E6%89%BE%20(%E6%85%95%E8%AF%BE%E6%B5%99%E5%A4%A7%E7%89%88%E6%9C%AC--XiaoYu).md)
+
+[数据结构第十二周笔记—— 综合习题选讲 (慕课浙大版本--XiaoYu)](https://github.com/2002XiaoYu/C-and-DataStructure-Notes/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%91%A8%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%20%E7%BB%BC%E5%90%88%E4%B9%A0%E9%A2%98%E9%80%89%E8%AE%B2%20(%E6%85%95%E8%AF%BE%E6%B5%99%E5%A4%A7%E7%89%88%E6%9C%AC--XiaoYu).md)
+
