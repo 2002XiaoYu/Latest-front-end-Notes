@@ -19,6 +19,14 @@
 > 我认为这个TypeScript跟C语言
 >
 > 是很像的，对语言的定义都有严格的规范。
+>
+> 应群友要求补充如何在vscode中使用TS：其实你看小满第一个视频，开头就有说(我进行补充)
+>
+> 1. 全局安装TS`npm install -g typescript`
+> 2. 检查是否安装成功`tsc -v`
+> 3. 初始化生成配件文件`tsc --init`
+> 4. 设置实时TS代码转换成JS代码：`shift+ctrl+B`选择监视
+> 5. 然后写的TS编译成js，使用node在终端运行转换成功的js文件
 
 ```typescript
 let str:string = "这是字符串类型"
@@ -3556,6 +3564,224 @@ module.exports = {
 **目录结构**
 
 <img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20221009090143222.png" alt="image-20221009090143222" style="zoom:50%;" />
+
+# TypeScript高级 - 实战插件编写
+
+> ### 目的
+>
+> 使用TypeScript去封装local storage(支持设置过期时间) =>local storage本身无此机制，只能人为手动删除，否则会一直存放在浏览器当中，可不可以跟cookie一样设置一个有效期。如果一直存放在浏览器又感觉有点浪费，那我们可以把`localStorage`进行二次封装实现该方案
+>
+> ### 实现思路
+>
+> 在存储的时候设置一个过期时间，并且存储的数据进行格式化方便统一校验，在读取的时候获取当前时间进行判断是否过期，如果过期进行删除即可。
+
+## 事前准备
+
+```typescript
+//新建dist文件夹(打包后的js代码放这里)
+//生成src文件夹
+	//src文件夹下生成index.ts文件
+ 	//src文件夹下生成enum文件夹，type文件夹
+		//enum、type文件夹下生成index.ts文件
+//创建html文件，用来测试代码
+//初始化package.json文件 ：npm init -y(或者你使用pnpm yarn都行，-y是默认配置)
+//右键新建rollup.config.js文件(作用：将TS打包成JS)
+//生成tsconfig.json => 使用命令`tsc -init`(这是TS的配置文件)
+```
+
+![image-20230118181032581](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20230118181032581.png)
+
+- 写代码前需要进行3个改动(`tsconfig.json`文件下的修改)
+
+| 改动地方                                                     | 改动原因                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `"module": "commonjs"`修改为`"module": "ESNext"`，位于27行附近 | `"module" `选项用来指定 `TypeScript` 编译器生成 JavaScript 代码时使用的模块系统。<br/>`"commonjs"` 是 `Node.js` 默认的模块系统。当 `"module"` 设置为 `"ESNext"` 时，`TypeScript` 编译器会把 `TypeScript` 代码编译成` ECMAScript `模块，这是最新的 `ECMAScript` 模块系统 |
+| `"moduleResolution": "node"`功能打开，位于29行附近           | 当 `"moduleResolution"` 设置为 `"node"` 时，`TypeScript` 编译器会使用 `Node.js` 模块解析策略来解析模块路径。这意味着编译器会先在当前目录下的 node_modules 文件夹中查找模块，如果找不到就会去父目录的 `node_modules` 文件夹中查找，直到找到或者到达根目录<br/>这样配置的好处是可以使用 `Node.js` 的模块解析机制来加载项目中的模块，并且可以使用 `npm` 和 `yarn`来管理项目中的依赖 |
+| `"strict": false`，位于79行附近                              | 关掉严格模式                                                 |
+
+## 编写插件
+
+- enum文件夹下的index.ts
+
+```typescript
+export enum Dictionaries {
+    expire = '__expire__',//下划线证明是私有的，存放的是过期时间
+    permanent = 'permanent'//设置local storage默认时间的
+}
+```
+
+- type文件夹下的index.ts
+
+```typescript
+import { Dictionaries } from "../enum"//引入字典表，因为字典表设置默认过期时间也有在传参中使用，所以需要定义类型
+export type Key = string //key类型
+export type expire = Dictionaries.permanent | number //有效期类型(联合类型，number由我们自己设置什么时候local storage什么时候过期)
+export interface Data<T> {  //格式化data类型
+    value: T
+    [Dictionaries.expire]: Dictionaries.expire | number
+}
+export interface Result<T> { //返回值类型，泛型，由用户自己定义
+    message: string,
+    value: T | null
+}
+export interface StorageCls { //class方法约束
+    set: <T>(key: Key, value: T, expire: expire) => void//设置，expire就是设置过期时间，也就是我们为什么要引入字典表的原因，在这里设置接口就用到了
+    get: <T>(key: Key) => Result<T | null>//读取
+    remove: (key: Key) => void//删除
+    clear: () => void//清空
+}
+```
+
+- src下的index.ts文件
+
+```typescript
+//expire过期时间key permanent永久不过期
+import { StorageCls, Key, expire, Data, Result } from "./type";////引入接口
+import { Dictionaries } from "./enum";
+//Storage 类必须实现 StorageCls 接口中定义的所有成员，也就是类必须满足 StorageCls 接口的约束条件
+export class Storage implements StorageCls {////通过implements来约束类
+    //存储接受 key value 和过期时间 默认永久(由枚举Dictionaries.permanent实现)
+    public set<T = any>(key: Key, value: T, expire: expire = Dictionaries.permanent) {////key这些类型都是定义了接口在type文件夹中的，expire是处理local storage存的时间，不设置则存的就是永久
+        //格式化数据，按照我们自己的要求规范格式
+        const data = {
+            value,//用户传过来的value
+            [Dictionaries.expire]: expire//存放的过期时间
+        }
+        //存进去，对JSON进行转化成字符串
+        localStorage.setItem(key, JSON.stringify(data))//通过提示Storage.setItem(key: string, value: string): void，在set的形参中接收值key跟value
+    }
+
+    //获取数据
+    public get<T = any>(key: Key): Result<T | null> {
+        const value = localStorage.getItem(key)//获取key值
+        //检测读出来的数据是否有效，如果为null就会提示key值无效
+        if (value) {
+            const obj: Data<T> = JSON.parse(value)//将处理好的字符串形式的数据再转化回来，Data<T>一样是规范了类型(方便写的时候给出提示)，同时允许用户传递类型进来
+            const now = new Date().getTime()//获取当前的时间
+            //有效并且是数组类型 并且过期了 进行删除和提示
+            if (typeof obj[Dictionaries.expire] == 'number' && obj[Dictionaries.expire] < now) {//typeof判断类型，如果传递的是数字，那就是时间戳，且同时判断传递的时间是否小于当前时间(就是判断过期了没)
+                this.remove(key)//过期了就把localstorage清除掉
+                return {
+                    message: `您的${key}已过期`,
+                    value: null
+                }
+            } else {
+                //否则成功返回
+                return {
+                    message: "成功读取",
+                    value: obj.value
+                }
+            }
+        } else {
+            //否则key值无效
+            console.warn('key值无效')
+            return {
+                message: `key值无效`,
+                value: null
+            }
+        }
+    }
+    //删除某一项，过期了就删掉localStorage
+    public remove(key: Key) {
+        localStorage.removeItem(key)
+    }
+    //清空所有值
+    public clear() {
+        localStorage.clear()
+    }
+}
+```
+
+- src下的index.html文件
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小余练习</title>
+</head>
+
+<body>
+    <script type="module">
+        import { Storage } from './dist/index.js'//引入
+        const sl = new Storage()
+        //五秒后过期
+        sl.set('a', 123, new Date().getTime() + 5000)
+
+        //每过0.5s查看是否过期
+        setInterval(() => {
+            const a = sl.get('a')
+            console.log(a)
+        }, 500)
+    </script>
+</body>
+
+</html>
+```
+
+- rullup.config.js文件
+
+```typescript
+//旧版写法(小满视频里的就是旧版)
+import ts from 'rollup-plugin-typescript2'
+import path from 'path'
+export default {
+    input: './src/index.ts',//入口文件
+    output: {//出口文件，会打到dist里面
+        file: path.resolve(__dirname, './dist/index.js')
+    },
+    plugins: [//rollup插件，将ts转化成js
+        ts()
+    ]
+}
+//如果上面你打包失败了，切换新版的代码，附在下面
+//第一步全局下载：npm install rollup -g
+//第二步：切换代码(不用上面的代码)
+import ts from "rollup-plugin-typescript2";
+import path from "path";
+import { fileURLToPath } from "url";
+const metaUrl = fileURLToPath(import.meta.url);
+const dirName = path.dirname(metaUrl);
+export default {
+    input: "./src/index.ts",
+    output: {
+        file: path.resolve(dirName, "./dist/index.js"),
+    },
+    plugins: [ts()],
+};
+```
+
+- tsconfig.json文件(不发了，太多了，就3个需要改动的地方)
+
+## 打包
+
+> 需要安装3个包(直接一次性安装好)
+>
+> `pnpm install rollup typescript rollup-plugin-typescript2 `
+>
+> ---
+>
+> 在`package.json`中配置启动命令
+>
+> ```typescript
+> "build":"rollup -c"
+> ```
+>
+> - 打包成功
+>
+> ![image-20230118204531135](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20230118204531135.png)
+>
+> 
+
+## 启动
+
+> 在本地服务器中启动(Stop Live Server)
+
+![image-20230118205225841](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20230118205225841.png)
 
 # 实战TS编写发布订阅模式(TS -- 22)
 
