@@ -62,7 +62,8 @@ Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本)
 
 [ES6-ES13的主要内容](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E7%9A%84JS%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0/JS%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0%20-%20coderwhy(ES6-ES13).md)
 
-### 接下来的规划是JavaScript的高级内容笔记(来自coderwhy王红元课程)，正在撰写中(目前5w字左右(已上传)，预计总和加起来12w字-15w字左右(超详细)，为了防止出现打包成PDF占据内存过大上传不了的问题，将会在写完后进行拆分)
+### 接下来的规划是JavaScript的高级内容笔记(来自coderwhy王红元课程)，正在撰写中(目前8w字左右(已上传)，
+> 预计总和加起来12w字-15w字左右(超详细)，为了防止出现打包成PDF占据内存过大上传不了的问题，将会在写完后进行拆分)，最新上传coderwhy体系课最新的ES6-ES13部分
 
 <br/><br/>
 ## 后端
