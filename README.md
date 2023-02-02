@@ -42,7 +42,7 @@ Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本)
 
 [前端常用英语词汇的汇总-(PDF文档-小满版本)](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/前端常用英语汇总.pdf)
 
-> 上述中的前端常用英语在Github上面无法直接浏览是因为里面的前端单词会触发效果，导致不全，所以还请下载下来观看
+> 上述中的前端常用英语PDF的显示补全问题已修复
 
 <br/>
 
