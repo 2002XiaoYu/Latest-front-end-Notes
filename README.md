@@ -67,11 +67,8 @@ Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本)
 
 ## coderwhy的2022年完整体系课内容免费分享
 > 适合时间充裕的同学观看，视频长度2600集（网盘时效永久）
+> 通过添加B站UP主小满zs，让他拉你进群，coderwhy体系课内容的网盘链接在群公告里面
 
-【超级会员V5】通过百度网盘分享的文件：web前端体系课
-链接:https://pan.baidu.com/s/1I6L6_jJ2lQD97EgkjyciGQ?pwd=nhg4 
-提取码:nhg4
-复制这段内容打开「百度网盘APP 即可获取」
 
 
 <br/><br/>
