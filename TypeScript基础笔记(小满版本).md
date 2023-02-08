@@ -1406,7 +1406,7 @@ interface A{
 }//name跟age会进行合并
 ```
 
-![image-20230209010245171](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\JavaScript高级笔记(coderwhy) -- 原创\coderwhy-images\image-20230209010245171.png)
+![image-20230209010245171](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20230209010245171.png)
 
 ## 类型别名高阶用法
 
@@ -1423,7 +1423,7 @@ type num = 1 extends number ? 1 : 0//返回1
 //never返回不了1是因为他是最底层的，连1都比不过，包含不了，所以返回0
 ```
 
-![image-20230209010955388](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\JavaScript高级笔记(coderwhy) -- 原创\coderwhy-images\image-20230209010955388.png)
+![image-20230209010955388](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20230209010955388.png)
 
 # never类型(TS -- 12)
 
