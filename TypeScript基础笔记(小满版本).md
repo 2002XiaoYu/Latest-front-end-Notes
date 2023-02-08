@@ -170,8 +170,8 @@ interface A{
 }
 
 let obj:A = {
-    name = "小满嗷嗷叫"//这里如果不写name就会报错，因为我们在上面定义了A类型集合，并且在这个变量中引入了(里面必须要有name属性且类型为字符串)
-    age	 = 18
+    name:"小满嗷嗷叫",//这里如果不写name就会报错，因为我们在上面定义了A类型集合，并且在这个变量中引入了(里面必须要有name属性且类型为字符串)
+    age:18
 }
 ```
 
@@ -186,8 +186,8 @@ interface A{
 }
 
 let obj:A = {
-    name = "小满嗷嗷叫"
-    age	 = 18//age写不写无所谓
+    name:"小满嗷嗷叫"
+    age:18//age写不写无所谓
 }
 ```
 
@@ -199,7 +199,7 @@ let obj:A = {
 interface Person{
     name:string,
     age?:number,
-    [propName:stirng]:string|number//这个属性一旦定义了，引用这个Person的对象就能够写入任意属性，属性的形式主要看冒号后面你定义了什么类型，比如在这里定义的类型就是string和number类型，不是这两者的类型就会报错，包括在Person里面定义除了string跟number之外其他类型也会报错
+    [propName:string]:string|number//这个属性一旦定义了，引用这个Person的对象就能够写入任意属性，属性的形式主要看冒号后面你定义了什么类型，比如在这里定义的类型就是string和number类型，不是这两者的类型就会报错，包括在Person里面定义除了string跟number之外其他类型也会报错
     //可以理解为这个 [propName:stirng]任意属性的优先度相当高
     
     注意string与number中间的 `|` 符号，小飞棍来咯，这是联合类型，后面笔记会写，这里就当作将string和number类型关系到了一块，有点像逻辑或，满足联合起来的其中一个条件都行，两个也可以
@@ -217,7 +217,7 @@ interface A{
 
 
 let obj:A = {
-    name = "小满嗷嗷叫"
+    name:"小满嗷嗷叫"
 }
 
 obj.name = "小满芳龄18"//报错
@@ -242,7 +242,7 @@ interface B extends A{
 }
 
 let p:B = {
-    name:"有看到小满的裤子吗？"
+    name:"有看到小满的裤子吗？",
     age:88//两种类型都要写
 }
 ```
@@ -376,21 +376,21 @@ let arr4:Array<Array<number>> = [[123],[456]]
 > 是所有参数的一个集合
 
 ```typescript
-function Arr(...args:any):void{//...args为ES6的解构方式，任意类型，voidwei不能有返回值
+function Arr(...args: any): void {//...args为ES6的解构方式，任意类型，voidwei不能有返回值
     console.log(arguments)//输出{'0':4,'1':56,'2':789}
-    
-    let arr:number[] = arguments//会报错，报缺少类型number[]的以下属性：pop,push,concat,join
-    let arr:IArguments = arguments//解决方法
-    
+
+    // let arr:number[] = arguments//会报错，报缺少类型number[]的以下属性：pop,push,concat,join
+    let arr1: IArguments = arguments//解决方法
+
     //其中 IArguments 是 TypeScript 中定义好了的类型，它实际上就是：
     interface IArguments {
-    [index: number]: any;
-    length: number;
-    callee: Function;
-
+        [index: number]: any;
+        length: number;
+        callee: Function;
     }
+}
 
-Arr(4,56,789)
+Arr(4, 56, 789)
 ```
 
 ## 接口表示数组
@@ -412,19 +412,19 @@ let Arr: ArrNumber = [1, 2, 3, 4, 5];
 > 函数内参数类型也是可以定义的
 
 ```typescript
-const fn(name:string,age:number):string{
+const fn = (name:string,age:number):string =>{
     return name + age
 }
 let a = fn('小满',10000)//输入不符合上述参数内定义的类型就会出错
 console.log(a)//输出小满10000
 --------------------------------------------------------------------
-const fn(name:string,age:number = 666):string{//如果在下面使用的时候，没有参数传进来就会以你在这里设置的默认参数执行，比如这个666
+const fn = (name:string,age:number = 666):string =>{//如果在下面使用的时候，没有参数传进来就会以你在这里设置的默认参数执行，比如这个666
     return name + age
 }
 let a = fn('小满')//输入不符合上述参数内定义的类型就会出错
 console.log(a)//输出小满666
 --------------------------------------------------------------------
-const fn(name:string,age?:number = 666):string{//也可以使用这个`?`操作符，age传不传就变成可选的了
+const fn = (name:string,age?:number = 666):string =>{//也可以使用这个`?`操作符，age传不传就变成可选的了
     return name + age
 }
 let a = fn('小满穿女仆装')//输入不符合上述参数内定义的类型就会出错
@@ -441,7 +441,7 @@ interface User{
     age:number
 }
 
-const fn(user:User):User{//这里的参数填写方式就变得简单了
+const fn = (user:User):User =>{//这里的参数填写方式就变得简单了
     return user
 }
 let a = fn({
@@ -466,12 +466,12 @@ console.log(a)//输出{name:'小满',age:18}
 ```typescript
 function fn(params:number):void//第一套规则
 function fn(params:string,params2:number):void//第二套规则
-function fn(params:any,params?:any):void{
+function fn(params:any,params2?:any):void{
     console.log(params)
     console.log(params2)
 }
 
-let a = fn(1,1)
+let a = fn(1)
 //输出1跟undefined，因为遵循的是第一套规则
 let a = fn("1",1)
 //输出"1"跟1，遵循的是第二套规则
@@ -534,8 +534,8 @@ const xiaoman = (man:Pople & Man):void => {//这里通过了&将Pople跟Man交�
 }
 
 xiaoman({
-    name:"小满今天坏掉了"
-    age:18
+    name:"小满今天坏掉了",
+    age:18,
     sex:1//如果sex不写是会报错的，会提示你少写了一个sex
 })
 ```
@@ -585,7 +585,7 @@ interface B{
     build:string
 }
 
-let fn(type:A | B) =>{
+let fn = (type:A | B) =>{
     console.log((<A>type).run);
 }
 
@@ -654,7 +654,7 @@ const regexp:Regexp = /\w\d\s///声明正则
 
 const date:Date = new Date()//对象类型
 //const date:Date = new Date().getTime()  number类型
-const error:Error('错误')
+const error:Error = new Error('错误')
 ```
 
 **总结**
@@ -694,10 +694,10 @@ document.body.addEventListener('click',(e:MouseEvent)=>{
 })
 
 //promise
-function promise():Promise<number>{//Promise是类型,number是泛型
-    return new Promise<number>(resolve,rejuct)=>{
+function promise1():Promise<number>{//Promise是类型,number是泛型
+    return new Promise<number>((resolve, rejects) => {
         resolve(1)//如果不进行断言的话会报错
-    }
+    })
 }
 
 promise().then(res=>{
@@ -1074,7 +1074,7 @@ interface H{
 
 class A{//也可以使用继承去使用
     params:string
-    constructor(params){
+    constructor(params:string){
         this.params = params
     }
 }
@@ -1235,7 +1235,7 @@ interface A{
     red:Color.yes
 }
 
-let B:A{
+let B:A = {
     red:Color.yes
     //或者直接red:1，只能填入这两个内容其中之一，其他的会报错
 }
@@ -1257,7 +1257,7 @@ const enum Types{//有没有const决定是编译成对象还是编译成常量
     fail
 }
 let code:number = 0
-if(code === sucess){//是能执行的
+if(code === Types.sucess){//是能执行的
     console.log("我在人民广场吃炸鸡")
 }
 ```
@@ -1272,9 +1272,9 @@ if(code === sucess){//是能执行的
 enum Types{
     one
 }
-let success:number = Types.success
+let success:number = Types.one
 
-console.log(success)//读取得出来为0
+console.log(one)//读取得出来为0
 ```
 
 ```typescript
@@ -1288,13 +1288,13 @@ let key = Types[success]
 console.log(`value---${success}`,`key----${key}`)//value---0,key----success
 ```
 
-# 类型推论|类型别名(TS -- 11)
+# 类型推论|类型别名(TS -- 11)代号：幼儿园
 
 ## 类型推论
 
 > 我声明了一个变量但是没有定义类型
 >
-> `TypeScript`会在没有明确的指定类型的时候推测出一个类型，这就是类型推论
+> `TypeScript`会在没有明确的指定类型的时候推测出一个类型，这就是类型推论(TS本身支持的功能)
 
 ```typescript
 let str = "小满"
@@ -1365,6 +1365,65 @@ type value = boolean | 0 | '213'
 let s:value = true
 //变量s的值  只能是上面value定义的值
 ```
+
+### 类型别名type跟interface的区别
+
+> - 区别1：interface是可以继承type的，但是type是没办法继承interface的，只能够使用`&`进行合并
+> - 区别2：interface是没办法写联合类型的，必须要里面写一个属性才能够去写联合类型(不能直接在外面添加联合类型)，而type能够直接写联合类型
+> - 区别3：interface重复写是会合并在一起的，type不行
+
+```typescript
+//区别1
+type s = number[] & B//使用&合并
+
+interface A extends B{//interface继承B
+    
+}
+interface B{
+    
+}
+```
+
+```typescript
+//区别2
+type s = number[] | string//type直接写联合类型
+
+interface A extends B{
+    name:string | number//要在内部属性才能写联合类型
+}
+interface B{
+    
+}
+```
+
+```typescript
+//区别3
+interface A{
+    name:string | number
+}
+interface A{
+    age:number
+}//name跟age会进行合并
+```
+
+![image-20230209010245171](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\JavaScript高级笔记(coderwhy) -- 原创\coderwhy-images\image-20230209010245171.png)
+
+## 类型别名高阶用法
+
+> extends ：包含的意思
+>
+> 左边的值 会作为右边类型的子类型
+
+```typescript
+type num = 1 extends number ? 1 : 0//返回1
+//其中除了number之外，其他类型包括any、unknown、Object、Number也都是返回1
+//类型never返回0
+//其中的关系图放在下面，他们(类型)是有层级关系的，下面的图由上往下，层级逐级递减
+
+//never返回不了1是因为他是最底层的，连1都比不过，包含不了，所以返回0
+```
+
+![image-20230209010955388](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\JavaScript高级笔记(coderwhy) -- 原创\coderwhy-images\image-20230209010955388.png)
 
 # never类型(TS -- 12)
 
@@ -1452,15 +1511,15 @@ console.log(JSON.stringify(obj));//["name":"小满","sex":"男"]，一样打印�
 > `Reflect.ownKeys` 方法返回一个由目标对象自身的属性键组成的数组。它的返回值等同于 `Object.getOwnPropertyNames(target).concat(Object.getOwnPropertySymbols(target))`。
 
 ```typescript
-console.log(Object.getOwnPropertySymbol(obj));//能打印出来两个Symbol，另外两个普通的不会打印出来
+console.log(Object.getOwnPropertySymbols(obj));//能打印出来两个Symbol，另外两个普通的不会打印出来
 
 Reflect.ownKeys()//此属性是将所有的属性都列出来
-console.log(Reflect.ownKeys())//四个全部圆满的打印出来
+console.log(Reflect.ownKeys(obj))//四个全部圆满的打印出来
 ```
 
 # 迭代器|生成器(TS -- 13)
 
-> 迭代器:Symbol.iterator 
+> 迭代器:Symbol.Iterator 
 >
 > 迭代器（Iterator）是⼀种对象，它能够⽤来遍历标准模板库容器中的部分或全部元素，每个迭代器对象代表容器中的确定的地址
 > 通俗点说，迭代器表现的像指针，读取集合或者数组中的⼀个值，读完以后⼜指向下⼀条数据，⼀个个数过去。
@@ -1473,7 +1532,7 @@ console.log(Reflect.ownKeys())//四个全部圆满的打印出来
 >
 > 1.`Interator`是 es6 引入的一种新的遍历机制。两个核心：
 >
-> (1) 迭代器是一个统一的接口，它的作用是使各种`数据结构`可被便捷的访问，它是通过一个键为 Symbol.iterator 的方法来实现。
+> (1) 迭代器是一个统一的接口，它的作用是使各种`数据结构`可被便捷的访问，它是通过一个键为 Symbol.Iterator 的方法来实现。
 > (2) 迭代器是用于`遍历`数据结构元素的指针（如数据库中的游标）。
 >
 > 使用迭代
@@ -1505,10 +1564,10 @@ let arr:Array<number> = [1,5,6]
 let it:Intertor<number> = arr[Symbol.interator]()//注意这里的接收类型<number>是固定要写的
 
 //next一次只遍历一个数，下一次调用将从上一次遍历到的位置开始下一个
-console.log(iterator.next());  //{ value: 1, done: false }
-console.log(iterator.next());  //{ value: 5, done: false }
-console.log(iterator.next());  //{ value: 6, done: false }
-console.log(iterator.next());  //{ value: undefined, done: true }
+console.log(Iterator.next());  //{ value: 1, done: false }
+console.log(Iterator.next());  //{ value: 5, done: false }
+console.log(Iterator.next());  //{ value: 6, done: false }
+console.log(Iterator.next());  //{ value: undefined, done: true }
 //返回的有两个属性，一个value，一个done。value当读取到值的时候，done为false、读取不到为true
 ```
 
@@ -1532,7 +1591,7 @@ function gen(erg:any){//这里定义为any类型是因为上面要传到这里�
     }
 }
 
-gen(arr)//调用第一个代码块的arr，输出了与console.log(iterator.next());一样的内容
+gen(arr)//调用第一个代码块的arr，输出了与console.log(Iterator.next());一样的内容
 //对象是不支持迭代器的使用的，其实我们在控制台输出一个对象，查找他内置的属性，也是找不到Symbol.interator的
 ```
 
@@ -1544,7 +1603,7 @@ gen(arr)//调用第一个代码块的arr，输出了与console.log(iterator.next
 **Symbol.isConcatSpreadable**
 布尔值，表示当在一个对象上调用 Array.prototype.concat 时，这个对象的数组元素是否可展开。
 
-**Symbol.iterator**
+**Symbol.Iterator**
 方法，被 for-of 语句调用。返回对象的默认迭代器。
 
 **Symbol.match**
@@ -1581,9 +1640,9 @@ gen(arr)//调用第一个代码块的arr，输出了与console.log(iterator.next
 >
 > ### for…of 语句
 >
-> for…of 会遍历可迭代的对象，调用对象上的 `Symbol.iterator`方法。(此对象非彼对象，这个对象是指你即将下手的目标)
+> for…of 会遍历可迭代的对象，调用对象上的 `Symbol.Iterator`方法。(此对象非彼对象，这个对象是指你即将下手的目标)
 >
-> 对象也是不支持的，因为对象没用`Symbol.iterator`方法。
+> 对象也是不支持的，因为对象没用`Symbol.Iterator`方法。
 
 ```typescript
 type mapKeys = string|number//相当于起别名，在下方使用的时候集合了string与number就会相对方便不少
@@ -1626,12 +1685,12 @@ for (let item of map){
 ```typescript
 //数字类型
 function num(A:number,B:number):Array<number>{//Array<number>为希望返回number类型的数组
-    return [a,b]
+    return [A,B]
 }
 num(6,9)
 //字符串类型
 function str(A:string,B:string):Array<string>{//Array<number>为希望返回number类型的数组
-    return [a,b]
+    return [A,B]
 }
 str('小满','穿女装')
 ```
@@ -1726,7 +1785,7 @@ interface Len{
     length:number
 }
 
-function getLegnth<T extends Len>(arg:T) {//使用接口让泛型T继承了Len
+function getLegth<T extends Len>(arg:T) {//使用接口让泛型T继承了Len
   return arg.length
 }
 
@@ -1976,7 +2035,7 @@ Argument of type '"date"' is not assignable to parameter of type '"id" | "text" 
 
 ### 3.in
 
-`in` 用来遍历枚举类型：
+`in` 用来遍历联合类型：
 
 ```js
 type Keys = "a" | "b" | "c"
@@ -2223,7 +2282,7 @@ const xiaoming: NewUserInfo = {
 
 可以看到，第二层以后就不会处理了，如果要处理多层，就可以自己实现
 
-#### DeepPartial
+#### DeepPartial(非内置)
 
 ```js
 type DeepPartial<T> = {
@@ -2318,7 +2377,7 @@ const todo: TodoPreview = {
 
 ```
 
-可以看到 NewUserInfo 中就只有个 name 的属性了。
+可能是`TodoPreview`中只有`title`和`completed`属性
 
 ### Record
 
@@ -2454,8 +2513,7 @@ const todo: TodoPreview = {
 #### 定义
 
 ```js
-type NonNullable<T> = T extendsnull | undefined ? never : T;
-
+type NonNullable<T> = T extends null | undefined ? nerver : T
 ```
 
 #### 举例说明
@@ -2463,7 +2521,6 @@ type NonNullable<T> = T extendsnull | undefined ? never : T;
 ```js
 type T0 = NonNullable<string | number | undefined>; // string | number
 type T1 = NonNullable<string[] | null | undefined>; // string[]
-
 ```
 
 ### Parameters
@@ -2475,17 +2532,15 @@ type T1 = NonNullable<string[] | null | undefined>; // string[]
 ```js
 type Parameters<T extends (...args: any) => any> = T extends (...args: infer P) => any
 ? P : never;
-
 ```
 
 #### 举例说明
 
 ```js
-type A = Parameters<() =>void>; // []
-type B = Parameters<typeofArray.isArray>; // [any]
-type C = Parameters<typeofparseInt>; // [string, (number | undefined)?]
-type D = Parameters<typeofMath.max>; // number[]
-
+type A = Parameters<() =>void>// []
+type B = Parameters<typeof Array.isArray>// [any]
+type C = Parameters<typeof parseInt>// [string, (number | undefined)?]
+type D = Parameters<typeof Math.max>// number[]
 ```
 
 # tsconfig.json配置文件(TS -- 15)
@@ -2834,7 +2889,7 @@ namespace A{
     }
 }
 console.log(A.C.D,B)//将B抽离成了文件
-//将此文件用dsc进行终端编译，然后在tscondig.json将module修改为CommonJs(node.js不认识defined，node.js是基于CommonJS的)，进去js文件夹、终端运行node index
+//将此文件用tsc进行终端编译，然后在tscondig.json将module修改为CommonJs(node.js不认识defined，node.js是基于CommonJS的)，进去js文件夹、终端运行node index
 ```
 
 ## 简化命名空间
@@ -2909,8 +2964,8 @@ namespace A {
 }
 //在index.ts
 
-///<reference path="./index2.ts" />
-///<reference path="./index3.ts" /> 
+///<reference path="./a.ts" />
+///<reference path="./b.ts" /> 
 //引入之后直接可以使用变量 A
 console.log(A);
 ```
@@ -3044,12 +3099,13 @@ class C implements A,B{
 mixins(C,[A,B])//第一个为目标对象，后面为要混入的对象
 //最后，创建这个帮助函数，帮我们做混入操作。 它会遍历 mixins 上的所有属性，并复制到目标上去，把之前的占位属性替换成真正的实现代码
 //帮助函数，把我们在实现类中写的去进行一个实现
+
 function mixins (curClas:any,itemCls:any[]){
-    itemCls.forEach(item()=>{
-        console.log(item);//输出[class A][class B]，我们要读取的不是这个，而是他原型上的一些属性
-        Object.getOwnPropertyNames(item,prototype).forEach(name =>{
-            //Object.getOwnPropertyNames () 可以获取对象自身的属性，除去他继承来的属性，对它所有的属性遍历，它是一个数组，遍历一下它所有的属性名
-            console.log(name);//打印出来了changeType跟getName
+    itemCls.forEach(item =>{
+        console.log(item)//输出[class A][class B]，我们要读取的不是这个，而是他原型上的一些属性
+        Object.getOwnPropertyNames(item.prototype).forEach(name =>{
+       //Object.getOwnPropertyNames () 可以获取对象自身的属性，除去他继承来的属性，对它所有的属性遍历，它是一个数组，遍历一下它所有的属性名
+            console.log(name)//打印出来了changeType跟getName
             curClas.prototype[name] = item.prototype[name]
         })
     })
@@ -3121,7 +3177,7 @@ class B{
     
 }
 let b = new B()
-console.log(b.getname('666'))//也是可以的
+console.log(b.getName('666'))//也是可以的
 ```
 
 ## 装饰器工厂
@@ -3135,7 +3191,7 @@ console.log(b.getname('666'))//也是可以的
 ```typescript
 const watcher = (name=string):ClassDecorator =>{
     return (target:Function) =>{
-        target.prototype.getNames = <T>(name:string):T =>{
+        target.prototype.getNames = () =>{
             return name
         }
         target.prototype.getOptions = (): string => {
@@ -3797,84 +3853,84 @@ export default {
 
 ```typescript
 interface Evenet{
-    on:(name:string,fn:Function)) => void,
-    emit(name:string,..args:Array<any>) => void,//派发
-    off(name:string,fn:Function)=> void,//移除
-    once(name:string,fn:Function) => void//只执行一次
+  on:(name:string,fn:Function) => void,
+  emit:(name:string,...args:Array<any>) => void//派发
+  off:(name:string,fn:Function)=> void//移除
+  once:(name:string,fn:Function) => void//只执行一次
 }
-    
+  
 interface List{
-    [key:string]:Array<Function>
-}
-   
-class Dispatch implements Event{//通过implements来约束这个类(Evenet)
-    list:List
-    constructor(){
-        this.list = {}
-    }
-    on(name:string,fn:Function){
-        const callback = this.list[name] || []//如果有取到值的话那就是一个数组，没有取到值的话就是一个空数组
-        callback.push(fn)//因为不管怎么说，callback都是数组，所以我们后面的数组也可以直接添加上去
-        this.list[name] = callback
-        console.log(this.list);
-    }
-    emit(name:string,..args:Array<any>){
-        let evnetName = this.list[name]
-        //on监听跟emit派发的时候 name 是需要一样的，不然会出错，所以我们这里要进行一个判断
-        if(evnetName){
-            eventName.forEach(fn=>{
-                //内容从下面的o.emit()传送上来
-                fn.apply(this.args)//第一个参数this指向，第二个参数为数组，这里也刚好是一个数组就直接传进去。会将on监听的数据直接打印出来，这里打印出来66 99
-            })
-        }else{
-            console.error(`名称错误${name}`)
-        }
-    }
-    off(name:string,fn:Function){
-        //off是删除一个函数，所以我们在下面将创建一个fn函数让他来删一下
-        let eventName = this.list[name]
-        //跟emit一样的，需要进行判断有没有值，还有就是函数存不存在，不存在的话就没得删了对吧
-        if(eventName && fn){
-            //我们要通过索引来将其删掉
-            let index = eventName.findIndex(fns=> fns === fn )
-            eventName.splice(index,1)
-            console.log(eventName)
-        }else{
-            console.error(`名称错误${name}`)
-        }
-    }
-    once(name:string,fn:Function){
-        let de = (...args:Array<any>) =>{
-            fn.apply(this,args)//指向到那个只调用一次函数的那里
-            this.off(name,de)//调用完就把它删掉，这就是只能调用一次的原因哈哈
-        }
-        this.on(name,de)//第一个还是名字，第二个临时函数
-    }
+  [key:string]:Array<Function>
 }
  
+class Dispatch implements Evenet{//通过implements来约束这个类(Evenet)
+  list:List
+  constructor(){
+      this.list = {}
+  }
+  on(name:string,fn:Function){
+      const callback = this.list[name] || []//如果有取到值的话那就是一个数组，没有取到值的话就是一个空数组
+      callback.push(fn)//因为不管怎么说，callback都是数组，所以我们后面的数组也可以直接添加上去
+      this.list[name] = callback
+      console.log(this.list);
+  }
+  emit(name:string,...args:Array<any>){
+      let eventName = this.list[name]
+      //on监听跟emit派发的时候 name 是需要一样的，不然会出错，所以我们这里要进行一个判断
+      if(eventName){
+          eventName.forEach(fn=>{
+              //内容从下面的o.emit()传送上来
+              fn.apply(this,args)//第一个参数this指向，第二个参数为数组，这里也刚好是一个数组就直接传进去。会将on监听的数据直接打印出来，这里打印出来66 99
+          })
+      }else{
+          console.error(`名称错误${name}`)
+      }
+  }
+  off(name:string,fn:Function){
+      //off是删除一个函数，所以我们在下面将创建一个fn函数让他来删一下
+      let eventName = this.list[name]
+      //跟emit一样的，需要进行判断有没有值，还有就是函数存不存在，不存在的话就没得删了对吧
+      if(eventName && fn){
+          //我们要通过索引来将其删掉
+          let index = eventName.findIndex(fns=> fns === fn )
+          eventName.splice(index,1)
+          console.log(eventName)
+      }else{
+          console.error(`名称错误${name}`)
+      }
+  }
+  once(name:string,fn:Function){
+      let de = (...args:Array<any>) =>{
+          fn.apply(this,args)//指向到那个只调用一次函数的那里
+          this.off(name,de)//调用完就把它删掉，这就是只能调用一次的原因哈哈
+      }
+      this.on(name,de)//第一个还是名字，第二个临时函数
+  }
+}
+
 const o = new Dispatch()//初始化
- 
+
 o.on('post',()=>{//post作为key
-    console.log(66);
+  console.log(66);
 })//第一个参数是事件名称，第二个是回调函数
- 
+
 o.on('post',(...args:Array<any>)=>{
-    console.log(99,args)
-    //这里我们对第二个回调函数传入了...args，也就是收到了o.emit除了第一个参数后面那些乱七八糟的东西(因为我们设定了any，对接收的类型并没有限制，所以收到什么乱七八糟的东西都不奇怪)，并在控制台打印了出来
+  console.log(99,args)
+  //这里我们对第二个回调函数传入了...args，也就是收到了o.emit除了第一个参数后面那些乱七八糟的东西(因为我们设定了any，对接收的类型并没有限制，所以收到什么乱七八糟的东西都不奇怪)，并在控制台打印了出来
 })
- 
+
 const fn = (...args:Array<any>) => {
-    console.log(args,2)
+  console.log(args,2)
 }
 o.on('post',fn)//没错，这个就是特地创建出来删掉的
 o.off('post',fn)//将fn删掉
 //o.on('post2',()=>{
-    //都会在控制台显示出来
+  //都会在控制台显示出来
 //})
 o.once('post',(...args:Array<any>)=>{
-    console.log(args,'once')
+  console.log(args,'once')
 })
- 
+
 o.emit('post',1,false,{name:"小满"})//除了第一个参数一样是事件，后面参数是不限制个数的，而且传什么都行
 o.emit('post',2,false,{name:"小满"})//这里如果收到就是有问题的，因为我们在上面使用once了，只调用一次
 ```
@@ -3954,10 +4010,8 @@ console.log(arr);         //['a','ttt','b','c','d']
 >
 > `Reflect.set` 方法设置 `target` 对象的 `name` 属性等于 `value`。
 
-
-
 ```typescript
-type Person{
+type Person = {
 	name:string,
 	age:number,
 	text:string
@@ -3969,11 +4023,11 @@ const proxy = (object:any,key:any)=>{//我们要自己实现proxy啦
             console.log('================>get',prop);
             //prop就是一个key，target就是地下那个man的对象，receiver是跟target一样的值，防止上下文错误的
             return Reflect.get(target,prop,receiver)//这里刚好对应的也是这三个参数
-        }
+        },
         set(target,prop,value,receiver){//多了一个value，因为我们要设置值
         //日志
         	console.log('================>set',prop);
-        	return Reflect.get(target,prop,value,receiver)
+        	return Reflect.set(target,prop,value,receiver)
     	}
     })
 }
@@ -3985,10 +4039,10 @@ const logAccess = <T>(object: T ,key:"name" | "age" | "text"):T =>{//为了使�
 }
 
 let man:Person = ({
-    name:"小满"
-    age:22
+    name:"小满",
+    age:22,
     text:"三秒真男人"
-},'name')
+})
 
 let man2 = logAccess({
     name:"小余"
@@ -4007,12 +4061,12 @@ const logAccess = <T>(object: T ,key:keyof T):T =>{//为了使其灵活度高一
 }
 
 let man2 = logAccess({
-    name:"小余"
+    name:"小余",
     id:925
 },'id')//就可以动态的去约束类型
 
 let man2 = logAccess({
-    name:"小余"
+    name:"小余",
     id:925
 },'id2')//报错，因为我们类型里没有id2
 ```
@@ -4085,7 +4139,7 @@ type Partial<T> = {
 >  手写实现
 
 ```typescript
-type Person{
+type Person = {
 	name:string,
 	age:number,
 	text:string
@@ -4178,7 +4232,7 @@ type Readonly<T> = {
 > 手写实现
 
 ```typescript
-type Readonly<T> = {
+type R<T> = {
     readonly [P in keyof T]: T[P];//keyof还是那样，转化为联合类型，in去遍历选项。T[P]通过索引取值的方式
     //然后为里面每个内容都加上只读属性
 };
@@ -4224,7 +4278,7 @@ type key = string |number | symbol
 
 type Person ={
     name:string,
-    age:number.
+    age:number,
     text:string
 }
 
@@ -4233,8 +4287,8 @@ type K = "A"|"B"|"C"//因为我们在这里定义了K，所以let B才只能使�
 type B = Rec<K,Person>//这里会返回成type B = {A:Person;B:Person;C:Person;}的形式
 
 let obj:B = {
-    A:{name:"小满",age:3,text:"三秒真男人"}//这里值的类型需要是Person的类型，因为在type B中已经定义了
-    B:{name:"小余",age:18,text:"三小时真男人"}
+    A:{name:"小满",age:3,text:"三秒真男人"},//这里值的类型需要是Person的类型，因为在type B中已经定义了
+    B:{name:"小余",age:18,text:"三小时真男人"},
     C:{name:"狗洛",age:1,text:"零点三秒真男人"}
 }
 ```
@@ -4248,7 +4302,7 @@ let obj:B = {
 > 定义一个类型 如果是数组类型 就返回 数组元素的类型 否则 就传入什么类型 就返回什么类型
 
 ```typescript
-type TYPE<T> = T entends Array<any> ? T[number] : T
+type TYPE<T> = T extends Array<any> ? T[number] : T
 
 type A = TYPE<string[]>//会返回type A = string
 type B = TYPE<(string|number)[]>//会返回type B = string|number
@@ -4260,7 +4314,9 @@ type C = TYPE<boolean>//返回type C = boolean
 > 使用 inter 修改
 
 ```typescript
+// 是不是某种数组类型 是：返回数组元素类型的类型 不是：返回类型本身
 type TYPE<T> = T entends Array<infer U> ? U : T//U不是泛型，而是充当占位符使用，读取Array类型然后进行返回
+// 是不是某种数组类型 是：返回数组元素类型的类型 不是：返回never
 type TYPE<T> = T entends Array<infer U> ? U : never//限制只能传type T这个元组类型，其他都不能传
 
 type A = TYPE<string[]>//会返回type A = string
@@ -4353,3 +4409,8 @@ type ReverArr<T extends any[]> = T extends [infer First,...infer rest] ? [...Rev
 type Arrb = ReverArr<Arr>
 ```
 
+
+
+> ####  致谢名单：
+>
+> 1. 小满QQ群的一位无名勇士提供的大量修正细节错误的反馈(由于他群名太骚了，为了不被河蟹就不发出来了，你可以去QQ群找群名最骚的就是他)
