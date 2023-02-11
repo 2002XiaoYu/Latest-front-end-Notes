@@ -15,7 +15,7 @@
 > 如果对你有帮助 请给作者一个star，作者会继续努力产出的
 ## 前端
 
-### B站UP主小满zs全系列笔记
+### B站UP主小满zs全系列笔记(持续更新)
 #### markdown文档系列
 ---
 
@@ -62,8 +62,10 @@ Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本)
 
 [ES6-ES13的主要内容](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E7%9A%84JS%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0/JS%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0%20-%20coderwhy(ES6-ES13).md)
 
+[Proxy-Reflect-Promise使用详解、迭代器和生成器、async和await(以及相关面试题)、微任务和宏任务、异常处理](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E7%9A%84JS%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0/Proxy-Reflect-Promise%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3(coderwhy).md)
+
 ### 接下来的规划是JavaScript的高级内容笔记(来自coderwhy王红元课程)，正在撰写中(目前8w字左右(已上传)，
-> 预计总和加起来12w字-15w字左右(超详细)，为了防止出现打包成PDF占据内存过大上传不了的问题，将会在写完后进行拆分)，最新上传coderwhy体系课最新的ES6-ES13部分
+> 预计总和加起来12w字-15w字左右(超详细)，为了防止出现打包成PDF占据内存过大上传不了的问题，将会在写完后进行拆分)，最新上传Proxy-Reflect-Promise使用详解等(2月12日上传)
 
 
 
