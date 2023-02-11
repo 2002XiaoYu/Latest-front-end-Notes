@@ -3362,7 +3362,7 @@ const a = new A();
 
 # Rollup构建TS项目(TS -- 21)
 
-> 由于我使用的是vite打包工具，那这个视频是属于过一遍的程度，本章节内容将直接把小满在CSDN的文章copy过来
+> 这个视频我是属于过一遍的程度，本章节内容将直接把小满在CSDN的文章copy过来
 
 ## Rollup 构建 TS 项目
 
@@ -3971,6 +3971,131 @@ var arr = ['a','b','c','d'];
 arr.splice(1,0,'ttt');
 console.log(arr);         //['a','ttt','b','c','d'] 
 ```
+
+# TS进阶 协变 逆变 双向协变(新增内容 - 代号:冬瓜)
+
+## 鸭子类型
+
+> - 所谓的类型兼容性，就是用于确定一个类型是否能赋值给其他的类型。typeScript中的类型兼容性是基于**结构类型**的（也就是形状），如果A要兼容B 那么A至少具有B相同的属性。
+>
+> - **"鸭子类型"** 是一个术语，用于描述动态类型语言中的类型系统的一种特殊方式。在鸭子类型系统中，如果对象看起来像鸭子，那么它就是鸭子。
+>
+>   在 TypeScript 中，鸭子类型是一种使用接口（interfaces）和类型断言（type assertions）来模拟动态类型系统的方法。这种方法允许定义一个对象的外观，而不需要严格的类型声明。
+>
+> - 小满的解释：一只鸟 走路像鸭子 ，游泳也像，做什么都像，那么这只鸟就可以成为鸭子类型
+
+```typescript
+//主类型
+interface a{
+  name:string,
+  age:number
+}
+//子类型
+interface b{
+  name:string,
+  age:number,
+  sex:string
+}
+
+let xiaoman:a = {
+  name:"小满",
+  age:24
+}
+
+let xiaoyu:b = {
+  name:"小余",
+  age:20,
+  sex:"男"
+}
+//此时b类型攘括了a类型，那此时a跟b都被称为了鸭子类型，关于为什么叫鸭子类型在上面有解释
+```
+
+## 协变
+
+> A B 两个类型完全不同但是竟然可以赋值并无报错B类型充当A类型的子类型，当子类型里面的属性满足A类型就可以进行赋值，也就是说不能少可以多，这就是协变
+>
+> - 举例子：a工作是前端，b工作是全栈(全都干)。你是前端，我是全栈，我能覆盖掉你的工作，你覆盖不了我的工作。因为你的工作里面只有前端，而我的工作里面还有后端，服务器维护，等等杂七杂八的东西，这些你都不会，你一上，除了前端部分之外，你啥都看不懂，完成不了工作是会被赶走的。要求全栈的工作你可以会得更多，但是这门工作的要求你得达到，需要用到的技术你不能不会
+
+```typescript
+//主类型
+interface a{
+  name:string,
+  age:number
+}
+//子类型
+interface b{
+  name:string,
+  age:number,
+  sex:string
+}
+
+let xiaoman:a = {
+  name:"小满",
+  age:24
+}
+
+let xiaoyu:b = {
+  name:"小余",
+  age:20,
+  sex:"男"
+}
+
+//协变
+xiaoman = xiaoyu//可以覆盖，xiaoyu充当xiaoman的子类型(我的理解是，像父类跟子类，子类是在父类的基础上继续扩展的)
+xiaoyu = xiaoman//报错，因为xiaoman没有sex这个属性，覆盖不了xiaoyu的sex
+```
+
+## 逆变
+
+> - 在 TypeScript 中，逆变是一种类型系统的特性，可以在泛型（generics）和函数参数上使用。逆变允许我们定义一个泛型类型或函数参数，其类型可以是一个父类型，而不是子类型。
+> - 逆变一般发生于函数的参数上面
+> - 逆变可以帮助我们编写更灵活的代码，同时仍然保持类型安全性
+>
+> 小满的解释：这里比较绕，注意看`fna` 赋值 给 `fnb` 其实最后执行的还是`fna` 而 `fnb`的类型能够完全覆盖`fna` 所以这一定是安全的，相反`fna`的类型不能完全覆盖`fnb`少一个sex所以是不安全的。 我的解释在下面
+
+```typescript
+//主类型
+interface a{
+  name:string,
+  age:number
+}
+//子类型
+interface b{
+  name:string,
+  age:number,
+  sex:string
+}
+
+let fna = (params:a)=>{
+
+}
+
+let fnb = (params:b)=>{
+
+}
+//逆变
+//首先父类有的，子类一定有。父类没有的，子类不一定没有。
+//我们先知道了这里的目的是为了保持类型的安全性，那就很明白了，父类覆盖掉子类，那子类一定是不会多出其他类型的，但是子类覆盖掉父类那就不一定了
+fnb = fna//父传子
+```
+
+## 双向协变
+
+> 在逆变的基础上反过来
+>
+> - 从只能`fnb = fna`到能够`fna = fnb`，也就是子类赋值给了父类
+> - 使用方式：tsconfig strictFunctionTypes 设置为false 支持双向协变 fna fnb 随便可以来回赋值
+> - 一般情况下建议不开启
+
+```typescript
+//步骤1：tsc --init	生成tsconfig.json文件
+    "strictFunctionTypes": false,                      
+        /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */
+        //翻译：在分配函数时，检查以确保参数和返回值是子类型兼容的
+        //我们选择了false，对于上面的意思来说也就是不检查子类会不会被父类型兼容了(原本不兼容报错，现在不报错了)，dan's
+```
+
+![image-20230211145443560](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20230211145443560.png)
 
 # TS 进阶用法 proxy & Reflect(TS -- 23)
 
