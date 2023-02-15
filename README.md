@@ -66,8 +66,9 @@ Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本)
 
 [Storage存储-正则表达式](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E7%9A%84JS%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0/Storage%E5%AD%98%E5%82%A8-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F(coderwhy%E7%89%88%E6%9C%AC).md)
 
-### 接下来的规划是JavaScript的高级内容笔记(来自coderwhy王红元课程)，正在撰写中(目前11w字左右(已上传)，
-> 预计总和加起来12w字-15w字左右(超详细)，为了防止出现打包成PDF占据内存过大上传不了的问题，将会在写完后进行拆分)，最新上传Storage存储-正则表达式(2月14日上传)
+#### node、webpack、git笔记(markdown版本) 
+
+[Node-前端模块化](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/node%E3%80%81webpack%E3%80%81git%E7%AC%94%E8%AE%B0(coderwhy%E7%89%88%E6%9C%AC)/Node-%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96.md)
 
 
 
