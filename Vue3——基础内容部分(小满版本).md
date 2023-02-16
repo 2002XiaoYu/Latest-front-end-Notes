@@ -39,7 +39,7 @@ yarn create vite
 
 3. 注意：在哪里打开终端，你的项目就建立在哪里
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221001030134810.png" alt="image-20221001030134810" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221001030134810.png" alt="image-20221001030134810" style="zoom:50%;" />
 
 ```
 安装依赖：npm install
@@ -72,9 +72,9 @@ https://blog.csdn.net/weixin_37861326/article/details/104295379
 检查安装：Vue -V
 ```
 
-![image-20221001031307642](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221001031307642.png)
+![image-20221001031307642](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221001031307642.png)
 
-![image-20221001031601936](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221001031601936.png)
+![image-20221001031601936](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221001031601936.png)
 
 > 使用脚手架
 >
@@ -211,7 +211,7 @@ nrm 是一个 npm 源管理器，允许你快速地在 npm 源间切换。(其�
 
      > npm版本6.14.15能够看到动画，如果升级到7.1.2的npm及以上就无法看到MMP动画的显示
 
-![bef067af3e294fae5d2d6e78c5795c20_](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\JavaScript高级笔记(coderwhy) -- 原创\coderwhy-images\bef067af3e294fae5d2d6e78c5795c20_.png)
+![bef067af3e294fae5d2d6e78c5795c20_](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/bef067af3e294fae5d2d6e78c5795c20_.png)
 
 ## 第三章 — 认识目录与SFC
 
@@ -364,7 +364,7 @@ const zs: string = '<section style="color:red">小红帽班花姐姐</section>'
 </script>
 ```
 
-![image-20221226232858145](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221226232858145.png)
+![image-20221226232858145](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221226232858145.png)
 
 ### v-if
 
@@ -747,7 +747,7 @@ const select = async (index: number) => {
 
 **优化前后端对比**：
 
-![image-20221227024614768](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221227024614768.png)![image-20221227024650122](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221227024650122.png)
+![image-20221227024614768](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221227024614768.png)![image-20221227024650122](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221227024650122.png)
 
 # 第五章 — 虚拟DOM和VueKeyDiff算法(代号：巴别塔)
 
@@ -789,15 +789,15 @@ Vue3 源码地址[ https://github.com/vuejs/core](https://github.com/vuejs/core)
 
 - 先来看看图片的描述
 
-![image-20221231162001284](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221231162001284.png)
+![image-20221231162001284](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221231162001284.png)
 
-![image-20221231184348742](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221231184348742.png)
+![image-20221231184348742](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221231184348742.png)
 
 ### 没有key的diff算法
 
 > 一共3步
 >
-> <img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221231164920117.png" alt="image-20221231164920117" style="zoom:67%;" />
+> <img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221231164920117.png" alt="image-20221231164920117" style="zoom:67%;" />
 >
 > 1. 无key，patch的时候会替换
 > 2. 新增
@@ -1310,19 +1310,19 @@ function getSequence (arr) {
 
 > 不同的声明方法
 
-![image-20221001094826076](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221001094826076.png)
+![image-20221001094826076](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221001094826076.png)
 
 - 推荐类型比较复杂的时候方便自定义
 
-![image-20221001094922141](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221001094922141.png)
+![image-20221001094922141](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221001094922141.png)
 
 - 或者什么都不要，让编辑器自己推导
 
-![image-20221001095054253](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221001095054253.png)
+![image-20221001095054253](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221001095054253.png)
 
 这里要响应改变值的话，要记得加.value，因为Proxy是在.value中的
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221001095226462.png" alt="image-20221001095226462" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221001095226462.png" alt="image-20221001095226462" style="zoom:50%;" />
 
 ```ts
 <template>
@@ -1453,7 +1453,7 @@ const obj = MyRef<string>('customRef小余')
 
 #### ref小技巧
 
-1. <img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221001111117720.png" alt="image-20221001111117720" style="zoom:33%;" />打开这个能够让我们观察value方便一点，控制台点一下就行，少点一下。就是格式化了，e f系列跟reactive系列都可以使用
+1. <img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221001111117720.png" alt="image-20221001111117720" style="zoom:33%;" />打开这个能够让我们观察value方便一点，控制台点一下就行，少点一下。就是格式化了，e f系列跟reactive系列都可以使用
 2. **ref是可以获取DOM元素的**，在html部分中ref="xxx"，这个xxx要与在JavaScript里面声明的变量名一样，比如const xxx = ref<泛型>()，然后console控制台输出一下，ref.value.innerText就能够获取到了
 
 ## 源码部分
@@ -1618,7 +1618,7 @@ export const effect = (fn:Function)=>{//fn是匿名函数方便用户去自定�
 
 ### 实现 track
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221118090908299.png" alt="image-20221118090908299" style="zoom:47%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221118090908299.png" alt="image-20221118090908299" style="zoom:47%;" />
 
 ```ts
 //target参数被当作targetMap中的key收集起来了
@@ -2050,7 +2050,7 @@ watch([message,message2],(newVal,oldVal)=>{//此时新值旧值也会变成一�
 },{deep:true})//深度监听
 ```
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221118215901847.png" alt="image-20221118215901847" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221118215901847.png" alt="image-20221118215901847" style="zoom:50%;" />
 
 通过控制台打印，我们发现了其中的Proxy下的深层次监听
 
@@ -2058,7 +2058,7 @@ watch([message,message2],(newVal,oldVal)=>{//此时新值旧值也会变成一�
 
 此时会发现有一个问题，那就是旧值跟新值的内容是一样的(原因是因为引用类型返回的新值是跟旧值一样的)
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221118220127745.png" alt="image-20221118220127745" style="zoom:67%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221118220127745.png" alt="image-20221118220127745" style="zoom:67%;" />
 
 我们在使用的时候会发现一个问题，那就是我只改变了一个值，为什么没有改变的那个值(例如上面的`喜多川学姐`)也跟着带出来了，我只想要得到改变的值,那要怎么办到呢？  =>  简洁版提问：想要侦听单一属性
 
@@ -3047,14 +3047,14 @@ const xiaoman = ()=>{//通过上方那个派发按钮触发这个事件
 
 输出：(我们可以看到，控制台输出的时候，子组件传递到父组件的信息会放置在后面，而在父组件定义的内容则会放在前面)
 
-![image-20221019001010912](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221019001010912.png)
+![image-20221019001010912](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221019001010912.png)
 
 ```js
 //对Menu进行一点小修改
 const yupi:string[] = reactive<string[]>(["鱼皮是一只B站的野生UP主","今天出海抓鱼皮","鱼皮今天潜水没有出没，没有抓到"])
 ```
 
-![image-20221019001900761](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221019001900761.png)
+![image-20221019001900761](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221019001900761.png)
 
 ```js
 //进一步修改
@@ -3066,7 +3066,7 @@ const AAA = (yupi?:any) =>{//没错，就是上面Menu组件中的AAA
 //可以传多个数据，然后使用多个@进行绑定
 ```
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221019002148260.png" alt="image-20221019002148260" style="zoom:50%;" /> 通过点击按钮  <img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20221019002210245.png" alt="image-20221019002210245" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221019002148260.png" alt="image-20221019002148260" style="zoom:50%;" /> 通过点击按钮  <img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20221019002210245.png" alt="image-20221019002210245" style="zoom:50%;" />
 
 #### 代码演示(重录后)
 
@@ -3474,7 +3474,7 @@ onMounted(() => {//操作DOM，引入生命周期
 
 > **效果展示**
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221119035843986.png" alt="image-20221119035843986" style="zoom:67%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221119035843986.png" alt="image-20221119035843986" style="zoom:67%;" />
 
 #### 案例(翻新前——旧案例)
 
@@ -3553,7 +3553,7 @@ const xiaoman = ()=>{//通过上方那个派发按钮触发这个事件
 
 效果图：
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221019005124778.png" alt="image-20221019005124778" style="zoom:70%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221019005124778.png" alt="image-20221019005124778" style="zoom:70%;" />
 
 > 总结：这个defineExpose是在子组件中使用，以对象的形式，往里面丢入我们想要传递到父组件中的变量(我们在这个变量中使用reactive将其传递的内容变为响应式)，变量被暴露出来，可以被父组件通过Proxy实例对象给发现。我们通过定义一个空的const xxx = ref(null)，来观察xxx.value中已经从Menu子组件传递过来的数据dayu。之所以是Reactive形式的则是需要我们看Vue3源码中的定义，在ref中嵌套了reactive
 
@@ -3685,7 +3685,7 @@ const data = reactive<TreeList[]>([
 >   	<Tree v-if="item?.children?.length" :data="item?.children"></Tree>
 >   //因为item?.children的children是数组，数组永远等于true，所以我们要判断它的length
 >   </div>
->                                                         
+>                                                           
 >   const clickTap =(item,e)=>{//我们能通过vue提供的一个$event在事件中来获取event元素，进行一些我们想要的操作
 >       console.log(item)
 >   }
@@ -4694,37 +4694,37 @@ import { ref, reactive } from 'vue'
 1. 前置：需要先找到runtime core，src下面的renderer.ts
 2. 因为Teleport会经过patch这个函数去创建。判断每一个类型从而去分别创建对应的节点、元素跟组件
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221021030819712.png" alt="image-20221021030819712" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221021030819712.png" alt="image-20221021030819712" style="zoom:50%;" />
 
 3. 如果type是teleport组件 会执行 process方法
 
    > 如果是teleport元素的话，会调用process这个方法
 
-   <img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221021030950416.png" alt="image-20221021030950416" style="zoom:70%;" />
+   <img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221021030950416.png" alt="image-20221021030950416" style="zoom:70%;" />
 
    4. 点进去这个process方法，主要能够看到process还有remove
 
       - process：创建和更新的一个操作
       - remove：做出一些移除
 
-      <img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221021031704707.png" alt="image-20221021031704707" style="zoom:67%;" />
+      <img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221021031704707.png" alt="image-20221021031704707" style="zoom:67%;" />
 
    5. 重点部分——target
 
-      ![image-20221021032013460](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221021032013460.png)
+      ![image-20221021032013460](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221021032013460.png)
 
       我们进入这个resolveTarget内部看看源码是怎么做的(他有两个参数，一个是N2.pops。另一个是query selector)
 
-      ![image-20221021032531449](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221021032531449.png)
+      ![image-20221021032531449](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221021032531449.png)
 
       - 读取了props的to属性，也就是我们之前那个teleport上面传的to属性(先读取了这个)
       - selector其实就是query selector。通过query selector去读取了一下元素，然后做一个返回targetSelector，读不到则报错提示
 
-      <img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221021033108244.png" alt="image-20221021033106919" style="zoom:87%;" />
+      <img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221021033108244.png" alt="image-20221021033106919" style="zoom:87%;" />
 
       第一步先挂上子节点，然后有一个if判断disabled，要么在原先的地方挂载，要么在target目标(新的目标位置)挂载。上面的disabled true false就是通过这个判断去控制挂载的位置
 
-   6. ![image-20221021033802585](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221021033802585.png)
+   6. ![image-20221021033802585](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221021033802585.png)
 
       **移回操作**：
 
@@ -4732,11 +4732,11 @@ import { ref, reactive } from 'vue'
 
    7. **移走操作**：
 
-      ![image-20221021034341599](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221021034341599.png)
+      ![image-20221021034341599](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221021034341599.png)
 
    8. **删除逻辑**
 
-      ![image-20221021034510139](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221021034510139.png)
+      ![image-20221021034510139](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221021034510139.png)
 
       1. 先获取teleport下面的所有子集(children)，通过Vnode
       2. 然后去调用一个unmount方法去做一个卸载，将所有内容清空
@@ -5304,11 +5304,11 @@ const shuffle = () => {
 </style>
 ```
 
-展示Array.apply的区别：相对于new Array而言，一个是空属性，一个却能默认存放undefined<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221022022918006.png" alt="image-20221022022918006" style="zoom:50%;" />
+展示Array.apply的区别：相对于new Array而言，一个是空属性，一个却能默认存放undefined<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221022022918006.png" alt="image-20221022022918006" style="zoom:50%;" />
 
 随机排列效果图：
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221022025921945.png" alt="image-20221022025921945" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221022025921945.png" alt="image-20221022025921945" style="zoom:50%;" />
 
 ## 状态过渡
 
@@ -5363,7 +5363,7 @@ watch(()=>num.current, (newVal,oldVal) => {//监听
 >
 > 当父组件有很多数据需要分发给其子代组件的时候， 就可以使用 provide 和 inject。
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221022034628429.png" alt="image-20221022034628429" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221022034628429.png" alt="image-20221022034628429" style="zoom:50%;" />
 
 ## 父组件传递数据
 
@@ -5880,7 +5880,7 @@ export { FilterOptions, Options, vueJsxPlugin as default };
     "jsxFragmentFactory": "Fragment",
 ```
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221023171319315.png" alt="image-20221023171319315" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221023171319315.png" alt="image-20221023171319315" style="zoom:50%;" />
 
 > 配置完成就可以使用啦
 >
@@ -5919,7 +5919,7 @@ import xiaoman from './App'
 </style>
 ```
 
-**成功展示**![image-20221121012230783](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221121012230783.png)
+**成功展示**![image-20221121012230783](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221121012230783.png)
 
 > 方式2：需要引入defineComponent，也就是optionsAPi的写法
 
@@ -5942,7 +5942,7 @@ export default defineComponent({
 })
 ```
 
-![image-20221121013400899](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221121013400899.png)
+![image-20221121013400899](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221121013400899.png)
 
 > 方式3：Vue3的setup语法糖函数模式
 
@@ -5957,7 +5957,7 @@ export default defineComponent({
 })
 ```
 
-![image-20221121013418369](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221121013418369.png)
+![image-20221121013418369](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221121013418369.png)
 
 > 方式总结：方式1跟方式3常用，方式2不常用
 
@@ -6057,7 +6057,7 @@ export default defineComponent({
 })
 ```
 
-效果展示![image-20221121015035504](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221121015035504.png)
+效果展示![image-20221121015035504](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221121015035504.png)
 
 ### v-for 也是不支持的
 
@@ -6106,7 +6106,7 @@ export default defineComponent({
 })
 ```
 
-效果展示![image-20221121015533308](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221121015533308.png)
+效果展示![image-20221121015533308](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221121015533308.png)
 
 ### v-bind 使用
 
@@ -6152,7 +6152,7 @@ export default defineComponent({
 //错误信息：类型‘{name：string；}’不能赋值给类型‘ElementAttrs<HTMLAttributes>’。属性‘name’在类型‘ElementAttrs<HTMLAttributes>’上不存在。
 ```
 
-效果展示：![image-20221121020242652](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221121020242652.png)
+效果展示：![image-20221121020242652](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221121020242652.png)
 
 ### v-on 绑定事件 所有的事件都按照 react 风格来
 
@@ -6247,9 +6247,9 @@ export default defineComponent({
 //----------------------------------->props传值中途失效了，不知道为什么，重开来了一遍又可以了，代码没用问题
 ```
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221121030607399.png" alt="image-20221121030607399" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221121030607399.png" alt="image-20221121030607399" style="zoom:50%;" />
 
-![image-20221204034704194](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221204034704194.png)
+![image-20221204034704194](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221204034704194.png)
 
 
 
@@ -6361,7 +6361,7 @@ const getItem = (item:any)=>{
 
 > 派发生效
 
-![image-20221204034914317](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221204034914317.png)
+![image-20221204034914317](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221204034914317.png)
 
 > 通过上面的例子，大家可以发现小满在视频里面的最外层<div>是只有一个<>的，事实上写不写都是可以生效的，由于小满在视频里面没有提这个事情，但不管加不加确实都是可以的
 >
@@ -6439,7 +6439,7 @@ export default defineComponent({
 
 - 打印效果如下
 
-![image-20221204040819930](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221204040819930.png)
+![image-20221204040819930](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221204040819930.png)
 
 #### 多个插槽的使用
 
@@ -6518,7 +6518,7 @@ export default defineComponent({
 })
 ```
 
-![image-20221204042320424](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221204042320424.png)
+![image-20221204042320424](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221204042320424.png)
 
 ## 手写Vite插件+babel使用
 
@@ -6528,7 +6528,7 @@ export default defineComponent({
 >
 > 主要功能如下：
 >
-> ![image-20221204043403171](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221204043403171.png)
+> ![image-20221204043403171](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221204043403171.png)
 
 ### 需要用到的第三方插件
 
@@ -6621,7 +6621,7 @@ export default defineConfig({
 
 > 爆红时候进行创建tsconfig.config.json文件，由于小满没把这个代码贴出来，我就把代码放在下面了，直接粘贴即可
 >
-> 不报错的效果![image-20221204051141373](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221204051141373.png)
+> 不报错的效果![image-20221204051141373](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221204051141373.png)
 
 ```ts
 {
@@ -6636,11 +6636,11 @@ export default defineConfig({
 
 - 成功渲染出来内容
 
-![image-20221204052626766](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221204052626766.png)
+![image-20221204052626766](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221204052626766.png)
 
 - 页面内容正常渲染
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221204052738605.png" alt="image-20221204052738605" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221204052738605.png" alt="image-20221204052738605" style="zoom:50%;" />
 
 # Vue3彩蛋部分
 
@@ -6655,7 +6655,7 @@ export default defineConfig({
 >
 > 请自行根据地址中给出的自述markdown文档进入使用
 >
-> <img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221025080212131.png" alt="image-20221025080212131" style="zoom:67%;" />
+> <img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221025080212131.png" alt="image-20221025080212131" style="zoom:67%;" />
 
 ### vite 配置
 
@@ -6699,7 +6699,7 @@ export default defineConfig({
 > - 新增 支持多个 v-model
 > - 新增 支持自定义 修饰符 Modifiers
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221025081006020.png" alt="image-20221025081006020" style="zoom:80%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221025081006020.png" alt="image-20221025081006020" style="zoom:80%;" />
 
 ## 案例 
 
@@ -7159,7 +7159,7 @@ export declare interface DirectiveBinding<V = any> {
 >
 > 第四个 prevNode 上一个虚拟节点，仅在 `beforeUpdate` 和 `updated` 钩子中可用 
 
-![image-20221027001014931](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221027001014931.png)
+![image-20221027001014931](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221027001014931.png)
 
 ## 4. 函数简写(指令鉴权-代号：斯塔缇可电刃)
 
@@ -7465,7 +7465,7 @@ wheel 该事件在鼠标滚轮在元素上下滚动时触发
 >
 > **组件的 data、methods、filters 会覆盖 mixins 里的同名 data、methods、filters。**
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221027010659745.png" alt="image-20221027010659745" style="zoom:67%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221027010659745.png" alt="image-20221027010659745" style="zoom:67%;" />
 
 > 问题1：mixins的生命周期调用比组件快(假设主文件跟mixins都定义了一个A，主文件会去覆盖掉mixins的A)
 >
@@ -7755,7 +7755,7 @@ console.log(app?.proxy.$filters.format('ts'));
 </script>
 ```
 
-![image-20221202202833703](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221202202833703.png)
+![image-20221202202833703](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221202202833703.png)
 
 #### 使用全局函数
 
@@ -8568,7 +8568,7 @@ app.mount('#app')
 
 > [Vue3的UI框架|Element Plus](https://element-plus.gitee.io/zh-CN/)
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221028000901611.png" alt="image-20221028000901611" style="zoom:67%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221028000901611.png" alt="image-20221028000901611" style="zoom:67%;" />
 
 ## 2. Ant Design Vue
 
@@ -8628,7 +8628,7 @@ app.use(store)
 
 [View Design组件库地址][https://www.iviewui.com/]
 
-![image-20221028001204072](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221028001204072.png)
+![image-20221028001204072](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221028001204072.png)
 
 ## 4.Vant 移动端
 
@@ -8648,7 +8648,7 @@ createApp(App).use(vant).$mount('#app)
 
 [Vant组件库地址][https://vant-contrib.gitee.io/vant/#/zh-CN/home]
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221028001422281.png" alt="image-20221028001422281" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221028001422281.png" alt="image-20221028001422281" style="zoom:50%;" />
 
 # 第三十二章 — 详解Scoped和样式 穿透
 
@@ -8699,7 +8699,7 @@ createApp(App).use(vant).$mount('#app)
 > app.mount('#app')
 > ```
 >
-> ![image-20230106115531991](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20230106115531991.png)
+> ![image-20230106115531991](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20230106115531991.png)
 
 > `PostCSS` 会给一个组件中的所有 dom 添加了一个独一无二的动态属性 data-v-xxxx，然后，给 CSS 选择器额外添加一个对应的属性选择器来选择该组件中 dom，这种做法使得样式只作用于含有该属性的 dom—— 组件内部 dom, 从而达到了 ' 样式模块化 ' 的效果.
 
@@ -8709,13 +8709,13 @@ createApp(App).use(vant).$mount('#app)
 >
 > 这里小满重录了，笔记已经更新
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221028010957470.png" alt="image-20221028010957470" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221028010957470.png" alt="image-20221028010957470" style="zoom:50%;" />
 
 >  如果不写 Scoped 就没问题
 >
 > 原因就是 Scoped 搞的鬼 他在进行 PostCss 转化的时候把元素选择器默认放在了最后
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221028011031260.png" alt="image-20221028011031260" style="zoom:67%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221028011031260.png" alt="image-20221028011031260" style="zoom:67%;" />
 
 > Vue 提供了样式穿透`:deep ()` 他的作用就是用来改变 属性选择器的位置 =>这是Vue3的写法
 >
@@ -8733,7 +8733,7 @@ createApp(App).use(vant).$mount('#app)
 > </style>
 > ```
 
-<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20221028011055850.png" alt="image-20221028011055850" style="zoom:50%;" /><img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20230106120442069.png" alt="image-20230106120442069" style="zoom:67%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20221028011055850.png" alt="image-20221028011055850" style="zoom:50%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20230106120442069.png" alt="image-20230106120442069" style="zoom:67%;" />
 
 ## 源码解析
 
@@ -8744,7 +8744,7 @@ createApp(App).use(vant).$mount('#app)
 >     - template(第一部分模板)
 >     - script
 >     - style
->   - ![image-20230106121235367](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20230106121235367.png)
+>   - ![image-20230106121235367](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20230106121235367.png)
 
 ```typescript
  //compileStyle文件
@@ -9052,7 +9052,7 @@ import A from "@/components/A.vue"
 >
 > 默认情况下，作用域样式不会影响到 `<slot/>` 渲染出来的内容，因为它们被认为是父组件所持有并传递进来的。
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221028012502463.png" alt="image-20221028012502463" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221028012502463.png" alt="image-20221028012502463" style="zoom:50%;" />
 
 > 解决方案 slotted
 
@@ -9065,7 +9065,7 @@ import A from "@/components/A.vue"
 </style>
 ```
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221028012602471.png" alt="image-20221028012602471" style="zoom:60%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221028012602471.png" alt="image-20221028012602471" style="zoom:60%;" />
 
 ## 2.全局选择器
 
@@ -9320,7 +9320,7 @@ module.exports = {
 
 ###  在 main.ts 引入
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221028165506768.png" alt="image-20221028165506768" style="zoom:35%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221028165529086.png" alt="image-20221028165529086" style="zoom:40%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221028165506768.png" alt="image-20221028165506768" style="zoom:35%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221028165529086.png" alt="image-20221028165529086" style="zoom:40%;" />
 
 >  最后 npm run dev 就可以使用啦
 
@@ -9347,7 +9347,7 @@ module.exports = {
 
 > 计时器属于`宏任务`
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221028174817630.png" alt="image-20221028174817630" style="zoom:67%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221028174817630.png" alt="image-20221028174817630" style="zoom:67%;" />
 
 ```JS
 <script setup lang="ts">
@@ -9863,7 +9863,7 @@ body,
 >
 > JAVA_HOME
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029011414486.png" alt="image-20221029011414486" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029011414486.png" alt="image-20221029011414486" style="zoom:50%;" />
 
 >  CLASSPATH （下面的照抄就行）
 
@@ -9875,11 +9875,11 @@ body,
 >
 > 添加 % JAVA_HOME%\bin
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029011505040.png" alt="image-20221029011505040" style="zoom:67%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029011505040.png" alt="image-20221029011505040" style="zoom:67%;" />
 
 > 安装完后通过终端输入java或者javac，看能不能正常显示，可以的话就是安装成功了
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029012007573.png" alt="image-20221029012007573" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029012007573.png" alt="image-20221029012007573" style="zoom:50%;" />
 
 2. [安卓编辑器下载地址(建议科学上网不然很慢)][https://developer.android.com/]
 
@@ -9889,31 +9889,31 @@ body,
 >
 > 新建一个空项目选这个就可以了
 
-<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029012119703.png" alt="image-20221029012119703" style="zoom:40%;" /><img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029012139135.png" alt="image-20221029012139135" style="zoom:40%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029012119703.png" alt="image-20221029012119703" style="zoom:40%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029012139135.png" alt="image-20221029012139135" style="zoom:40%;" />
 
 > 语言会 java 选 java 会别的就选别的
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029012224076.png" alt="image-20221029012224076" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029012224076.png" alt="image-20221029012224076" style="zoom:50%;" />
 
 > 等待加载完成
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029012249002.png" alt="image-20221029012249002" style="zoom:67%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029012249002.png" alt="image-20221029012249002" style="zoom:67%;" />
 
 > 打开之后可以创建一个虚拟机 
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029012308994.png" alt="image-20221029012308994" style="zoom:67%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029012308994.png" alt="image-20221029012308994" style="zoom:67%;" />
 
 > 创建完成之后就可以运行安卓项目
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029012334927.png" alt="image-20221029012334927" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029012334927.png" alt="image-20221029012334927" style="zoom:50%;" />
 
 >  其实就是一个虚拟手机
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029012412260.png" alt="image-20221029012412260" style="zoom:67%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029012412260.png" alt="image-20221029012412260" style="zoom:67%;" />
 
 > 切换成代码模式
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029012434685.png" alt="image-20221029012434685" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029012434685.png" alt="image-20221029012434685" style="zoom:50%;" />
 
 >  修改成以下代码
 >
@@ -9941,13 +9941,13 @@ body,
 >
 > 其实就是类似于我们前端的 display felx
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029012546483.png" alt="image-20221029012546483" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029012546483.png" alt="image-20221029012546483" style="zoom:50%;" />
 
 > webView 就和小程序的 webView 基本一样 套网页的
 >
 > **match_parent 表示让当前控件的大小和父布局的大小一样，也就是让父布局来决定当前控件的大小**
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029012637496.png" alt="image-20221029012637496" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029012637496.png" alt="image-20221029012637496" style="zoom:50%;" />
 
 > java 代码逻辑
 
@@ -9987,11 +9987,11 @@ public class MainActivity extends Activity {
 > 加载需要显示的网页 不能使用局域网地址 只能虚拟机专属地址 http://10.0.2.2 端口是我们vue 项目端口
 > ```
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029012717584.png" alt="image-20221029012717584" style="zoom:67%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029012717584.png" alt="image-20221029012717584" style="zoom:67%;" />
 
 > 配置权限
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029012741080.png" alt="image-20221029012741080" style="zoom:67%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029012741080.png" alt="image-20221029012741080" style="zoom:67%;" />
 
 ```java
 <?xml version="1.0" encoding="utf-8"?>
@@ -10027,7 +10027,7 @@ public class MainActivity extends Activity {
 </manifest>
 ```
 
-![image-20221029012803227](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029012803227.png)
+![image-20221029012803227](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029012803227.png)
 
 > 你就可以看到我们的项目了
 >
@@ -10035,7 +10035,7 @@ public class MainActivity extends Activity {
 >
 > 打包的时候路径记得换成线上的服务器地址
 
-![image-20221029012833653](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029012833653.png)
+![image-20221029012833653](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029012833653.png)
 
 # 第三十七章 — unocss原子化
 
@@ -10090,7 +10090,7 @@ rules: [
 ]
 ```
 
-![image-20221029014539491](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029014539491.png)
+![image-20221029014539491](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029014539491.png)
 
 ### 配置动态 css（使用`正则表达式`）
 
@@ -10103,7 +10103,7 @@ rules: [
 ]
 ```
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029014635847.png" alt="image-20221029014635847" style="zoom:67%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029014635847.png" alt="image-20221029014635847" style="zoom:67%;" />
 
 ### shortcuts 可以自定义组合样式
 
@@ -10121,7 +10121,7 @@ rules: [
   })],
 ```
 
-![image-20221029014714339](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029014714339.png)
+![image-20221029014714339](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029014714339.png)
 
 ###  unocss 预设
 
@@ -10157,7 +10157,7 @@ npm i -D @iconify-json/ic
 </div>
 ```
 
-![image-20221029014857392](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029014857392.png)
+![image-20221029014857392](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029014857392.png)
 
 ### 3.presetUno 工具类预设
 
@@ -10307,9 +10307,9 @@ console.log(div)//打印看看属性
 >
 >  electron 内置了 Chromium 和 nodeJS 其中 Chromium 是渲染进程 主要渲染和解析 HTML，Nodejs 作为主进程，其中管道用 IPC 通信
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029024147767.png" alt="image-20221029024147767" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029024147767.png" alt="image-20221029024147767" style="zoom:50%;" />
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029024230035.png" alt="image-20221029024230035" style="zoom:67%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029024230035.png" alt="image-20221029024230035" style="zoom:67%;" />
 
 ## 1. 使用 vite 构建 electron 项目
 
@@ -10319,7 +10319,7 @@ console.log(div)//打印看看属性
 npm init vite@latest
 ```
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029024326972.png" alt="image-20221029024326972" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029024326972.png" alt="image-20221029024326972" style="zoom:50%;" />
 
 > 安装 **electron**
 
@@ -10330,7 +10330,7 @@ npm install vite-plugin-electron -D//vite插件
 
 >  根目录新建 electron /index.ts
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029024413185.png" alt="image-20221029024413185" style="zoom:100%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029024413185.png" alt="image-20221029024413185" style="zoom:100%;" />
 
 > 修改 vite.config.ts 配置文件
 >
@@ -10388,7 +10388,7 @@ export interface Configuration {
 }
 ```
 
-![image-20221029024448813](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029024448813.png)
+![image-20221029024448813](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029024448813.png)
 
 > 编写代码 electron /index.ts
 
@@ -10462,13 +10462,13 @@ app.whenReady().then(createWindow)
 
 > 通过npm run dev在终端进行启动
 
-![image-20221029024620786](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029024620786.png)
+![image-20221029024620786](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029024620786.png)
 
 > 上面是小满的效果，我的不知道为什么内容跟窗口分离了，就是白屏了，在后面会有讲解到，需要使用到Debugtron工具(自行下载)
 >
 > 问题贼多，由于我还有其他事情，目前也不写这个桌面程序，所以就看着，不继续踩坑了
 
-![image-20221029145302924](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029145302924.png)
+![image-20221029145302924](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029145302924.png)
 
 ## 2. 打包 Electron
 
@@ -10559,11 +10559,11 @@ npm install electron-builder -D
 
 > npm run build 	进行打包
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029024754088.png" alt="image-20221029024754088" style="zoom:67%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029024754088.png" alt="image-20221029024754088" style="zoom:67%;" />
 
 > 安装成功后的样子
 
-![image-20221029024822686](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029024822686.png)
+![image-20221029024822686](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029024822686.png)
 
 ##  3.Electron Vscode 输出乱码解决 方案
 
@@ -10573,11 +10573,11 @@ npm install electron-builder -D
  "dev": "chcp 65001 && vite",
 ```
 
-![image-20221029024900534](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029024900534.png)
+![image-20221029024900534](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029024900534.png)
 
 > 加上之后
 
-![image-20221029024916311](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029024916311.png)
+![image-20221029024916311](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029024916311.png)
 
 ## 4. 渲染进程和主进程通信
 
@@ -10669,7 +10669,7 @@ export default defineConfig({
 })
 ```
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029154223821.png" alt="image-20221029154223821" style="zoom:70%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029154223821.png" alt="image-20221029154223821" style="zoom:70%;" />
 
 > 如果你是 vue-cli
 
@@ -10858,13 +10858,13 @@ PROD":false, //是否是build 环境
 >
 > 如下 env.[name]
 
-![image-20221029165142677](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029165142677.png)
+![image-20221029165142677](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029165142677.png)
 
 ###  修改启动命令
 
 > 在 package json 配置 --mode env 文件名称。修改后就能生效
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029165222746.png" alt="image-20221029165222746" style="zoom:67%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029165222746.png" alt="image-20221029165222746" style="zoom:67%;" />
 
 ###  配置智能提示
 
@@ -10874,7 +10874,7 @@ interface ImportMetaEnv {
 }
 ```
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029165253714.png" alt="image-20221029165253714" style="zoom:67%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029165253714.png" alt="image-20221029165253714" style="zoom:67%;" />
 
 ### App输出
 
@@ -10882,7 +10882,7 @@ interface ImportMetaEnv {
 >
 > 就已经添加进去了
 
-![image-20221029165331964](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029165331964.png)
+![image-20221029165331964](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029165331964.png)
 
 ### 生产环境使用
 
@@ -10892,13 +10892,13 @@ interface ImportMetaEnv {
 >
 > 图中的VITE_XIAOMAN就是环境变量
 
-![image-20221029165357165](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029165357165.png)
+![image-20221029165357165](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029165357165.png)
 
-![image-20221029165409004](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029165409004.png)
+![image-20221029165409004](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029165409004.png)
 
 ### **如果想在 vite.config.ts 使用环境变量**
 
-![image-20221029165428545](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029165428545.png)
+![image-20221029165428545](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029165428545.png)
 
 ```typescript
 import { fileURLToPath, URL } from 'node:url'
@@ -11249,21 +11249,21 @@ pnpm add clean-webpack-plugin//这个就是那个每次 打包都将dist文件�
 
 在App.vue中输出点东西，然后重新打包，我们打开dist下的index.html文件
 
-![image-20221118041311032](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221118041311032.png)
+![image-20221118041311032](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221118041311032.png)
 
 发现是没有问题的
 
-![image-20221118041336382](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221118041336382.png)
+![image-20221118041336382](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221118041336382.png)
 
 > 以上是打包后的效果，让我们使用npm run dev启动项目试一试
 >
 > 正常启动，莫得问题，从路径中我们能发现他们的不同之处
 
-![image-20221118041528445](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221118041528445.png)
+![image-20221118041528445](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221118041528445.png)
 
 >  本地启动项目是支持热更新的，也就是你编辑器里的东西一改，页面同步进行改动
 
-![image-20221118041507642](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221118041507642.png)
+![image-20221118041507642](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221118041507642.png)
 
 ## 强化Webpack功能
 
@@ -11328,9 +11328,9 @@ pnpm add clean-webpack-plugin//这个就是那个每次 打包都将dist文件�
 
   - 重新运行项目，然后就可以了(这里记得css文件不要放到views文件夹去，他们两个挨太近了，我给放错位置，报错显示找不到哈哈)
 
-    <img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221118053037140.png" alt="image-20221118053037140" style="zoom:67%;" />
+    <img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221118053037140.png" alt="image-20221118053037140" style="zoom:67%;" />
 
-  ![image-20221118052907487](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221118052907487.png)
+  ![image-20221118052907487](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221118052907487.png)
 
   > 额外内容，你也可以安装less进行使用
   >
@@ -11424,7 +11424,7 @@ pnpm add ts-loader//两条命令
 
   效果展示(没有问题，一切正常)：
 
-  ![image-20221118060659343](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221118060659343.png)
+  ![image-20221118060659343](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221118060659343.png)
 
 ### webpack美化插件
 
@@ -11447,7 +11447,7 @@ stats: "errors-only",
 
 让我们来看看实际效果(非常不错)：
 
-![image-20221118061813271](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221118061813271.png)
+![image-20221118061813271](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221118061813271.png)
 
 ### devServer
 
@@ -11631,11 +11631,11 @@ declare module "*.vue" {
 
 猫咪照片：
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221120192059771.png" alt="image-20221120192059771" style="zoom:30%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221120192118071.png" alt="image-20221120192118071" style="zoom:40%;" /> <img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221120230622097.png" alt="image-20221120230622097" style="zoom:40%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221120230634700.png" alt="image-20221120230634700" style="zoom:40%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221120192059771.png" alt="image-20221120192059771" style="zoom:30%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221120192118071.png" alt="image-20221120192118071" style="zoom:40%;" /> <img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221120230622097.png" alt="image-20221120230622097" style="zoom:40%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221120230634700.png" alt="image-20221120230634700" style="zoom:40%;" />
 
 班花姐姐照片如下：
 
-<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221120192236922.png" alt="image-20221120192236922" style="zoom:33%;" /><img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221120192247449.png" alt="image-20221120192247449" style="zoom:33%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221120192236922.png" alt="image-20221120192236922" style="zoom:33%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221120192247449.png" alt="image-20221120192247449" style="zoom:33%;" />
 
 要求如下：
 
@@ -11650,9 +11650,9 @@ declare module "*.vue" {
 >
 > 我们可以使用谷歌浏览器自带的 DevTools 进行性能分析 LightHouse
 
-![image-20221029171146467](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029171146467.png)
+![image-20221029171146467](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029171146467.png)
 
-![image-20221029171227572](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029171227572.png)
+![image-20221029171227572](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029171227572.png)
 
 ##  参数介绍
 
@@ -11685,7 +11685,7 @@ plugins: [vue(), vueJsx(),visualizer({
 
 > 然后进行 npm run build 打包
 
-![image-20221029171552764](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029171552764.png)
+![image-20221029171552764](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029171552764.png)
 
 > 项目中使用了 Ant Design 发现 这个 UI 库非常庞大 这时候 就可以使用 Ant Design 的按需引入减少 包大小
 
@@ -11744,9 +11744,9 @@ VitePWA({
 
 > 进行 npm run build 打包会生成 sw.js
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029171732821.png" alt="image-20221029171732821" style="zoom:67%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029171732821.png" alt="image-20221029171732821" style="zoom:67%;" />
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029171744045.png" alt="image-20221029171744045" style="zoom:67%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029171744045.png" alt="image-20221029171744045" style="zoom:67%;" />
 
 ##  其他性能优化
 
@@ -11760,7 +11760,7 @@ VitePWA({
 
 > 可以承受住好几万条数据
 
-![image-20221029171836454](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029171836454.png)
+![image-20221029171836454](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029171836454.png)
 
 >  多线程 使用 new Worker 创建
 >
@@ -11792,13 +11792,13 @@ worker.terminate();
 
 > VueUse 库已经集成了 webWorker
 
-![image-20221029172012528](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029172012528.png)
+![image-20221029172012528](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029172012528.png)
 
 ### 防抖节流
 
 > 同样 VueUse 也是集成了
 
-![image-20221029172042033](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029172042590.png)
+![image-20221029172042033](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029172042590.png)
 
 # 第四十五章 — Web Components
 
@@ -11808,7 +11808,7 @@ worker.terminate();
 >
 > **再简单来说：就是提供了我们自定义标签的能力，并且提供了标签内完整的生命周期** **。**
 
-![image-20221029174408114](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029174408114.png)
+![image-20221029174408114](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029174408114.png)
 
 > **Custom elements（自定义元素）**：JavaScript [API](https://so.csdn.net/so/search?q=API&spm=1001.2101.3001.7020)，允许定义 custom elements 及其行为，然后可以在我们的用户界面中按照需要使用它们。
 >
@@ -12017,9 +12017,9 @@ defineProps<{
 </style>
 ```
 
-![image-20221029175604096](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029175604096.png)
+![image-20221029175604096](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029175604096.png)
 
-![image-20221029175614603](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221029175614603.png)
+![image-20221029175614603](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221029175614603.png)
 
 
 
@@ -12103,7 +12103,7 @@ fetch('http://localhost:9001/xm')
 </script>
 ```
 
-![image-20221203034619148](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221203034619148.png)
+![image-20221203034619148](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221203034619148.png)
 
 > 发现是存在跨域的,这时候我们就可以配合vite的代理来解决跨域 用法如下
 >
@@ -12142,7 +12142,7 @@ app.get('/api/xm',(req,res)=>{//request为接收参数，response返回参数
 })
 ```
 
-![image-20221203034721309](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221203034721309.png)
+![image-20221203034721309](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221203034721309.png)
 
 > webpack proxy 和 node proxy 用法都类似，且**proxy代理只适合dev环境**，上线之后这段代码是无效的，因为上线之后没人给你起node服务，上线之后可能使用的是Nginx，Tomcat或者apache之类都可能，到时候就需要通过它们的代理再去做一个转发
 
@@ -12217,7 +12217,7 @@ app.listen(9001)
 
 > 成功代理 访问8888端口代理9001的请求，成功跨域请求
 
-![image-20221203035020508](D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221203035020508.png)
+![image-20221203035020508](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221203035020508.png)
 
 **作者留言**：
 
