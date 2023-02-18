@@ -72,6 +72,9 @@ Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本)
 
 [ES Module使用-原理-包管理工具详解npm、yarn、cnpm、npx、pnpm](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/node%E3%80%81webpack%E3%80%81git%E7%AC%94%E8%AE%B0(coderwhy%E7%89%88%E6%9C%AC)/ES%20Module%E4%BD%BF%E7%94%A8-%E5%8E%9F%E7%90%86-%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7npm.md)
 
+[WebPack详解-基础打包(HTML、CSS)、打包图片-JS-Vue、常见的插件和模式(包括loader与Plugin等等)、搭建本地服务器](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/node%E3%80%81webpack%E3%80%81git%E7%AC%94%E8%AE%B0(coderwhy%E7%89%88%E6%9C%AC)/Webpack%E8%AF%A6%E8%A7%A3.md)
+
+> 2023年2月19日更新webpack详解，下一节笔记：Git版本工具详解
 
 <br/><br/>
 ## 后端
