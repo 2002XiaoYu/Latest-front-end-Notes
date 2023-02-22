@@ -74,7 +74,7 @@ Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本)
 
 [WebPack详解-基础打包(HTML、CSS)、打包图片-JS-Vue、常见的插件和模式(包括loader与Plugin等等)、搭建本地服务器](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/node%E3%80%81webpack%E3%80%81git%E7%AC%94%E8%AE%B0(coderwhy%E7%89%88%E6%9C%AC)/Webpack%E8%AF%A6%E8%A7%A3.md)
 
-> 2023年2月19日更新webpack详解，下一节笔记：Git版本工具详解
+[Git版本控制工具详解](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/node%E3%80%81webpack%E3%80%81git%E7%AC%94%E8%AE%B0(coderwhy%E7%89%88%E6%9C%AC)/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7%E8%AF%A6%E8%A7%A3.md)
 
 <br/><br/>
 ## 后端
