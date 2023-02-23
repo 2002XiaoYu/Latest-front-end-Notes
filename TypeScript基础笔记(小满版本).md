@@ -1469,7 +1469,7 @@ function type(val:All){
 }
 ```
 
-# Symbol类型
+## Symbol类型
 
 > `symbol` 是一种新的原生类型，就像 `number` 和 `string` 一样
 >
@@ -1515,6 +1515,60 @@ console.log(Object.getOwnPropertySymbols(obj));//能打印出来两个Symbol，�
 
 Reflect.ownKeys()//此属性是将所有的属性都列出来
 console.log(Reflect.ownKeys(obj))//四个全部圆满的打印出来
+```
+
+# never类型(TS -- 12)|重做
+
+> `never`类型通常用于表示不可能出现的情况，它可以用于增强代码的类型安全性和可读性。
+>
+> 当一个变量被推断为`never`类型时，表示该变量的类型不能是任何其他类型，即不存在任何值与其兼容
+
+```ts
+type A = string & number//同时推断A是string和number类型，那显然是不可能的。这时就显示为never类型
+
+//当一个函数抛出异常时，其返回类型为never类型。因为抛出异常时，函数永远不会返回任何值(包括void的值)
+function xy():never{//这里选择never，而不是void。void是指没有返回值，但其实还是会抛出错误的
+  throw new Error("小余")
+  //或者while死循环
+  while(true){
+    //xxx
+  }
+}
+
+//在许多编程语言中，包括 TypeScript，void类型表示函数不返回任何值。这意味着函数执行完毕后不会返回任何内容，而只是执行某些操作或返回到调用方。
+
+//然而，当一个函数抛出异常时，它并没有正常地执行完毕。相反，它会在抛出异常的位置停止执行，并将控制权交回到调用方，因此它不会返回任何值，包括void类型的值。
+
+//在 TypeScript 中，never类型表示“永远不会发生”的值。函数的返回类型为never时，它表明函数不会正常地返回任何值，而是可能抛出异常、无限循环或导致类型错误等情况。
+
+//因此，当一个函数抛出异常时，其返回类型应该是never，而不是void。这有助于编译器在类型检查和推断方面更准确地处理异常情况
+```
+
+> never是底层的内容，所以在联合类型上面会有问题
+
+```ts
+type A = void | number|never//联合类型中never类型会被忽略掉
+```
+
+![image-20230223163056013](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20230223163056013.png)
+
+```typescript
+type A = '唱'|'跳'|'rap'
+
+function ikun(value:A){
+  switch(value){
+    case "唱":
+      break
+    case "跳":
+      break
+    case "rap":
+      break
+    default://兜底逻辑
+      //最后来到这说明前面都没有生效，那就是超出我们预料的情况，这时候估计就是有问题的
+      const error:never = value;//看你想写啥来提示自己
+      break
+  }
+}
 ```
 
 # 迭代器|生成器(TS -- 13)
@@ -1843,7 +1897,7 @@ console.log(s,str)
 
 > 作者使用了Typora作为写笔记的编辑器，这里可以对目录进行折叠方面我们查阅我们想要的部分
 
-<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20221008104110335.png" alt="image-20221008104110335" style="zoom:45%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221008104110335.png" alt="image-20221008104110335" style="zoom:45%;" />
 
 为了方便开发者 TypeScript 内置了一些常用的工具类型，比如 Partial、Required、Readonly、Record 和 ReturnType 等。不过在具体介绍之前，我们得先介绍一些相关的基础知识，方便读者可以更好的学习其它的工具类型。
 
@@ -2993,7 +3047,7 @@ console.log(A);
 
 # 声明文件d.ts(TS -- 18)
 
-> 声明文件 declare 
+> 声明文件 declare ，d.ts中d的简写
 >
 > 当使用`第三方库`时，我们需要引用它的声明文件，才能获得对应的代码补全、接口提示等功能。
 
@@ -3007,15 +3061,15 @@ interface 和 type 声明全局类型
 /// <reference /> 三斜线指令
 ```
 
-> 先：npm init -y	
+> 先：`npm init -y`	
 >
-> npm init -y 在文件夹下生成默认的 package.json 文件，使用命令生成的 package.json 文件内容与不使用命令生产的不一样
+> `npm init -y` 在文件夹下生成默认的 `package.json` 文件，使用命令生成的 `package.json` 文件内容与不使用命令生产的不一样
 >
-> 后：npm install express -S	正式线安装
+> 后：`npm install express -S`	正式线安装
 >
-> npm install axios
+> `npm install axios`
 
-- 从node_modules的axios的package.json可以发现types:"index.d.ts"，可以发现声明文件已经被指定了
+- 从`node_modules`的`axios`的package.json可以发现types:"index.d.ts"，可以发现声明文件已经被指定了
   - 我们在去看index.d.ts文件可以看到最后通过declare将其导出了
 - 在引入使用的时候，发现express在引入的时候爆红了
   - 同样的在node_nodules可以找到express中的package.json，发现他根本没有types，也就是说没有指定声明文件。所以才会有爆红的这个问题
@@ -3025,6 +3079,65 @@ interface 和 type 声明全局类型
   - 另一种方法就是按照提示去装包，然后去tsconfig.json去导出一下`"allowSyntheticDefaultImports":true`进行补全
 
 [npm收录包大全](https://www.npmjs.com/~types?activeTab=packages)
+
+> TS没有流行起来的部分原因：有些第三方库没有写声明文件，那就没有提示还会报错了
+>
+> 给出了提示让你试一试`npm i --save-dev @types/express`，@types是编写声明文件库的规范格式。
+>
+> 如果装不上就说明社区没有写声明文件
+
+![image-20230223170402601](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20230223170402601.png)
+
+```typescript
+//index.ts文件，用来使用express，为了不报错，我们要在后面自己写express的声明文件(当然这只是个例子，espress是有声明文件可以直接下载的)
+
+import express from 'express'
+ 
+xiaoyu = "大二学生"
+
+const app = express()
+ 
+const router = express.Router()
+ 
+app.use('/api', router)
+ 
+router.get('/list', (req, res) => {
+    res.json({
+        code: 200
+    })
+})
+ 
+app.listen(9001,()=>{//监听端口
+    console.log(9001)
+})
+```
+
+```typescript
+//我们进行编写express.d.ts文件
+
+declare module 'express' {
+    interface Router {
+      //我们上面使用了两个参数，这里对其进行定义
+        get(path: string, cb: (req: any, res: any) => void): void
+    }
+    interface App {
+ 
+        use(path: string, router: any): void
+        listen(port: number, cb?: () => void): void
+    }
+    interface Express {
+        (): App
+        Router(): Router
+ 
+    }
+  	//定义全局变量，那就能够在index.js中直接使用
+  	declare var xiaoyu:string
+  	//扩充函数，类，枚举等等都是可以的，然后直接在index直接使用
+    
+    const express: Express
+    export default express
+}
+```
 
 # Mixins混入(TS -- 19)
 
@@ -3619,7 +3732,7 @@ module.exports = {
 
 **目录结构**
 
-<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20221009090143222.png" alt="image-20221009090143222" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221009090143222.png" alt="image-20221009090143222" style="zoom:50%;" />
 
 # TypeScript高级 - 实战插件编写
 
@@ -3849,7 +3962,7 @@ export default {
 
 ## 思维导图
 
-<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20221009095700693.png" alt="image-20221009095700693" style="zoom:50%;" />
+<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/xiaoyu925/image-20221009095700693.png" alt="image-20221009095700693" style="zoom:50%;" />
 
 ```typescript
 interface Evenet{
