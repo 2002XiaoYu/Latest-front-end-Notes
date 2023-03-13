@@ -13,6 +13,9 @@
 </div>
 
 > 如果对你有帮助 请给作者一个star，作者会继续努力产出的
+
+## 提醒：由于一些原因，图床爆掉了，暂时只能提供PDF格式的笔记，markdown的图片暂时访问不了，过段时间后陆续恢复，暂请谅解
+
 ## 前端
 
 ### B站UP主小满zs全系列笔记(持续更新)
@@ -32,7 +35,7 @@
 #### PDF电子书系列
 ---
 
-Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本) => 目前正在等小满最后一集Vue视频的录制即可完结，后续分上下部的方式上传(一次性上传超过40MB，无法上传)
+Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本) => (一次性上传超过40MB，太大无法上传，找B站UP主小满zs获取最新的笔记，markdown爆掉了暂时没法提供)
 
 [TypeScript笔记-(PDF文档-小满版本)](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/TypeScript基础笔记(小满版本).pdf)
 
@@ -75,6 +78,20 @@ Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本)
 [WebPack详解-基础打包(HTML、CSS)、打包图片-JS-Vue、常见的插件和模式(包括loader与Plugin等等)、搭建本地服务器](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/node%E3%80%81webpack%E3%80%81git%E7%AC%94%E8%AE%B0(coderwhy%E7%89%88%E6%9C%AC)/Webpack%E8%AF%A6%E8%A7%A3.md)
 
 [Git版本控制工具详解](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/node%E3%80%81webpack%E3%80%81git%E7%AC%94%E8%AE%B0(coderwhy%E7%89%88%E6%9C%AC)/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7%E8%AF%A6%E8%A7%A3.md)
+
+## coderwhy体系课笔记PDF(markdown的图片暂时访问不了)
+
+[ES Module使用-原理-包管理工具npm.pdf](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEPDF/ES%20Module%E4%BD%BF%E7%94%A8-%E5%8E%9F%E7%90%86-%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7npm.pdf)
+
+[Git版本控制工具详解](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEPDF/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7%E8%AF%A6%E8%A7%A3.pdf)
+
+[JS高级笔记 - coderwhy(ES6-ES13)](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEPDF/JS%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0%20-%20coderwhy(ES6-ES13).pdf)
+
+[Node-前端模块化](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEPDF/Node-%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96.pdf)
+
+[Proxy-Reflect-Promise使用详解](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEPDF/Proxy-Reflect-Promise%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3(coderwhy).pdf)
+
+[Webpack详解](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEPDF/Webpack%E8%AF%A6%E8%A7%A3.pdf)
 
 <br/><br/>
 ## 后端
