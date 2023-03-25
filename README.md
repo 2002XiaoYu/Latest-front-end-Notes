@@ -45,6 +45,9 @@ Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本)
 
 [前端常用英语词汇的汇总-(PDF文档-小满版本)](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/前端常用英语汇总.pdf)
 
+### 小满前端面试题的答案
+[PDF版本面试题](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/%E5%B0%8F%E6%BB%A1%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AD%94%E6%A1%88.pdf)
+[markdown版本面试题](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/%E5%B0%8F%E6%BB%A1%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AD%94%E6%A1%88.md)
 > 上述中的前端常用英语PDF的显示补全问题已修复
 
 <br/>
