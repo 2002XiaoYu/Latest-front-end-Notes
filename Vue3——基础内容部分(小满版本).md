@@ -3986,7 +3986,7 @@ const switchCom = (item:any,index:any)=>{
 >
 > Vue提供了两种解决方式(要一起使用)：
 >
-> - shallowRF
+> - shallowRef
 > - markRaw
 >
 > ```ts
