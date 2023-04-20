@@ -32,17 +32,17 @@ BST=>Binary Search Tree
 3.左、右子树都是二叉搜索树
 ```
 
-<img src="./数据结构-image\image-20220702012825394.png" alt="image-20220702012825394" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702012825394.png" alt="image-20220702012825394" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220702012726729.png" alt="image-20220702012726729" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702012726729.png" alt="image-20220702012726729" style="zoom:50%;" />
 
 #### 二叉搜索树操作的特别函数：
 
-<img src="./数据结构-image\image-20220702012904895.png" alt="image-20220702012904895" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702012904895.png" alt="image-20220702012904895" style="zoom:50%;" />
 
 #### 插入(新结点x)删除(x这个结点)
 
-<img src="./数据结构-image\image-20220702013012616.png" alt="image-20220702013012616" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702013012616.png" alt="image-20220702013012616" style="zoom:50%;" />
 
 #### 二叉搜索树的查找操作：Find
 
@@ -132,7 +132,7 @@ Position FindMax( BinTree BST)
 
 【分析】关键是要找到元素应该插入的位置，可以采用与Find类似的方法
 
-<img src="./数据结构-image\image-20220702015511291.png" alt="image-20220702015511291" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702015511291.png" alt="image-20220702015511291" style="zoom:50%;" />
 
 #### 二叉搜索树的插入算法
 
@@ -154,9 +154,9 @@ BinTree Insert(ElementType X,BinTree BST)
 }
 ```
 
-<img src="./数据结构-image\image-20220702021901357.png" alt="image-20220702021901357" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702021901357.png" alt="image-20220702021901357" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220702021921682.png" alt="image-20220702021921682" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702021921682.png" alt="image-20220702021921682" style="zoom:50%;" />
 
 
 
@@ -169,15 +169,15 @@ BinTree Insert(ElementType X,BinTree BST)
 2. 要删除的结点只有一个孩子结点：
 
    1. 将其父节点的指针指向要删除结点的孩子结点
-   2. <img src="./数据结构-image\image-20220702025452840.png" alt="image-20220702025452840" style="zoom:50%;" />
-   3. <img src="./数据结构-image\image-20220702025522322.png" alt="image-20220702025522322" style="zoom:50%;" />
+   2. <img src=".\数据结构-image\image-20220702025452840.png" alt="image-20220702025452840" style="zoom:50%;" />
+   3. <img src=".\数据结构-image\image-20220702025522322.png" alt="image-20220702025522322" style="zoom:50%;" />
 
 3. 要删除的结点有左、右两颗子树：
 
    1. 用另一结点代替被删除结点：右子树的最小元素或者左子树的最大元素
-   2. <img src="./数据结构-image\image-20220702025716832.png" alt="image-20220702025716832" style="zoom:50%;" /> 取右子树中的最小元素替代
-   3. <img src="./数据结构-image\image-20220702025939253.png" alt="image-20220702025939253" style="zoom:50%;" />
-   4. <img src="./数据结构-image\image-20220702030039570.png" alt="image-20220702030039570" style="zoom:50%;" />
+   2. <img src=".\数据结构-image\image-20220702025716832.png" alt="image-20220702025716832" style="zoom:50%;" /> 取右子树中的最小元素替代
+   3. <img src=".\数据结构-image\image-20220702025939253.png" alt="image-20220702025939253" style="zoom:50%;" />
+   4. <img src=".\数据结构-image\image-20220702030039570.png" alt="image-20220702030039570" style="zoom:50%;" />
    5. 代码实现
 
    ```c
@@ -212,13 +212,13 @@ BinTree Insert(ElementType X,BinTree BST)
 
 ### 4.2.1 什么是平衡二叉树
 
-<img src="./数据结构-image\image-20220702032658211.png" alt="image-20220702032658211" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702032658211.png" alt="image-20220702032658211" style="zoom:50%;" />
 
 怎么样子算基本上平衡：1.左右结点差不多2.左右高度差不多
 
 #### **平衡因子**：
 
-<img src="./数据结构-image\image-20220702032941579.png" alt="image-20220702032941579" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702032941579.png" alt="image-20220702032941579" style="zoom:50%;" />
 
 平衡因子是对结点来说的，左右的一个高度差我们就称为平衡因子
 
@@ -227,15 +227,15 @@ BinTree Insert(ElementType X,BinTree BST)
 空树，或者任一结点左、右子树高度差的绝对值不超过1，即|BF(T)|<=1
 ```
 
-<img src="./数据结构-image\image-20220702040217888.png" alt="image-20220702040217888" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702040217888.png" alt="image-20220702040217888" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220702040552776.png" alt="image-20220702040552776" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702040552776.png" alt="image-20220702040552776" style="zoom:50%;" />
 
 画画看，至少需要多少个结点才能构造出一棵4层（h=3)的平衡二叉树？7个
 
-<img src="./数据结构-image\image-20220702041010879.png" alt="image-20220702041010879" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702041010879.png" alt="image-20220702041010879" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220702041413070.png" alt="image-20220702041413070" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702041413070.png" alt="image-20220702041413070" style="zoom:50%;" />
 
 
 
@@ -243,37 +243,37 @@ BinTree Insert(ElementType X,BinTree BST)
 
 #### RR旋转
 
-<img src="./数据结构-image\image-20220702050945421.png" alt="image-20220702050945421" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702050945421.png" alt="image-20220702050945421" style="zoom:50%;" />
 
- <img src="./数据结构-image\image-20220702051127034.png" alt="image-20220702051127034" style="zoom:50%;" />
+ <img src=".\数据结构-image\image-20220702051127034.png" alt="image-20220702051127034" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220702051214039.png" alt="image-20220702051214039" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702051214039.png" alt="image-20220702051214039" style="zoom:50%;" />
 
 #### LL旋转
 
-<img src="./数据结构-image\image-20220702051315347.png" alt="image-20220702051315347" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702051315347.png" alt="image-20220702051315347" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220702051544173.png" alt="image-20220702051544173" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702051544173.png" alt="image-20220702051544173" style="zoom:50%;" />
 
 #### LR旋转
 
-<img src="./数据结构-image\image-20220702051645639.png" alt="image-20220702051645639" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702051645639.png" alt="image-20220702051645639" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220702051833406.png" alt="image-20220702051833406" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702051833406.png" alt="image-20220702051833406" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220702052115268.png" alt="image-20220702052115268" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702052115268.png" alt="image-20220702052115268" style="zoom:50%;" />
 
 #### RL旋转
 
-<img src="./数据结构-image\image-20220702052247419.png" alt="image-20220702052247419" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702052247419.png" alt="image-20220702052247419" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220702052510229.png" alt="image-20220702052510229" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702052510229.png" alt="image-20220702052510229" style="zoom:50%;" />
 
 
 
 ### 小测试
 
-<img src="./数据结构-image\image-20220702042025929.png" alt="image-20220702042025929" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220702042025929.png" alt="image-20220702042025929" style="zoom:50%;" />
 
 ## 小白专场：是否同一棵二叉搜索树 - C实现
 
@@ -289,9 +289,9 @@ BinTree Insert(ElementType X,BinTree BST)
 
 2. **不建树的判别方式**
 
-   1. <img src="./数据结构-image\image-20220702053319839.png" alt="image-20220702053319839" style="zoom:50%;" />
+   1. <img src=".\数据结构-image\image-20220702053319839.png" alt="image-20220702053319839" style="zoom:50%;" />
    2. 先看根结点也就是第一个数一样吗？再把比根结点小的放左边(顺序不动)，比根结点大的放右边(顺序不动)，然后再进行对比左右树，上图就是一样的，下图为反面例子
-   3. <img src="./数据结构-image\image-20220702053522047.png" alt="image-20220702053522047" style="zoom:50%;" />
+   3. <img src=".\数据结构-image\image-20220702053522047.png" alt="image-20220702053522047" style="zoom:50%;" />
 
 3. 建一颗树，再判别其他序列是否与该树一致
 
@@ -397,7 +397,7 @@ Tree NewNode(int V)
 
 ### 搜索树是否一样的判别
 
-<img src="./数据结构-image\image-20220706083408133.png" alt="image-20220706083408133" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220706083408133.png" alt="image-20220706083408133" style="zoom:50%;" />
 
 ```c
 方法:在树T中按顺序搜索序列
@@ -479,21 +479,21 @@ void FreeTree(Tree T)//释放T的空间
 
 1. 有块地方存数据
 2. 有块地方存指针——下一个结点的地址(一个抽象的指针指向的就是地址，任何一种形式去存了下一个结点的位置这东西就叫做指针)
-3. <img src="./数据结构-image\image-20220706093854900.png" alt="image-20220706093854900" style="zoom:50%;" />
-4. <img src="./数据结构-image\image-20220706094019412.png" alt="image-20220706094019412" style="zoom:50%;" />
+3. <img src=".\数据结构-image\image-20220706093854900.png" alt="image-20220706093854900" style="zoom:50%;" />
+4. <img src=".\数据结构-image\image-20220706094019412.png" alt="image-20220706094019412" style="zoom:50%;" />
 5. 
 
 ### 线性结构习题2：链表逆转算法
 
 #### 单链表的逆转
 
-<img src="./数据结构-image\image-20220706094116841.png" alt="image-20220706094116841" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220706094116841.png" alt="image-20220706094116841" style="zoom:50%;" />
 
 第一个加上头结点虽然会浪费一个空间，但是会使后面的操作变为更加简单
 
 **逆序之后如下：**
 
-<img src="./数据结构-image\image-20220706094241649.png" alt="image-20220706094241649" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220706094241649.png" alt="image-20220706094241649" style="zoom:50%;" />
 
 接下来是逆序的过程：
 
@@ -504,13 +504,13 @@ void FreeTree(Tree T)//释放T的空间
 
 2. 我们首先想要把2跟1进行逆转，但是在逆转之前需要先把3这个位置记住，所以设定一个tmp指针去指向3。否则当2的指针一转向，2后面的链表就丢失了
 
-   1. <img src="./数据结构-image\image-20220706095027756.png" alt="image-20220706095027756" style="zoom:50%;" />
+   1. <img src=".\数据结构-image\image-20220706095027756.png" alt="image-20220706095027756" style="zoom:50%;" />
 
-   2. <img src="./数据结构-image\image-20220706095101249.png" alt="image-20220706095101249" style="zoom:50%;" />
+   2. <img src=".\数据结构-image\image-20220706095101249.png" alt="image-20220706095101249" style="zoom:50%;" />
 
-   3. <img src="./数据结构-image\image-20220706095134083.png" alt="image-20220706095134083" style="zoom:50%;" />
+   3. <img src=".\数据结构-image\image-20220706095134083.png" alt="image-20220706095134083" style="zoom:50%;" />
 
-   4. <img src="./数据结构-image\image-20220706095200258.png" alt="image-20220706095200258" style="zoom:50%;" />
+   4. <img src=".\数据结构-image\image-20220706095200258.png" alt="image-20220706095200258" style="zoom:50%;" />
 
    5. ```c
       以下是伪代码实现

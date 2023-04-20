@@ -20,7 +20,7 @@ localStorage.setItem("password",password)
 //成功保存token信息，这是将 内容 保存在本地
 ```
 
-![image-20230213080502107](./JavaScript高级_image\image-20230213080502107.png)
+![image-20230213080502107](.\JavaScript高级_image\image-20230213080502107.png)
 
 - 但实际中通常是会进行判断本地是否有信息的，没有的话再去服务器获取
 
@@ -156,7 +156,7 @@ localStorage.setItem("userInfo",userInfo)
 console.log(first);
 ```
 
-![image-20230214034136785](./JavaScript高级_image\image-20230214034136785.png)
+![image-20230214034136785](.\JavaScript高级_image\image-20230214034136785.png)
 
 > 需要将对象转化为字符串类型，然后传入要取出的时候再从字符串转化为对象类型，那这个操作如果要每次使用都写一次的话，就太过繁琐了，而且重复代码量也会提升，最好的当然还是直接封装起来了，也能够额外扩展我们想要的很多操作
 
@@ -201,7 +201,7 @@ class Cache {
 const localCache = new Cache()
 ```
 
-![image-20230214034815822](./JavaScript高级_image\image-20230214034815822.png)
+![image-20230214034815822](.\JavaScript高级_image\image-20230214034815822.png)
 
 > 进一步修改成我们想要的，让我们自如的切换在local跟session之间
 
@@ -362,7 +362,7 @@ const re1 = /abc/ig
 console.log(re1.exec(message))//index是找到位置开头的索引
 ```
 
-![image-20230214065727307](./JavaScript高级_image\image-20230214065727307.png)
+![image-20230214065727307](.\JavaScript高级_image\image-20230214065727307.png)
 
 ### match方法
 
@@ -377,7 +377,7 @@ const re2 = message.match(re1)
 console.log(re2)
 ```
 
-![image-20230214065933699](./JavaScript高级_image\image-20230214065933699.png)
+![image-20230214065933699](.\JavaScript高级_image\image-20230214065933699.png)
 
 ### matchAll方法
 
@@ -396,7 +396,7 @@ console.log(re2.next())
 console.log(re2.next())
 ```
 
-![image-20230214070656641](./JavaScript高级_image\image-20230214070656641.png)
+![image-20230214070656641](.\JavaScript高级_image\image-20230214070656641.png)
 
 ```javascript
 //当然迭代器必不可免能够用到的当然是遍历了
@@ -408,7 +408,7 @@ for(item of re2){
 }
 ```
 
-![image-20230214071532993](./JavaScript高级_image\image-20230214071532993.png)
+![image-20230214071532993](.\JavaScript高级_image\image-20230214071532993.png)
 
 ### replace/replaceAll方法
 
@@ -425,7 +425,7 @@ const result4 = message.split(re1)
 console.log(result4)
 ```
 
-![image-20230214071847107](./JavaScript高级_image\image-20230214071847107.png)
+![image-20230214071847107](.\JavaScript高级_image\image-20230214071847107.png)
 
 ### search方法
 
@@ -454,7 +454,7 @@ console.log(result5)//2
   - 获取一个字符串中所有的abc；
   - 将一个字符串中的所有abc换成大写
 
-![image-20230214072515689](./JavaScript高级_image\image-20230214072515689.png)
+![image-20230214072515689](.\JavaScript高级_image\image-20230214072515689.png)
 
 ### 规则 – 字符类（Character classes）
 
@@ -518,7 +518,7 @@ if(/\bname\b/i.test(message)){//依靠/b XXX \b，进行划分边界
 
 - **在字符串 Hello, Java! 中，以下位置对应于 \b：**
 
-![image-20230214074222085](./JavaScript高级_image\image-20230214074222085.png)
+![image-20230214074222085](.\JavaScript高级_image\image-20230214074222085.png)
 
 -  **匹配下面字符串中的时间：**
 
@@ -589,7 +589,7 @@ console.log(newFileNames)//['node.js', 'three.js', 'Vue.js', 'React.js', 'home.j
 
 - **案例：匹配手机号码**：第一位是1，第二位是3、5、6、7、8、9其中之一，加上后面9位[0-9]的数字一共11位数，最后第11位就$结尾，不能再添加其他数字
 
-  ![image-20230214082930276](./JavaScript高级_image\image-20230214082930276.png)
+  ![image-20230214082930276](.\JavaScript高级_image\image-20230214082930276.png)
 
 - **排除范围：除了普通的范围匹配，还有类似 [^…] 的“排除”范围匹配 **
 
@@ -617,7 +617,7 @@ console.log(newFileNames)//['node.js', 'three.js', 'Vue.js', 'React.js', 'home.j
 
   > 开头/是特殊情况需要前面加\，然后?是因为如果不加就意味着这里开头就必须要有a-z其中一个字母，需要考虑下边界效应
 
-  ![image-20230214090508401](./JavaScript高级_image\image-20230214090508401.png)
+  ![image-20230214090508401](.\JavaScript高级_image\image-20230214090508401.png)
 
 ## (理解)正则-正则表达式规则-贪婪和惰性模式
 
@@ -670,7 +670,7 @@ for(item of result){
 //第一波使用捕获组
 ```
 
-![image-20230214112307091](./JavaScript高级_image\image-20230214112307091.png)
+![image-20230214112307091](.\JavaScript高级_image\image-20230214112307091.png)
 
 ```javascript
 //就能做出如下操作
@@ -681,11 +681,11 @@ for(item of result){
 }
 ```
 
-![image-20230214112355191](./JavaScript高级_image\image-20230214112355191.png)
+![image-20230214112355191](.\JavaScript高级_image\image-20230214112355191.png)
 
 - **案例：匹配到HTML标签，并且获取其中的内容**
 
-![image-20230214113228379](./JavaScript高级_image\image-20230214113228379.png)
+![image-20230214113228379](.\JavaScript高级_image\image-20230214113228379.png)
 
 ### 捕获组的补充
 
@@ -695,14 +695,14 @@ for(item of result){
   - 对于更复杂的模式，计算括号很不方便。我们有一个更好的选择：给括号起个名字。
   - 这是通过在开始括号之后立即放置 ?<name> 来完成的
 
-  ![image-20230214113302181](./JavaScript高级_image\image-20230214113302181.png)
+  ![image-20230214113302181](.\JavaScript高级_image\image-20230214113302181.png)
 
 - **非捕获组：**
 
   - 有时我们需要括号才能正确应用量词，但我们不希望它们的内容出现在结果中。
   - 可以通过在开头添加 ?: 来排除组
 
-  ![image-20230214113326297](./JavaScript高级_image\image-20230214113326297.png)
+  ![image-20230214113326297](.\JavaScript高级_image\image-20230214113326297.png)
 
 - **or是正则表达式中的一个术语，实际上是一个简单的“或”。**
   - 在正则表达式中，它用竖线 | 表示；

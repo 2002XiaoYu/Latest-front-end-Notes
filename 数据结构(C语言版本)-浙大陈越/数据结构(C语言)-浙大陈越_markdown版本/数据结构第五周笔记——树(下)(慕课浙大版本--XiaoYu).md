@@ -14,7 +14,7 @@
    优先队列(Priority Queue)：特殊的"队列"，取出元素的顺序是依照元素的优先权(关键字)大小，而不是元素进入队列的先后顺序
    ```
 
-   1. <img src="./数据结构-image\image-20220707112759644.png" alt="image-20220707112759644" style="zoom:50%;" />
+   1. <img src=".\数据结构-image\image-20220707112759644.png" alt="image-20220707112759644" style="zoom:50%;" />
 
 2. 是否可以采用二叉树存储结构？
 
@@ -25,7 +25,7 @@
 
 3. 优先队列的完全二叉树表示
 
-   1. <img src="./数据结构-image\image-20220707114110845.png" alt="image-20220707114110845" style="zoom:50%;" />
+   1. <img src=".\数据结构-image\image-20220707114110845.png" alt="image-20220707114110845" style="zoom:50%;" />
 
    2. ```
       堆的两个特性
@@ -37,7 +37,7 @@
       	注意：从根结点到任意结点路径上结点系列的有序性！
       ```
 
-   3. <img src="./数据结构-image\image-20220707114551521.png" alt="image-20220707114551521" style="zoom:50%;" />
+   3. <img src=".\数据结构-image\image-20220707114551521.png" alt="image-20220707114551521" style="zoom:50%;" />
 
 #### 堆的抽象数据类型描述
 
@@ -79,11 +79,11 @@ MaxHeap Create(int MaxSize)
 
 #### 最大堆的插入
 
-1. <img src="./数据结构-image\image-20220707205756557.png" alt="image-20220707205756557" style="zoom:33%;" />
+1. <img src=".\数据结构-image\image-20220707205756557.png" alt="image-20220707205756557" style="zoom:33%;" />
 
-2. <img src="./数据结构-image\image-20220707205844776.png" alt="image-20220707205844776" style="zoom:33%;" />
+2. <img src=".\数据结构-image\image-20220707205844776.png" alt="image-20220707205844776" style="zoom:33%;" />
 
-3. <img src="./数据结构-image\image-20220707205940384.png" alt="image-20220707205940384" style="zoom:33%;" />
+3. <img src=".\数据结构-image\image-20220707205940384.png" alt="image-20220707205940384" style="zoom:33%;" />
 
 4. 如果在底下插入的数值比上面大就沿着线路一路换位置，直到上面没有在比插入的大了为止
 
@@ -106,7 +106,7 @@ MaxHeap Create(int MaxSize)
       复杂度：T(N) = O(log N)
       ```
 
-      <img src="./数据结构-image\image-20220707212158564.png" alt="image-20220707212158564" style="zoom:33%;" />
+      <img src=".\数据结构-image\image-20220707212158564.png" alt="image-20220707212158564" style="zoom:33%;" />
 
       问题：“哨兵”是在创建堆(Create函数）时设置的：H->Elements[0]=MaxData;
 
@@ -120,9 +120,9 @@ MaxHeap Create(int MaxSize)
 
 1. 取出根结点(最大值)元素，同时删除堆的一个结点
 
-2. <img src="./数据结构-image\image-20220707213148580.png" alt="image-20220707213148580" style="zoom:33%;" />
+2. <img src=".\数据结构-image\image-20220707213148580.png" alt="image-20220707213148580" style="zoom:33%;" />
 
-3. <img src="./数据结构-image\image-20220707213217119.png" alt="image-20220707213217119" style="zoom:50%;" />
+3. <img src=".\数据结构-image\image-20220707213217119.png" alt="image-20220707213217119" style="zoom:50%;" />
 
    1. 时间复杂度就等于树的高度
 
@@ -183,13 +183,13 @@ MaxHeap Create(int MaxSize)
 
 问：建堆时，最坏情况下需要挪动元素次数是等于树中各结点的高度和。问：对于元素个数为12的堆，其各结点的高度之和是多少？10
 
-<img src="./数据结构-image\image-20220707221437125.png" alt="image-20220707221437125" style="zoom:67%;" />
+<img src=".\数据结构-image\image-20220707221437125.png" alt="image-20220707221437125" style="zoom:67%;" />
 
 ### 小测验：堆
 
-![image-20220707222337161](./数据结构-image\image-20220707222337161.png)
+![image-20220707222337161](.\数据结构-image\image-20220707222337161.png)
 
-<img src="./数据结构-image\image-20220707223127298.png" alt="image-20220707223127298" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220707223127298.png" alt="image-20220707223127298" style="zoom:50%;" />
 
 ### C语言代码：堆的定义和操作
 
@@ -305,13 +305,13 @@ else grade = 5;
 
 上述代码中，其实对应着就有一棵树，如下图：
 
-<img src="./数据结构-image\image-20220707234237931.png" alt="image-20220707234237931" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220707234237931.png" alt="image-20220707234237931" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220707234356578.png" alt="image-20220707234356578" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220707234356578.png" alt="image-20220707234356578" style="zoom:50%;" />
 
 优化后的效率：
 
-<img src="./数据结构-image\image-20220707234452711.png" alt="image-20220707234452711" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220707234452711.png" alt="image-20220707234452711" style="zoom:50%;" />
 
 ```c
 if(score < 80)
@@ -327,7 +327,7 @@ else grade = 5;
 
 #### 哈夫曼树的定义
 
-<img src="./数据结构-image\image-20220707234921567.png" alt="image-20220707234921567" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220707234921567.png" alt="image-20220707234921567" style="zoom:50%;" />
 
 **最优二叉树或哈夫曼树就是WPL最小的二叉树**
 
@@ -337,11 +337,11 @@ else grade = 5;
 
 [例]有五个叶子结点，它们的权值为{1，2，3，4，5}，用此权值序列可以构造出形状不同的多个二叉树
 
- <img src="./数据结构-image\image-20220708001419786.png" alt="image-20220708001419786" style="zoom:50%;" />
+ <img src=".\数据结构-image\image-20220708001419786.png" alt="image-20220708001419786" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220708001539908.png" alt="image-20220708001539908" style="zoom:50%;" />是50
+<img src=".\数据结构-image\image-20220708001539908.png" alt="image-20220708001539908" style="zoom:50%;" />是50
 
-<img src="./数据结构-image\image-20220708001741632.png" alt="image-20220708001741632" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220708001741632.png" alt="image-20220708001741632" style="zoom:50%;" />
 
 
 
@@ -349,7 +349,7 @@ else grade = 5;
 
 1. 每次把权值最小的两颗二叉树合并
 
-2. <img src="./数据结构-image\image-20220708002041082.png" alt="image-20220708002041082" style="zoom:50%;" />
+2. <img src=".\数据结构-image\image-20220708002041082.png" alt="image-20220708002041082" style="zoom:50%;" />
 
 3. 代码实现(如何选取两个最小的？)
 
@@ -386,14 +386,14 @@ else grade = 5;
          3. n2：有2个儿子的结点总数
          4. n2 = n0 - 1
       3. 哈夫曼树的任意非叶节点的左右子树交换后仍是哈夫曼树;
-      4. <img src="./数据结构-image\image-20220708003623357.png" alt="image-20220708003623357" style="zoom:50%;" />
+      4. <img src=".\数据结构-image\image-20220708003623357.png" alt="image-20220708003623357" style="zoom:50%;" />
       5. 
 
 ### 5.2.3 哈夫曼编码
 
 给定一段字符串，如何对字符进行编码，可以使得该字符串的编码存储空间最少？
 
-<img src="./数据结构-image\image-20220708003841443.png" alt="image-20220708003841443" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220708003841443.png" alt="image-20220708003841443" style="zoom:50%;" />
 
 分析：
 
@@ -410,17 +410,17 @@ else grade = 5;
 2. 二叉树用于编码：
    1. 左右分支：0、1
    2. 字符只在叶结点上
-   3. <img src="./数据结构-image\image-20220708004934296.png" alt="image-20220708004934296" style="zoom:50%;" />
-   4. <img src="./数据结构-image\image-20220708005100967.png" alt="image-20220708005100967" style="zoom:50%;" />
-   5. <img src="./数据结构-image\image-20220708005137719.png" alt="image-20220708005137719" style="zoom:50%;" />
+   3. <img src=".\数据结构-image\image-20220708004934296.png" alt="image-20220708004934296" style="zoom:50%;" />
+   4. <img src=".\数据结构-image\image-20220708005100967.png" alt="image-20220708005100967" style="zoom:50%;" />
+   5. <img src=".\数据结构-image\image-20220708005137719.png" alt="image-20220708005137719" style="zoom:50%;" />
    6. 怎么构造一颗编码代价最小的二叉树？
-      1. <img src="./数据结构-image\image-20220708005631723.png" alt="image-20220708005631723" style="zoom:67%;" />
+      1. <img src=".\数据结构-image\image-20220708005631723.png" alt="image-20220708005631723" style="zoom:67%;" />
 
 
 
 ### 小测验：哈夫曼树
 
-<img src="./数据结构-image\image-20220708010907498.png" alt="image-20220708010907498" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220708010907498.png" alt="image-20220708010907498" style="zoom:50%;" />
 
 
 
@@ -436,10 +436,10 @@ else grade = 5;
 
    1. 可以用树结构表示集合，树的每个结点代表一个集合元素
 
-   2. <img src="./数据结构-image\image-20220708125448566.png" alt="image-20220708125448566" style="zoom:50%;" />对这样三棵树的存储方法
+   2. <img src=".\数据结构-image\image-20220708125448566.png" alt="image-20220708125448566" style="zoom:50%;" />对这样三棵树的存储方法
 
       1. 采用数组存储形式
-      2. <img src="./数据结构-image\image-20220708130212563.png" alt="image-20220708130212563" style="zoom:50%;" />
+      2. <img src=".\数据结构-image\image-20220708130212563.png" alt="image-20220708130212563" style="zoom:50%;" />
       3. 上图中没有父节点的用负数来表示，Parent是它父节点的下标
 
    3. ```
@@ -449,7 +449,7 @@ else grade = 5;
       2和7是连通的，5和9不连通
       ```
 
-      <img src="./数据结构-image\image-20220708124931978.png" alt="image-20220708124931978" style="zoom:50%;" />
+      <img src=".\数据结构-image\image-20220708124931978.png" alt="image-20220708124931978" style="zoom:50%;" />
 
 #### 集合运算
 
@@ -533,10 +533,10 @@ SetName Find( SetType S, ElementType X )
 
 ### 堆中的路径
 
-1. <img src="./数据结构-image\image-20220708133742876.png" alt="image-20220708133742876" style="zoom:50%;" />
+1. <img src=".\数据结构-image\image-20220708133742876.png" alt="image-20220708133742876" style="zoom:50%;" />
 2. 5 3的意思是给你5个数据构成一个最小堆进行3次查询。第二行就是要插入的五个数据。5 4 3代表下标
 
-<img src="./数据结构-image\image-20220708134013080.png" alt="image-20220708134013080" style="zoom:33%;" />
+<img src=".\数据结构-image\image-20220708134013080.png" alt="image-20220708134013080" style="zoom:33%;" />
 
 ```c
 堆的表示及其操作(堆是一种按一定顺序组织的完全二叉树)
@@ -623,11 +623,11 @@ int Find(SetType S[],ElementType X)
 }
 ```
 
-<img src="./数据结构-image\image-20220708232958390.png" alt="image-20220708232958390" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220708232958390.png" alt="image-20220708232958390" style="zoom:50%;" />
 
 但其实这个声明这个Data专门用来存储是可以省略的，直接用数组来存储就行了，想知道有几个独立的集合就看数组里面有几个-1就可以了(-1表示处于最上方的了)
 
-<img src="./数据结构-image\image-20220708233303936.png" alt="image-20220708233303936" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220708233303936.png" alt="image-20220708233303936" style="zoom:50%;" />
 
 #### 集合简化表示
 
@@ -662,13 +662,13 @@ I：连通
 
 S：输入结束
 
-<img src="./数据结构-image\image-20220708234749670.png" alt="image-20220708234749670" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220708234749670.png" alt="image-20220708234749670" style="zoom:50%;" />
 
 在这里面每台计算机都是直接或者间接连通的。在上图中1虽然是一个孤立的计算机，但他也被认为是跟自己连通的
 
 所以这个会输出：There are 2 components (这个系统有两个连通机)
 
-<img src="./数据结构-image\image-20220709000356238.png" alt="image-20220709000356238" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220709000356238.png" alt="image-20220709000356238" style="zoom:50%;" />
 
 在上图的这种情况下，输出的最后一行就应该是The network is connected(这个网络是连通的)
 
@@ -715,7 +715,7 @@ int main()
 }
 ```
 
-<img src="./数据结构-image\image-20220709000953246.png" alt="image-20220709000953246" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220709000953246.png" alt="image-20220709000953246" style="zoom:50%;" />
 
 答案是A
 
@@ -774,13 +774,13 @@ TSSN(to simple sometime neive)实现
    2. Union(Find(3),Find（1))//这里1指向3了，由于上面那个，相当于2也指向3了
    ```
 
-   <img src="./数据结构-image\image-20220710091606477.png" alt="image-20220710091606477" style="zoom:50%;" />但这样显然会让树越来越高，有几个数，树就有多高，退化成单链表了，而且每次都绑定在1身上就意味着每次都需要从1开始找，直到找到他的根结点
+   <img src=".\数据结构-image\image-20220710091606477.png" alt="image-20220710091606477" style="zoom:50%;" />但这样显然会让树越来越高，有几个数，树就有多高，退化成单链表了，而且每次都绑定在1身上就意味着每次都需要从1开始找，直到找到他的根结点
 
-   刚才一系列Union(Find(![img](./数据结构-image\6608211117981750295.jpeg)), Find(1))（其中![img](./数据结构-image\6631765955584149961.jpeg))操作的时间复杂度是：T(n) = O(n²)
+   刚才一系列Union(Find(![img](.\数据结构-image\6608211117981750295.jpeg)), Find(1))（其中![img](.\数据结构-image\6631765955584149961.jpeg))操作的时间复杂度是：T(n) = O(n²)
 
    #### 为什么树的高度会越来越高
 
-   <img src="./数据结构-image\image-20220710092019371.png" alt="image-20220710092019371" style="zoom:50%;" />
+   <img src=".\数据结构-image\image-20220710092019371.png" alt="image-20220710092019371" style="zoom:50%;" />
 
    1. 只要把矮树贴到高树上就可以避免这种情况。但这样就势必要判断树的高度再决定谁贴到谁身上
 
@@ -850,16 +850,16 @@ SetName Find (SetType S,ElementType X)
 }
 ```
 
-<img src="./数据结构-image\image-20220710103232692.png" alt="image-20220710103232692" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220710103232692.png" alt="image-20220710103232692" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220710103259091.png" alt="image-20220710103259091" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220710103259091.png" alt="image-20220710103259091" style="zoom:50%;" />
 
 路径压缩好处：
 
 1. 第一次调用find会稍微复杂一点，但只要后续还需要调用就会非常合算
 2. Find函数的递归调用是一个伪递归调用(不会像递归一样把堆栈压爆掉，因为是非常容易转换成循环的，编辑器可能直接执行优化过后的循环代码)
 
-<img src="./数据结构-image\image-20220710104353745.png" alt="image-20220710104353745" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220710104353745.png" alt="image-20220710104353745" style="zoom:50%;" />
 
 做不做路径压缩的本质区别：
 

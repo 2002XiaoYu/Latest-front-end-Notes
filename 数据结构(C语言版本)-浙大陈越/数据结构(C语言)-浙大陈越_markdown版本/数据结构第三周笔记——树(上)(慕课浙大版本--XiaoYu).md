@@ -69,15 +69,15 @@ typedef struct LNode{
 
 **使用前提**：有序存放
 
-<img src="./数据结构-image\image-20220630133518543.png" alt="image-20220630133518543" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220630133518543.png" alt="image-20220630133518543" style="zoom:50%;" />
 
 **例子**：假设有13个数据元素，按关键字由小到大顺序存放，二分查找关键字为444的数据元素过程如下：
 
-<img src="./数据结构-image\image-20220630133710273.png" alt="image-20220630133710273" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220630133710273.png" alt="image-20220630133710273" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220630133856929.png" alt="image-20220630133856929" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220630133856929.png" alt="image-20220630133856929" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220630134122043.png" alt="image-20220630134122043" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220630134122043.png" alt="image-20220630134122043" style="zoom:50%;" />
 
  
 
@@ -89,11 +89,11 @@ typedef struct LNode{
 
 **例子2**：仍然以上面13个数据元素构成的有序线性表为例，二分查找关键字为43的数据元素如下：
 
-<img src="./数据结构-image\image-20220630134238735.png" alt="image-20220630134238735" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220630134238735.png" alt="image-20220630134238735" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220630134317471.png" alt="image-20220630134317471" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220630134317471.png" alt="image-20220630134317471" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220630134845190.png" alt="image-20220630134845190" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220630134845190.png" alt="image-20220630134845190" style="zoom:50%;" />
 
 ### 3.1.3 引子(二分查找实现)
 
@@ -128,7 +128,7 @@ int BinarySearch(List Tbl,ElementType K)//List Tbl是结构的指针，包含了
 
 #### 11个元素的二分查找判定树
 
-<img src="./数据结构-image\image-20220630141214141.png" alt="image-20220630141214141" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220630141214141.png" alt="image-20220630141214141" style="zoom:50%;" />
 
 **二分查找的启示**：
 
@@ -151,13 +151,13 @@ int BinarySearch(List Tbl,ElementType K)//List Tbl是结构的指针，包含了
 
 1. 树中有一个称为"根(Root)"的特殊结点，用r表示;
 2. 其余结点可分为m(m>0)个互不相交的有限集T1，T2,....,Tm,其中每个集合本身又是一颗树，称为原来树的"子树(SubTree)"
-3. <img src="./数据结构-image\image-20220630212408181.png" alt="image-20220630212408181" style="zoom:50%;" />
+3. <img src=".\数据结构-image\image-20220630212408181.png" alt="image-20220630212408181" style="zoom:50%;" />
 
 #### 树与非树
 
 不是树的例子
 
-1. <img src="./数据结构-image\image-20220630212516643.png" alt="image-20220630212516643" style="zoom:50%;" />
+1. <img src=".\数据结构-image\image-20220630212516643.png" alt="image-20220630212516643" style="zoom:50%;" />
 2. 子树是不相交的;
 3. 除了根结点外，每个结点有且只有一个父结点;
 4. 一颗N个结点的树有N-1条边
@@ -172,7 +172,7 @@ int BinarySearch(List Tbl,ElementType K)//List Tbl是结构的指针，包含了
 4. 父结点(Parent)：有子树的结点是其子树的根节点的父节点
 5. 子结点(Child)：若A结点是B结点的父节点，则称B结点是A结点的子结点;子节点也称孩子结点
 6. 兄弟结点(Sibling)：具有同一父节点的各结点彼此是兄弟结点 
-7. <img src="./数据结构-image\image-20220630221534749.png" alt="image-20220630221534749" style="zoom:50%;" />
+7. <img src=".\数据结构-image\image-20220630221534749.png" alt="image-20220630221534749" style="zoom:50%;" />
 8. 祖先结点(Ancestor)：沿着树根到某一结点路径上的所有结点都是这个结点的祖先结点
 9. 子孙结点(Descendant)：某一结点的子树中的所有结点是这个结点的子孙
 10. 结点的层次(Lever)：规定根节点在1层，其他任一结点的层数是其父节点的层数加1
@@ -182,11 +182,11 @@ int BinarySearch(List Tbl,ElementType K)//List Tbl是结构的指针，包含了
 
 数组实现：把这些结点按顺序存储在数组里面
 
-<img src="./数据结构-image\image-20220630231222581.png" alt="image-20220630231222581" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220630231222581.png" alt="image-20220630231222581" style="zoom:50%;" />
 
 链表表示：
 
-<img src="./数据结构-image\image-20220630231244287.png" alt="image-20220630231244287" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220630231244287.png" alt="image-20220630231244287" style="zoom:50%;" />
 
  这样树的结构：每个结点的结构的样子是不一样的。有的结点有3个指针，有的结点有1个指针，有的没有指针。这样整个这个结构的形式都不一样，会给后面的程序实现带来困难(因为访问之前没办法确认会带来多少个儿子)
 
@@ -200,13 +200,13 @@ int BinarySearch(List Tbl,ElementType K)//List Tbl是结构的指针，包含了
 
 #### 儿子-兄弟表示法
 
-<img src="./数据结构-image\image-20220630235030353.png" alt="image-20220630235030353" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220630235030353.png" alt="image-20220630235030353" style="zoom:50%;" />
 
 这样可以将整颗树的结点把它串起来
 
 实现效果如下：
 
-<img src="./数据结构-image\image-20220630235200617.png" alt="image-20220630235200617" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220630235200617.png" alt="image-20220630235200617" style="zoom:50%;" />
 
 ```
 这种方法的优点:
@@ -220,14 +220,14 @@ int BinarySearch(List Tbl,ElementType K)//List Tbl是结构的指针，包含了
 
 #### 二叉树的图
 
-<img src="./数据结构-image\image-20220630235703723.png" alt="image-20220630235703723" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220630235703723.png" alt="image-20220630235703723" style="zoom:50%;" />
 
 **二叉树特点**：
 
 1. 链表实现方法：旋转45度
 2. 每个结点都有两个指针，一个指向左边一个指向右边，每个结点最多是两个儿子
 3. 二叉树就是度为2的一种树
-4.  <img src="./数据结构-image\image-20220630235936075.png" alt="image-20220630235936075" style="zoom:50%;" />
+4.  <img src=".\数据结构-image\image-20220630235936075.png" alt="image-20220630235936075" style="zoom:50%;" />
 
 ## 二叉树及存储结构
 
@@ -244,24 +244,24 @@ int BinarySearch(List Tbl,ElementType K)//List Tbl是结构的指针，包含了
 
 **二叉树具体五种基本形态**
 
-<img src="./数据结构-image\image-20220701000338791.png" alt="image-20220701000338791" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701000338791.png" alt="image-20220701000338791" style="zoom:50%;" />
 
 **二叉树的子树有左右之分**
 
-<img src="./数据结构-image\image-20220701000422530.png" alt="image-20220701000422530" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701000422530.png" alt="image-20220701000422530" style="zoom:50%;" />
 
 #### 特殊的二叉树
 
 ##### 斜二叉树(Skewed Binary Tree)
 
 1. 只有左边或者只有右边，相当于一个链表
-2. <img src="./数据结构-image\image-20220701000612336.png" alt="image-20220701000612336" style="zoom:50%;" />
+2. <img src=".\数据结构-image\image-20220701000612336.png" alt="image-20220701000612336" style="zoom:50%;" />
 
 ##### 完美二叉树(Perfect Binary Tree)
 
 **或者叫做满二叉树(Full Binary Tree)**
 
-<img src="./数据结构-image\image-20220701000716448.png" alt="image-20220701000716448" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701000716448.png" alt="image-20220701000716448" style="zoom:50%;" />
 
 特点：	一个深度为k(>=-1)且有2^(k+1) - 1个结点的二叉树称为完美二叉树。 满二叉树
 
@@ -274,7 +274,7 @@ int BinarySearch(List Tbl,ElementType K)//List Tbl是结构的指针，包含了
 
 #### 二叉树的几个重要性质
 
-<img src="./数据结构-image\image-20220701001640388.png" alt="image-20220701001640388" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701001640388.png" alt="image-20220701001640388" style="zoom:50%;" />
 
 叶结点的总数等于有两个儿子的结点的总数加1
 
@@ -315,7 +315,7 @@ int BinarySearch(List Tbl,ElementType K)//List Tbl是结构的指针，包含了
 //这个树最适合数组方式解决
 ```
 
-<img src="./数据结构-image\image-20220701003345507.png" alt="image-20220701003345507" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701003345507.png" alt="image-20220701003345507" style="zoom:50%;" />
 
 1. 非根结点(序号 i > 1)的父节点的序号是[i/2]
    1. 这句话的意思就是说假设我们目前知道M结点时6，如果想知道它的父节点就是6/2=3，Q结点就是7/2=3.5，把小数去掉，父节点一样是3
@@ -326,9 +326,9 @@ int BinarySearch(List Tbl,ElementType K)//List Tbl是结构的指针，包含了
 
 **一般二叉树**也可以采用这种结构，缺点：但会造成空间浪费....(将缺少的结点补上一个空结点)
 
-<img src="./数据结构-image\image-20220701004348299.png" alt="image-20220701004348299" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701004348299.png" alt="image-20220701004348299" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220701004413217.png" alt="image-20220701004413217" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701004413217.png" alt="image-20220701004413217" style="zoom:50%;" />
 
 ```
 问题：
@@ -337,11 +337,11 @@ int BinarySearch(List Tbl,ElementType K)//List Tbl是结构的指针，包含了
 答案：6
 ```
 
-<img src="./数据结构-image\image-20220701004541010.png" alt="image-20220701004541010" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701004541010.png" alt="image-20220701004541010" style="zoom:50%;" />
 
 2.**链表存储**
 
-<img src="./数据结构-image\image-20220701004912537.png" alt="image-20220701004912537" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701004912537.png" alt="image-20220701004912537" style="zoom:50%;" />
 
 ```c
 typedef struct TreeNode *BinTree;
@@ -353,7 +353,7 @@ struct TreeNode{
 }
 ```
 
-<img src="./数据结构-image\image-20220701005059244.png" alt="image-20220701005059244" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701005059244.png" alt="image-20220701005059244" style="zoom:50%;" />
 
 ## 二叉树的遍历
 
@@ -380,7 +380,7 @@ void PreOrderTraversal(BinTree BT)//BT是树
 }
 ```
 
-<img src="./数据结构-image\image-20220701101511679.png" alt="image-20220701101511679" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701101511679.png" alt="image-20220701101511679" style="zoom:50%;" />
 
 ```
 先是从根开始  A(B D F E)(C G H I)
@@ -405,7 +405,7 @@ void PreOrderTraversal(BinTree BT)//BT是树
 }
 ```
 
-<img src="./数据结构-image\image-20220701102142532.png" alt="image-20220701102142532" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701102142532.png" alt="image-20220701102142532" style="zoom:50%;" />
 
 ```
 中序遍历 => D B E F A G H C I
@@ -414,7 +414,7 @@ void PreOrderTraversal(BinTree BT)//BT是树
 原因是E-F是一个树，然后因为这个是左子树，所以从左边开始，E在F的左边
 ```
 
-<img src="./数据结构-image\image-20220701103417703.png" alt="image-20220701103417703" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701103417703.png" alt="image-20220701103417703" style="zoom:50%;" />
 
 ##### (3)后序遍历
 
@@ -434,7 +434,7 @@ void PreOrderTraversal(BinTree BT)//BT是树
 }
 ```
 
-<img src="./数据结构-image\image-20220701103619016.png" alt="image-20220701103619016" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701103619016.png" alt="image-20220701103619016" style="zoom:50%;" />
 
 ```
 注意点：后序遍历，那当然得从下面开始咯，所以会发现B跟E是E优先。H跟C比是H优先
@@ -449,7 +449,7 @@ void PreOrderTraversal(BinTree BT)//BT是树
 图中先从入口到出口的曲线上用三种符号分别标记除先序，中序和后序的访问各结点时刻
 ```
 
-<img src="./数据结构-image\image-20220701112206952.png" alt="image-20220701112206952" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701112206952.png" alt="image-20220701112206952" style="zoom:50%;" />
 
 
 
@@ -493,7 +493,7 @@ PPOPOOPPOO正确
     第二次碰到同一个的时候就print出来
 ```
 
-<img src="./数据结构-image\image-20220701114302678.png" alt="image-20220701114302678" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701114302678.png" alt="image-20220701114302678" style="zoom:50%;" />
 
 ##### 先序遍历的非递归遍历算法？
 
@@ -518,17 +518,17 @@ PPOPOOPPOO正确
 遍历从根结点开始，首先将根结点入队，然后开始执行循环：结点出队、访问该结点、其左右儿子入队
 ```
 
-<img src="./数据结构-image\image-20220701122430994.png" alt="image-20220701122430994" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701122430994.png" alt="image-20220701122430994" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220701122450231.png" alt="image-20220701122450231" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701122450231.png" alt="image-20220701122450231" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220701122514520.png" alt="image-20220701122514520" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701122514520.png" alt="image-20220701122514520" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220701122530744.png" alt="image-20220701122530744" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701122530744.png" alt="image-20220701122530744" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220701122549970.png" alt="image-20220701122549970" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701122549970.png" alt="image-20220701122549970" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220701122603151.png" alt="image-20220701122603151" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701122603151.png" alt="image-20220701122603151" style="zoom:50%;" />
 
 最后结果就是：层序遍历 => A B C D F G I E H
 
@@ -571,7 +571,7 @@ void PreOrderPrintLeaves(BinTree BT)
 
 #### 【例】求二叉树的高度
 
- <img src="./数据结构-image\image-20220701124015460.png" alt="image-20220701124015460" style="zoom:50%;" />
+ <img src=".\数据结构-image\image-20220701124015460.png" alt="image-20220701124015460" style="zoom:50%;" />
 
 ```c
 void PreOrderGetHeight(BinTree BT)
@@ -589,7 +589,7 @@ void PreOrderGetHeight(BinTree BT)
 
 #### 【例】二元运算表达式树及其遍历
 
-<img src="./数据结构-image\image-20220701124745933.png" alt="image-20220701124745933" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701124745933.png" alt="image-20220701124745933" style="zoom:50%;" />
 
 **中缀表达式是不准的，会收到运算符优先度的影响**，其它都是准的
 
@@ -613,11 +613,11 @@ void PreOrderGetHeight(BinTree BT)
 
 **先序第一个是根**，**后序最后一个是根**
 
-<img src="./数据结构-image\image-20220701125607995.png" alt="image-20220701125607995" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701125607995.png" alt="image-20220701125607995" style="zoom:50%;" />
 
 问：已知有颗5个结点的二叉树，其前序遍历序列是a????，中序遍历序列是a????，可以断定：
 
-<img src="./数据结构-image\image-20220701125653916.png" alt="image-20220701125653916" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701125653916.png" alt="image-20220701125653916" style="zoom:50%;" />
 
 答案： 该树根结点是a，且没有左子树
 
@@ -625,29 +625,29 @@ void PreOrderGetHeight(BinTree BT)
 
 ### 题意理解及二叉树表示
 
-<img src="./数据结构-image\image-20220701221930149.png" alt="image-20220701221930149" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701221930149.png" alt="image-20220701221930149" style="zoom:50%;" />
 
- <img src="./数据结构-image\image-20220701224453225.png" alt="image-20220701224453225" style="zoom:50%;" />
+ <img src=".\数据结构-image\image-20220701224453225.png" alt="image-20220701224453225" style="zoom:50%;" />
 
 不是同构的(反面教材)：
 
-<img src="./数据结构-image\image-20220701224543157.png" alt="image-20220701224543157" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701224543157.png" alt="image-20220701224543157" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220701224727874.png" alt="image-20220701224727874" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701224727874.png" alt="image-20220701224727874" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220701224754107.png" alt="image-20220701224754107" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701224754107.png" alt="image-20220701224754107" style="zoom:50%;" />
 
 #### 求解思路
 
 1. **二叉树表示**
 
-   1. <img src="./数据结构-image\image-20220701224950324.png" alt="image-20220701224950324" style="zoom:50%;" />(链表的表示方法啊)
+   1. <img src=".\数据结构-image\image-20220701224950324.png" alt="image-20220701224950324" style="zoom:50%;" />(链表的表示方法啊)
 
-   2. <img src="./数据结构-image\image-20220701225028557.png" alt="image-20220701225028557" style="zoom:50%;" />(一般的用数组表示二叉树做法)
+   2. <img src=".\数据结构-image\image-20220701225028557.png" alt="image-20220701225028557" style="zoom:50%;" />(一般的用数组表示二叉树做法)
 
    3. 结构数组表示二叉树：静态链表(物理上存储是数组，思想是一种链表的思想 )
 
-      1. <img src="./数据结构-image\image-20220701225755398.png" alt="image-20220701225755398" style="zoom:50%;" />
+      1. <img src=".\数据结构-image\image-20220701225755398.png" alt="image-20220701225755398" style="zoom:50%;" />
 
          A B C D是代表节点本身的信息(用来标识节点的)，并且Left根Right不是指向左儿子右儿子的，而是指向他们的下标的，指向空节点用-1表示
 
@@ -702,7 +702,7 @@ int main()
 }
 ```
 
-<img src="./数据结构-image\image-20220701234728261.png" alt="image-20220701234728261" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701234728261.png" alt="image-20220701234728261" style="zoom:50%;" />
 
 %c：转化为整数
 
@@ -712,7 +712,7 @@ Root：树根
 
 Root = ???  =>T[i]中没有任何结点的left(cl)和right(cr)指向它。只有一个
 
-<img src="./数据结构-image\image-20220701235112746.png" alt="image-20220701235112746" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701235112746.png" alt="image-20220701235112746" style="zoom:50%;" />
 
 ```
 最后if(!check[i]) break;中返回的值是0的就是根结点，因为有指向的都被转化为1了
@@ -722,7 +722,7 @@ T[i].Left = cl - '0';的原因是我们是以字符的形式读取进来的，�
 
 #### 如何判别两二叉树同构
 
-<img src="./数据结构-image\image-20220701235555687.png" alt="image-20220701235555687" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701235555687.png" alt="image-20220701235555687" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220701235650631.png" alt="image-20220701235650631" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220701235650631.png" alt="image-20220701235650631" style="zoom:50%;" />
 

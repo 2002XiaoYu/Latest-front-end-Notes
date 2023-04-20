@@ -682,7 +682,7 @@ fn()
 > - 这个时候不会马上调用函数执行的上下文，会先创建一个AO对象(函数执行之前创建)
 > - 为什么不每个函数都创建AO对象呢？因为如果你如果每个都创建，当数量一多，就会创建很多个AO对象出来，当你都放着不调用，那岂不是就很浪费，所以设置当我们即将调用的前一刻会将AO对象创建出来，这样每个创建出来的AO对象都会被用上
 
-![image-20221216125858055](./JavaScript高级_image\image-20221216125858055.png)
+![image-20221216125858055](.\JavaScript高级_image\image-20221216125858055.png)
 
 1. AO对象里面有一个bar，也就是我们刚刚上面代码块中的bar，在foo函数里面进行了return
 2. 这个bar存放的其实只是一个地址，原本全局对象GO(global object)里面的fn是underfined，现在变成bar的内存地址(类似`0Xb00`之类的东西)了
@@ -734,15 +734,15 @@ test()
 
 ### 函数的执行过程的内存
 
-<img src="./JavaScript高级_image\image-20221217113842954.png" style="zoom:67%;" />
+<img src=".\JavaScript高级_image\image-20221217113842954.png" style="zoom:67%;" />
 
 ---
 
 foo的执行上下文销毁前后对比：
 
-<img src="./JavaScript高级_image\image-20221217114703886.png" alt="image-20221217114703886" style="zoom:67%;" />
+<img src=".\JavaScript高级_image\image-20221217114703886.png" alt="image-20221217114703886" style="zoom:67%;" />
 
-<img src="./JavaScript高级_image\image-20221217114821548.png" alt="image-20221217114821548" style="zoom:67%;" />
+<img src=".\JavaScript高级_image\image-20221217114821548.png" alt="image-20221217114821548" style="zoom:67%;" />
 
 > 1. 我们写了foo函数跟test函数，从foo()开始执行，这个时候会先创建出foo函数的函数对象(0xa00`内存地址`)，然后函数对象里面包括了parentScope`父级作用域`跟函数执行体。
 > 2. 然后foo函数这个父级作用域parentScope在下面的代码块中指GO(0x100`内存地址`)，没错，parentScope是指向一个内存地址(根据上图，我们能知道他们其实是一个互相引用的关系)。test函数 同理
@@ -768,25 +768,25 @@ test()
 
 **执行之前**一样是非常熟悉的流程，直接上图啦
 
-<img src="./JavaScript高级_image\image-20221217120650694.png" alt="image-20221217120650694" style="zoom:67%;" />
+<img src=".\JavaScript高级_image\image-20221217120650694.png" alt="image-20221217120650694" style="zoom:67%;" />
 
 **当foo开始执行之后**：
 
-<img src="./JavaScript高级_image\image-20221217120850640.png" alt="image-20221217120850640" style="zoom:67%;" />
+<img src=".\JavaScript高级_image\image-20221217120850640.png" alt="image-20221217120850640" style="zoom:67%;" />
 
 > **当foo执行完了之后**：这个时候，bar的内存地址已经存放到fn中了(也就是fn已经指向bar了)，并且在后续被fn()给调用了，所以不管foo的函数执行上下文有没有被销毁，都不会影响到bar的函数对象了(因为GO根对象的fn已经指向了bar函数对象了`上面有介绍JavaScript的垃圾回收，也就是标记清除部分`，让bar函数对象不被销毁)，然后bar函数对象连锁反应又跟foo的AO对象相互进行引用了(最关键的是bar指向foo的AO对象，这是可达的部分)，所以foo的AO对象也不会被销毁。这就是为什么bar引用的父级自由变量会得以保留的原因
 
-<img src="./JavaScript高级_image\image-20221217121318244.png" alt="image-20221217121318244" style="zoom:67%;" />
+<img src=".\JavaScript高级_image\image-20221217121318244.png" alt="image-20221217121318244" style="zoom:67%;" />
 
 > 我们接下来就要继续执行fn的函数执行上下文(bar的)了
 
-<img src="./JavaScript高级_image\image-20221217123311693.png" alt="image-20221217123311693" style="zoom:67%;" />
+<img src=".\JavaScript高级_image\image-20221217123311693.png" alt="image-20221217123311693" style="zoom:67%;" />
 
-<img src="./JavaScript高级_image\image-20221217123413878.png" alt="image-20221217123413878" style="zoom:67%;" />
+<img src=".\JavaScript高级_image\image-20221217123413878.png" alt="image-20221217123413878" style="zoom:67%;" />
 
 > 当bar的执行上下文被销毁掉的时候，也不会影响闭包，因为根对象依旧指向着fn，也就是bar的函数对象，而bar函数对象的父级作用域parentScope指着foo的AO对象，所以脱离了捕捉时的上下文，它也能照常运行。自由变量依旧存在而没有被销毁
 
-<img src="./JavaScript高级_image\image-20221217123507832.png" alt="image-20221217123507832" style="zoom:67%;" />
+<img src=".\JavaScript高级_image\image-20221217123507832.png" alt="image-20221217123507832" style="zoom:67%;" />
 
 ```js
 function foo(){
@@ -820,15 +820,15 @@ fn()
 
 #### 闭包内存泄漏案例
 
-<img src="./JavaScript高级_image\image-20221218092955343.png" alt="image-20221218092955343" style="zoom:67%;" />
+<img src=".\JavaScript高级_image\image-20221218092955343.png" alt="image-20221218092955343" style="zoom:67%;" />
 
-<img src="./JavaScript高级_image\image-20221218094436686.png" alt="image-20221218094436686" style="zoom:50%;" />
+<img src=".\JavaScript高级_image\image-20221218094436686.png" alt="image-20221218094436686" style="zoom:50%;" />
 
 > - 只要arrayFns数组不被销毁，则createFnArray函数也会一直保留着不被销毁
 
 V8引擎源码可以看到对数字的处理：(是在后面回顾的时候进行补充说明的)
 
-![image-20221221221349656](./JavaScript高级_image\image-20221221221349656.png)
+![image-20221221221349656](.\JavaScript高级_image\image-20221221221349656.png)
 
 ```js
 function createFnArray(){
@@ -852,11 +852,11 @@ for(var i = 0 ; i<100 ; i++){
 }
 ```
 
-![image-20221218095602579](./JavaScript高级_image\image-20221218095602579.png)
+![image-20221218095602579](.\JavaScript高级_image\image-20221218095602579.png)
 
 #### 内存泄漏解决方法
 
-<img src="./JavaScript高级_image\image-20221217124919230.png" alt="image-20221217124919230" style="zoom:67%;" />
+<img src=".\JavaScript高级_image\image-20221217124919230.png" alt="image-20221217124919230" style="zoom:67%;" />
 
 ```js
 //内存泄漏解决方法
@@ -905,22 +905,22 @@ console.log(add10(8));
 
 > 内存回收案例测试如下
 
-<img src="./JavaScript高级_image\image-20221217135007121.png" alt="image-20221217135007121" style="zoom:50%;" />
+<img src=".\JavaScript高级_image\image-20221217135007121.png" alt="image-20221217135007121" style="zoom:50%;" />
 
 > 如果我们连foo函数对象都不想要了，我们也来个foo = null，断掉了foo与根对象GO的联系，那下次foo函数也会被销毁，或者说垃圾回收掉
 >
-> <img src="./JavaScript高级_image\image-20221218135505633.png" alt="image-20221218135505633" style="zoom:67%;" />回收一半的内存
+> <img src=".\JavaScript高级_image\image-20221218135505633.png" alt="image-20221218135505633" style="zoom:67%;" />回收一半的内存
 
 ## JS闭包引用的自由变量销毁
 
 > 当我们除了声明了fn来接收foo()之外，又声明了baz同样子接收foo()，这个时候是又执行了一遍foo函数里面的bar部分，fn跟baz不是同时指向同一个地方，而是又创建了一个新的foo的AO对象跟bar的函数对象，当我们将fn指向null，将内存进行回收时的时候，销毁的也只是fn对应的bar函数对象跟foo()对象，而对baz产生的bar函数对象跟foo的AO对象没有任何的影响，毕竟baz是又重新走了一遍流程，baz跟fn是互相独立的(PS：foo的AO对象是由bar的父级作用域内存地址指向而产生出来的)
 
-<img src="./JavaScript高级_image\image-20221218195427320.png" alt="image-20221218195427320" style="zoom:67%;" />
+<img src=".\JavaScript高级_image\image-20221218195427320.png" alt="image-20221218195427320" style="zoom:67%;" />
 
 > 1. foo的AO对象有bar在指向着，因为bar函数内含父级作用域foo的AO对象的内存地址且正处于引用状态，这个内存地址指向着AO对象，让AO对象不会被销毁掉，但是我们只是引用name这个自由变量，age并没有使用到，按照ECMA规范，正规AO对象都不会被销毁，当然也就包含了我们没有用上的age变量了
 > 2. 但是js引擎是非常灵活的，为了提高内存的利用率，这个可能永远使用不上的age属性是会被回收掉的，从而提高空余的内存空间，提高性能
 
-<img src="./JavaScript高级_image\image-20221218214558472.png" alt="image-20221218214558472" style="zoom:50%;" />
+<img src=".\JavaScript高级_image\image-20221218214558472.png" alt="image-20221218214558472" style="zoom:50%;" />
 
 ### 闭包引用的AO对象属性销毁
 
@@ -942,7 +942,7 @@ var fn = foo()
 fn()
 ```
 
-<img src="./JavaScript高级_image\image-20221218220313176.png" alt="image-20221218220313176" style="zoom:67%;" />
+<img src=".\JavaScript高级_image\image-20221218220313176.png" alt="image-20221218220313176" style="zoom:67%;" />
 
 ## JS中函数的this指向
 
@@ -1112,7 +1112,7 @@ obj.foo()
 foo.apply("XiaoYu")
 ```
 
-结果如下：![image-20221220134952932](./JavaScript高级_image\image-20221220134952932.png)
+结果如下：![image-20221220134952932](.\JavaScript高级_image\image-20221220134952932.png)
 
 # 05_this的绑定规则、优先级和面试
 
@@ -1162,7 +1162,7 @@ foo3()
 
 结果如下：
 
-![image-20221220212753721](./JavaScript高级_image\image-20221220212753721.png)
+![image-20221220212753721](.\JavaScript高级_image\image-20221220212753721.png)
 
 > 要注意，案例3是定义的时候有绑定到对象上面，但是当他在执行的时候，我们执行的是fn，根据之前学的内存里的执行过程，我们知道fn此时执行的就是obj里面的function本身，那fn是独立调用的其实就证明了函数也是独立调用的，那答案就应该指向window
 >
@@ -1248,7 +1248,7 @@ obj.foo()
 
 返回结果：
 
-![image-20221220224644327](./JavaScript高级_image\image-20221220224644327.png)
+![image-20221220224644327](.\JavaScript高级_image\image-20221220224644327.png)
 
 > 我们通过这种在一开始就演示过的代码中可以看到，obj里面的eacting跟running函数的this是可以指向函数的父级作用域的，也就是obj函数
 >
@@ -1281,7 +1281,7 @@ obj.running()
 
 吃东西的this指向出现了问题，this.name的结果出不来了，因为我们在调用的时候已经将obj跟eating函数的关系给去除掉了，obj没有绑定到eating里面了，所以就指向不到了obj里面的内容了
 
-![image-20221220230844569](./JavaScript高级_image\image-20221220230844569.png)
+![image-20221220230844569](.\JavaScript高级_image\image-20221220230844569.png)
 
 > 通过案例3，我们调用obj2中的bar属性，obj2.bar属性调用obj1中的foo函数。
 
@@ -1305,11 +1305,11 @@ obj2.bar()
 
 控制台打印结果：
 
-![image-20221220232552486](./JavaScript高级_image\image-20221220232552486.png)
+![image-20221220232552486](.\JavaScript高级_image\image-20221220232552486.png)
 
 > 那此时这个this是绑定到了谁身上，我们通过结果可以看到是obj2的身上，首先我们bar是调用到了obj1中的foo函数身上，但是最后我们执行的时候，是通过obj2来进行执行的，所以obj2就被绑定到了foo函数里面去了，所以此时foo函数控制台打印this的结果才会是obj2里的内容
 
-![image-20221220233110245](./JavaScript高级_image\image-20221220233110245.png)
+![image-20221220233110245](.\JavaScript高级_image\image-20221220233110245.png)
 
 ### 规则3：显示绑定
 
@@ -1402,7 +1402,7 @@ sum.apply("apply",[20,30])//后面的参数是以数组存在的
 
   返回结果如下：
 
-  ![image-20221221024716057](./JavaScript高级_image\image-20221221024716057.png)
+  ![image-20221221024716057](.\JavaScript高级_image\image-20221221024716057.png)
 
 #### 显示绑定 -- bind
 
@@ -1487,7 +1487,7 @@ Person()//正常调用
 new Person()//new调用
 ```
 
-调用区别：![image-20221221114414556](./JavaScript高级_image\image-20221221114414556.png)
+调用区别：![image-20221221114414556](.\JavaScript高级_image\image-20221221114414556.png)
 
 > 我们通过一个new关键字调用一个函数时(构造器)，这个时候this是在调用这个构造器创建出来的对象
 >
@@ -1535,7 +1535,7 @@ setTimeout(()=>{
 
 node环境下的结果：
 
-![image-20221222131325900](./JavaScript高级_image\image-20221222131325900.png)
+![image-20221222131325900](.\JavaScript高级_image\image-20221222131325900.png)
 
 ### 监听点击
 
@@ -1543,7 +1543,7 @@ node环境下的结果：
 >
 > 我们监听点击中的this给到我们的是监听的对象，也就是如下的东西(div的元素对象)：
 >
-> ![image-20221222183921708](./JavaScript高级_image\image-20221222183921708.png)
+> ![image-20221222183921708](.\JavaScript高级_image\image-20221222183921708.png)
 >
 > this指向了div的元素对象，这说明了这个boxDiv会拿到内部的函数的，然后进行调用，相当于
 >
@@ -1600,11 +1600,11 @@ names.forEach(function(){
 
 **forEach不加第二个参数：**
 
-![image-20221222204947490](./JavaScript高级_image\image-20221222204947490.png)
+![image-20221222204947490](.\JavaScript高级_image\image-20221222204947490.png)
 
 **forEach加第二个参数：**
 
-![image-20221222205023654](./JavaScript高级_image\image-20221222205023654.png)
+![image-20221222205023654](.\JavaScript高级_image\image-20221222205023654.png)
 
 **其他函数的效果(不一定就这些)：**
 
@@ -1626,7 +1626,7 @@ names.find(function(){
 },"小余")
 ```
 
-![image-20221222231000791](./JavaScript高级_image\image-20221222231000791.png)
+![image-20221222231000791](.\JavaScript高级_image\image-20221222231000791.png)
 
 ## this规则优先级
 
@@ -1697,7 +1697,7 @@ names.find(function(){
 
        隐式绑定的结果应该是下面这样的：
 
-       ![image-20221223000646446](./JavaScript高级_image\image-20221223000646446.png)
+       ![image-20221223000646446](.\JavaScript高级_image\image-20221223000646446.png)
 
   4. **结论：new关键字是不能够跟call和apply一起来使用的**
 
@@ -2687,7 +2687,7 @@ function HelloWorld(props){
   - 你在**写的时候**保证函数的纯度，只是**单纯实现自己的业务逻辑**即可，**不需要关心传入的内容**是如何获得的或者**依赖其他的外部变量**是否已经发生了修改
   - 你在**用的时候**，你确定**你的输入内容不会被任意篡改**，并且**自己确定的输入，一定有确定的输出**
 - **React中就要求我们无论是函数还是class声明一个组件，这个组件都必须像纯函数一样，保护它们的orops不被修改：**
-  - <img src="./JavaScript高级_image\image-20230103002841805.png" alt="image-20230103002841805" style="zoom:50%;" />
+  - <img src=".\JavaScript高级_image\image-20230103002841805.png" alt="image-20230103002841805" style="zoom:50%;" />
 
 ## JavaScript柯里化
 
@@ -3228,7 +3228,7 @@ console.log(obj)
 
 控制台打印：
 
-![image-20230107083010161](./JavaScript高级_image\image-20230107083010161.png)
+![image-20230107083010161](.\JavaScript高级_image\image-20230107083010161.png)
 
 > 出现如上问题的原因：
 >
@@ -3680,7 +3680,7 @@ console.log(p1,p2,p3);
 //   }
 ```
 
-![image-20230109045442038](./JavaScript高级_image\image-20230109045442038.png)
+![image-20230109045442038](.\JavaScript高级_image\image-20230109045442038.png)
 
 #### 工厂函数的缺点
 
@@ -3748,7 +3748,7 @@ console.log(p1,p2,p3);
 
      - 浏览器控制台打印结果：
 
-       ![image-20230109055524421](./JavaScript高级_image\image-20230109055524421.png)
+       ![image-20230109055524421](.\JavaScript高级_image\image-20230109055524421.png)
 
 ```javascript
  function foo(){
@@ -3795,7 +3795,7 @@ new foo //我们甚至可以不写这个小括号
 >   function square(x) {
 >     console.log(x * x);
 >   }
->                         
+>                           
 >   let result = square(2); // 输出4，result的值为undefined
 >   ```
 >
@@ -3838,7 +3838,7 @@ new foo //我们甚至可以不写这个小括号
   //很明显，在开头多了一个类型xiaoyu，是不是更加明确清晰了。你想要的任意类型都能够自己更加精准的定位，你写ikun都行
   ```
 
-  ![image-20230109060143434](./JavaScript高级_image\image-20230109060143434.png)
+  ![image-20230109060143434](.\JavaScript高级_image\image-20230109060143434.png)
 
 - 这个构造函数可以确保我们的对象是有Person的类型的（实际是constructor的属性，这个我们后续再探讨）；
 
@@ -3934,7 +3934,7 @@ console.log(obj);//在node打印是看不到隐藏起来的[[prototype]]的，�
 console.log(obj.__proto__);//[Object: null prototype] {}
 ```
 
-![image-20230109203959859](./JavaScript高级_image\image-20230109203959859.png)
+![image-20230109203959859](.\JavaScript高级_image\image-20230109203959859.png)
 
 > 这个Prototype是浏览器提供的，但有些浏览器可能是没有实现这个东西，所以我们在开发的时候尽量不使用这个。但是理解内部的原理还是很有必要的
 >
@@ -4030,11 +4030,11 @@ console.log(obj.age)//18
 
 ## Person构造函数原型内存图
 
-![image-20230109225438553](./JavaScript高级_image\image-20230109225438553.png)
+![image-20230109225438553](.\JavaScript高级_image\image-20230109225438553.png)
 
-![image-20230109224443444](./JavaScript高级_image\image-20230109224443444.png)
+![image-20230109224443444](.\JavaScript高级_image\image-20230109224443444.png)
 
-![image-20230109224459797](./JavaScript高级_image\image-20230109224459797.png)
+![image-20230109224459797](.\JavaScript高级_image\image-20230109224459797.png)
 
 ```javascript
 //上面为内存图表现，p1对象跟p2对象的__proto__隔壁那个空格是指内存地址
@@ -4050,7 +4050,7 @@ console.log(p2.__proto__ === Person.prototype);//true
 
 ### 赋值为新的对象
 
-![image-20230109233824306](./JavaScript高级_image\image-20230109233824306.png)
+![image-20230109233824306](.\JavaScript高级_image\image-20230109233824306.png)
 
 ```javascript
 function Person(){
@@ -4077,7 +4077,7 @@ console.log(p1.name);//大满
 
 ### prototype添加属性
 
-![image-20230109235539333](./JavaScript高级_image\image-20230109235539333.png)
+![image-20230109235539333](.\JavaScript高级_image\image-20230109235539333.png)
 
 ### constructor属性
 
@@ -4093,7 +4093,7 @@ console.log(foo.prototype,"纯foo.prototype打印")//这个打印出来是个空
 console.log(Object.getOwnPropertyDescriptors(foo.prototype),"getOwnPropertyDescriptors打印foo.prototype");
 ```
 
-![image-20230110000506456](./JavaScript高级_image\image-20230110000506456.png)
+![image-20230110000506456](.\JavaScript高级_image\image-20230110000506456.png)
 
 ```javascript
 //我们知道是事实上这个并不是空的，只是因为可枚举属性被设置为了false，那就可以采取另一种方式，将他的枚举属性设置为true，那就可以看到了
@@ -4140,18 +4140,18 @@ console.log(foo.prototype.constructor.name);//foo
 
 > 这个互相引用是会回收的，因为JS的垃圾回收机制是标记清除，是从根节点开始看有没有引用的
 
-![image-20230110233648426](./JavaScript高级_image\image-20230110233648426.png)
+![image-20230110233648426](.\JavaScript高级_image\image-20230110233648426.png)
 
 **当我们使用重写原型方法之后，也就是在内存里又创建了一个对象，内存图如下(代码在下面的代码块中)：**
 
 - foo函数不再指向它的原型对象了，而是指向新的对象了，刚指向的时候，这个新对象连constructor都没有
 - 指向新对象之后，foo函数的原型对象就会被销毁掉了，因为我们js的垃圾回收机制是采用标记清除法(详细的内容往回翻)
 
-![image-20230111013756415](./JavaScript高级_image\image-20230111013756415.png)
+![image-20230111013756415](.\JavaScript高级_image\image-20230111013756415.png)
 
 **当我们填入内容之后：**
 
-![image-20230111014318735](./JavaScript高级_image\image-20230111014318735.png)
+![image-20230111014318735](.\JavaScript高级_image\image-20230111014318735.png)
 
 
 
@@ -4183,7 +4183,7 @@ Person.prototype = {//这种对象形式的写法意味着直接在内存里创�
 - 前面我们说过, 每创建一个函数, 就会同时创建它的prototype对象, 这个对象也会自动获取constructor属性；
   - 而我们这里相当于给prototype重新赋值了一个对象, 那么这个新对象的constructor属性, 会指向Object构造函 数, 而不是Person构造函数了
 
-![image-20230111014738997](./JavaScript高级_image\image-20230111014738997.png)
+![image-20230111014738997](.\JavaScript高级_image\image-20230111014738997.png)
 
 ```javascript
 function Person(){
@@ -4204,7 +4204,7 @@ console.log(f1.name+"今年"+f1.age);//小余今年18，这里能够打印出来
 >
 > 缺少了constructor啦，就是构造函数的标志，所以我们只要给新对象加上constructor就完工了，原来那个显式原型就可有可无了
 
-![image-20230111021233959](./JavaScript高级_image\image-20230111021233959.png)
+![image-20230111021233959](.\JavaScript高级_image\image-20230111021233959.png)
 
 ```javascript
 function Person(){
@@ -4324,12 +4324,12 @@ var p2 = new Person()//但也可以称为 类，在ES6之后开始可以使用cl
 >     return number * 2;
 >   });
 >   console.log(double); // [2, 4, 6, 8, 10]
->                     
+>                       
 >   // 使用箭头函数
 >   let numbers = [1, 2, 3, 4, 5];
 >   let double = numbers.map(number => number * 2);
 >   console.log(double); // [2, 4, 6, 8, 10]
->                     
+>                       
 >   ```
 >
 >   - 可以看出在使用箭头函数时，省去了函数的名称、return关键字，并且在参数比较简单的情况下可以省去括号，使代码更简洁易读。
@@ -4354,7 +4354,7 @@ var p2 = new Person()//但也可以称为 类，在ES6之后开始可以使用cl
 - 在真正实现继承之前，我们先来理解一个非常重要的概念：原型链。
   - 我们知道，从一个对象上获取属性，如果在当前对象中没有获取到就会去它的原型上面获取：
 
-![image-20230111144111168](./JavaScript高级_image\image-20230111144111168.png)
+![image-20230111144111168](.\JavaScript高级_image\image-20230111144111168.png)
 
 ```javascript
 var obj = {
@@ -4399,11 +4399,11 @@ console.log(obj.address);
 
 #### Object顶层原型来自哪里
 
-![image-20230111163400343](./JavaScript高级_image\image-20230111163400343.png)
+![image-20230111163400343](.\JavaScript高级_image\image-20230111163400343.png)
 
-![image-20230111163938419](./JavaScript高级_image\image-20230111163938419.png)
+![image-20230111163938419](.\JavaScript高级_image\image-20230111163938419.png)
 
-![image-20230111171832610](./JavaScript高级_image\image-20230111171832610.png)
+![image-20230111171832610](.\JavaScript高级_image\image-20230111171832610.png)
 
 ```javascript
 //创建了一个对象
@@ -4504,17 +4504,17 @@ console.log(Object.getOwnPropertyDescriptors(Person.prototype))
 
 #### 创建Object对象的内存图
 
-![image-20230111173150297](./JavaScript高级_image\image-20230111173150297.png)
+![image-20230111173150297](.\JavaScript高级_image\image-20230111173150297.png)
 
 ### 原型链关系的内存图
 
-![image-20230111173223272](./JavaScript高级_image\image-20230111173223272.png)
+![image-20230111173223272](.\JavaScript高级_image\image-20230111173223272.png)
 
 ### Object是所有类的父类
 
 - 从我们上面的Object原型我们可以得出一个结论：原型链最顶层的原型对象就是Object的原型对象
 
-![image-20230111175049084](./JavaScript高级_image\image-20230111175049084.png)
+![image-20230111175049084](.\JavaScript高级_image\image-20230111175049084.png)
 
 ```javascript
 //Person原型指向顶层对象
@@ -4625,7 +4625,7 @@ console.log(stu.eating);//undefined
 >
 > 这里首先我们new了Person，使Person变为了构造函数，然后将new Person产生的新对象替换掉了Student的原型，我们知道通常指向顺序是：隐式原型=>显式原型=>constructor(构造函数)=>本身函数。那这里则是将显式原型指向的constructor替换掉了，变成了Student(子类)显式原型=>p对象=>Person原型对象(由P对象的隐式原型指向)
 
-![image-20230112034256733](./JavaScript高级_image\image-20230112034256733.png)
+![image-20230112034256733](.\JavaScript高级_image\image-20230112034256733.png)
 
 ```javascript
 //实现继承的效果，关键在第四五步骤，顺序不能调整
@@ -4725,7 +4725,7 @@ stu1.friends.push("小余")//stu1.friends是[[get]]操作，会顺着原型链�
   - 因为函数可以在任意的时刻被调用；
   - 因此通过apply()和call()方法也可以在新创建的对象上执行构造函数；
 
-![image-20230112134112365](./JavaScript高级_image\image-20230112134112365.png)
+![image-20230112134112365](.\JavaScript高级_image\image-20230112134112365.png)
 
 ```javascript
 //解决无法在子类传递参数的问题
@@ -5074,7 +5074,7 @@ var stu2 = createStudent("小满")
   - 不要这么做, 因为这么做意味着以后修改了子类型原型对象的某个引用类型的时候, 父类型原生对象的引用类型 也会被修改.
   - 我们使用前面的寄生式思想就可以了
 
-![image-20230114135452413](./JavaScript高级_image\image-20230114135452413.png)
+![image-20230114135452413](.\JavaScript高级_image\image-20230114135452413.png)
 
 ```javascript
 //最终方案
@@ -5385,9 +5385,9 @@ console.log(obj.isPrototypeOf(info));//obj是不是出现在info的原型链上�
 
 > 这里当我学完一遍后，我后续会回来复习，然后将思路完整总结的
 
-![image-20230114172103104](./JavaScript高级_image\image-20230114172103104.png)
+![image-20230114172103104](.\JavaScript高级_image\image-20230114172103104.png)
 
-![image-20230115003809858](./JavaScript高级_image\image-20230115003809858.png)
+![image-20230115003809858](.\JavaScript高级_image\image-20230115003809858.png)
 
 ```javascript
 //最根上面的原型对象

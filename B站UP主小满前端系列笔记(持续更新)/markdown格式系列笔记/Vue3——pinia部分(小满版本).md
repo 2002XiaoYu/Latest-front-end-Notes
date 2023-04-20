@@ -14,7 +14,7 @@
 
 > 一颗可爱的小菠萝，乍一看是不是很像海绵宝宝的家呢？他就是pinia~ 具体做什么的，你很快就会了解到了，他是VueX的后继者，已经把VueX拍死在了沙滩上了，通常你叫他商店store也行
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221106014220939.png" alt="image-20221106014220939" style="zoom:50%;" />
+<img src=".\xmzs-images\image-20221106014220939.png" alt="image-20221106014220939" style="zoom:50%;" />
 
 [toc]
 
@@ -813,7 +813,7 @@ Test.$subscribe((args,state)=>{//subscribe是订阅的意思
 
 **返回值**
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221107122917091.png" style="zoom:50%;" />
+<img src=".\xmzs-images\image-20221107122917091.png" style="zoom:50%;" />
 
 **第二个参数**
 
@@ -850,7 +850,7 @@ const change = ()=>{
 }
 ```
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221107123021043.png" alt="image-20221107123021043" style="zoom:50%;" />
+<img src=".\xmzs-images\image-20221107123021043.png" alt="image-20221107123021043" style="zoom:50%;" />
 
 ## 第七章 — pinia插件
 

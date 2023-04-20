@@ -80,11 +80,11 @@ void Insertion_Sort( ElementType A[],int N )
 
 ### 9.1.4 时间复杂度下界
 
-<img src="./数据结构-image\image-20220817225121906.png" alt="image-20220817225121906" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220817225121906.png" alt="image-20220817225121906" style="zoom:50%;" />
 
 问题：序列{34，8，64，51，32，21}中有多少逆序对？9对
 
-<img src="./数据结构-image\image-20220817225414978.png" alt="image-20220817225414978" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220817225414978.png" alt="image-20220817225414978" style="zoom:50%;" />
 
 逆序对的数量跟交换元素次数是一样的，也就说明了交换两个相邻元素正好消去一个逆序对！ 
 
@@ -92,11 +92,11 @@ void Insertion_Sort( ElementType A[],int N )
 
 1. 如果序列**基本有序**，则插入排序简单且非常高效
 
-<img src="./数据结构-image\image-20220817225812751.png" alt="image-20220817225812751" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220817225812751.png" alt="image-20220817225812751" style="zoom:50%;" />
 
 逆序对平均个数：大O(N2)数量级的，不管是冒泡排序还是插入排序，他们的平均时间复杂度是跟逆序对的个数有关系的
 
-<img src="./数据结构-image\image-20220817230020643.png" alt="image-20220817230020643" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220817230020643.png" alt="image-20220817230020643" style="zoom:50%;" />
 
 Ω：指的是下界
 
@@ -109,25 +109,25 @@ void Insertion_Sort( ElementType A[],int N )
 
 基本思路：利用了插入排序的简单，同时克服插入排序每次只交换相邻两个元素的缺点
 
-<img src="./数据结构-image\image-20220817231030461.png" alt="image-20220817231030461" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220817231030461.png" alt="image-20220817231030461" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220817231059520.png" alt="image-20220817231059520" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220817231059520.png" alt="image-20220817231059520" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220817231127625.png" alt="image-20220817231127625" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220817231127625.png" alt="image-20220817231127625" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220817231150119.png" alt="image-20220817231150119" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220817231150119.png" alt="image-20220817231150119" style="zoom:50%;" />
 
 到最后使用1-间隔的排序来保证序列有序(彻底的插入排序)。但此时这个序列已经基本有序了，大多数的逆序对已经在前面两趟5-间隔和3-间隔里面被消除掉了
 
-<img src="./数据结构-image\image-20220817231759370.png" alt="image-20220817231759370" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220817231759370.png" alt="image-20220817231759370" style="zoom:50%;" />
 
 **重要性质**：3-间隔有序的序列还保持了前面5-间隔有序的这个性质(没有把上一步的结果变坏)
 
-<img src="./数据结构-image\image-20220817231818451.png" alt="image-20220817231818451" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220817231818451.png" alt="image-20220817231818451" style="zoom:50%;" />
 
 #### 希尔增量序列
 
-1. 原始希尔排序<img src="./数据结构-image\image-20220817231915152.png" alt="image-20220817231915152" style="zoom:33%;" />
+1. 原始希尔排序<img src=".\数据结构-image\image-20220817231915152.png" alt="image-20220817231915152" style="zoom:33%;" />
 
 2. ```c
    void Shell_Sort( ElementType A[],int N )
@@ -143,11 +143,11 @@ void Insertion_Sort( ElementType A[],int N )
    }
    ```
 
-   最坏情况：<img src="./数据结构-image\image-20220817235114397.png" alt="image-20220817235114397" style="zoom:50%;" />
+   最坏情况：<img src=".\数据结构-image\image-20220817235114397.png" alt="image-20220817235114397" style="zoom:50%;" />
 
    O是一个上界(可能达不到)
 
-   <img src="./数据结构-image\image-20220817235222549.png" alt="image-20220817235222549" style="zoom:50%;" />
+   <img src=".\数据结构-image\image-20220817235222549.png" alt="image-20220817235222549" style="zoom:50%;" />
 
    增长速度跟N²一样快
 
@@ -155,13 +155,13 @@ void Insertion_Sort( ElementType A[],int N )
 
    **坏例子**：
 
-   <img src="./数据结构-image\image-20220817235503572.png" alt="image-20220817235503572" style="zoom:50%;" />
+   <img src=".\数据结构-image\image-20220817235503572.png" alt="image-20220817235503572" style="zoom:50%;" />
 
    增量元素不互质，则小增量可能根本不起作用
 
    #### 更多的增量序列
 
-   <img src="./数据结构-image\image-20220817235733415.png" alt="image-20220817235733415" style="zoom:50%;" />
+   <img src=".\数据结构-image\image-20220817235733415.png" alt="image-20220817235733415" style="zoom:50%;" />
 
    ```c
    用Sedgewick增量序列
@@ -216,7 +216,7 @@ void Selection_Sort( ElementType A[],int N )
 //想要得到更快的算法取决于这个ScanForMin( A,i,N-1)，也就是如何快速找到最小元
 ```
 
-<img src="./数据结构-image\image-20220818001442455.png" alt="image-20220818001442455" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220818001442455.png" alt="image-20220818001442455" style="zoom:50%;" />
 
 最小堆的特点就是他的根结点一定存的是最小元
 
@@ -253,11 +253,11 @@ void Heap_Sort(ElementType A[],int N )
 
 在堆排序中，元素下标从0开始。则对于下标为i的元素，其左、右孩子的下标分别为：2i+1, 2i+2
 
-<img src="./数据结构-image\image-20220818003410802.png" alt="image-20220818003410802" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220818003410802.png" alt="image-20220818003410802" style="zoom:50%;" />
 
 算法2的动态变化：
 
-<img src="./数据结构-image\image-20220818003617976.png" alt="image-20220818003617976" style="zoom:33%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20220818003655108.png" alt="image-20220818003655108" style="zoom:33%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20220818003743315.png" alt="image-20220818003743315" style="zoom:33%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20220818003817239.png" alt="image-20220818003817239" style="zoom:33%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20220818003836433.png" alt="image-20220818003836433" style="zoom:33%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20220818003917597.png" alt="image-20220818003917597" style="zoom:33%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20220818003933416.png" alt="image-20220818003933416" style="zoom:33%;" />
+<img src=".\数据结构-image\image-20220818003617976.png" alt="image-20220818003617976" style="zoom:33%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20220818003655108.png" alt="image-20220818003655108" style="zoom:33%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20220818003743315.png" alt="image-20220818003743315" style="zoom:33%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20220818003817239.png" alt="image-20220818003817239" style="zoom:33%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20220818003836433.png" alt="image-20220818003836433" style="zoom:33%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20220818003917597.png" alt="image-20220818003917597" style="zoom:33%;" /><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20220818003933416.png" alt="image-20220818003933416" style="zoom:33%;" />
 
 ```c
 堆排序
@@ -306,7 +306,7 @@ void HeapSort( ElementType A[], int N )
 
 **指针**：本质上他存的是位置
 
-<img src="./数据结构-image\image-20220818060835688.png" alt="image-20220818060835688" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220818060835688.png" alt="image-20220818060835688" style="zoom:50%;" />
 
 假设我们讨论的是数组(那位置由下标决定，那图中的指针就可以是整数，整数存的是这个元素的下标)
 
@@ -348,7 +348,7 @@ void Merge(ElementType A[],ElementType TmpA[],int L,int R,int RightEnd)//Merge�
       先把整个一分为二，然后递归的去考虑问题，递归的去把左边排好序，再递归的把右边排好序。这样得到两个有序的子序列，而且肩并肩的放在一起，最后调用我们归并的算法，把他们归并到一个完整的数组里
       ```
 
-   2. 算法的伪代码实现<img src="./数据结构-image\image-20220818072931321.png" alt="image-20220818072931321" style="zoom:50%;" />
+   2. 算法的伪代码实现<img src=".\数据结构-image\image-20220818072931321.png" alt="image-20220818072931321" style="zoom:50%;" />
 
       ```c
       void MSort(ElementType A[],ElementType TmpA[],int L,int RightEnd )
@@ -365,7 +365,7 @@ void Merge(ElementType A[],ElementType TmpA[],int L,int R,int RightEnd)//Merge�
       NlogN：没有最坏时间复杂度也没有最好时间复杂度，更没有平均时间复杂度，任何情况下都是NlogN，非常稳定
       ```
 
-      <img src="./数据结构-image\image-20220818074038141.png" alt="image-20220818074038141" style="zoom:50%;" />
+      <img src=".\数据结构-image\image-20220818074038141.png" alt="image-20220818074038141" style="zoom:50%;" />
 
       #### 统一函数接口
 
@@ -388,13 +388,13 @@ void Merge(ElementType A[],ElementType TmpA[],int L,int R,int RightEnd)//Merge�
       2.void MSort( ElementType A[],int L,int RightEnd)
       ```
 
-      <img src="./数据结构-image\image-20220818083938089.png" alt="image-20220818083938089" style="zoom:50%;" />白色砖块一样的东西是申请的空间，要不停的申请空间再释放掉，这样做实际上是不合算的(太麻烦了，申请一个释放掉在申请下一个不停循环)
+      <img src=".\数据结构-image\image-20220818083938089.png" alt="image-20220818083938089" style="zoom:50%;" />白色砖块一样的东西是申请的空间，要不停的申请空间再释放掉，这样做实际上是不合算的(太麻烦了，申请一个释放掉在申请下一个不停循环)
 
       最合算的做法：一开始就声明一个数组，每次只把数组的指针传进去，只在这个数组的某一段上面做操作，就不需要重复的malloc跟free
 
 ### 9.4.3非递归算法(归并排序)
 
-<img src="./数据结构-image\image-20220818084431828.png" alt="image-20220818084431828" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220818084431828.png" alt="image-20220818084431828" style="zoom:50%;" />
 
 上图的深度为logN
 

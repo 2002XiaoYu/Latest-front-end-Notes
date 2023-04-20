@@ -17,7 +17,7 @@
 1. 插入排序：前面有序，后面没有变化
 2. 归并排序：分段有序
 
-<img src="./数据结构-image\image-20220901225159180.png" alt="image-20220901225159180" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220901225159180.png" alt="image-20220901225159180" style="zoom:50%;" />
 
 #### 捏软柿子算法
 
@@ -43,9 +43,9 @@
 
 错误的想法：
 
-1. 从头开始连续有序的子列长度？<img src="./数据结构-image\image-20220901232611803.png" alt="image-20220901232611803" style="zoom:50%;" />
+1. 从头开始连续有序的子列长度？<img src=".\数据结构-image\image-20220901232611803.png" alt="image-20220901232611803" style="zoom:50%;" />
 
-2. 所有连续有序子列的最短长度？<img src="./数据结构-image\image-20220901232637687.png" alt="image-20220901232637687" style="zoom:50%;" />
+2. 所有连续有序子列的最短长度？<img src=".\数据结构-image\image-20220901232637687.png" alt="image-20220901232637687" style="zoom:50%;" />
 
    1. 这个其实是四个一段的，但前8个刚好都是有序的
 
@@ -56,11 +56,11 @@
           //在保证了l是4的情况下，要检查看能不能是8，我们要重复前面的步骤看两段之间的衔接点是不是有序
       ```
 
-      <img src="./数据结构-image\image-20220901234730452.png" alt="image-20220901234730452" style="zoom:50%;" />
+      <img src=".\数据结构-image\image-20220901234730452.png" alt="image-20220901234730452" style="zoom:50%;" />
 
       红色位置没有序了跳出循环(此时l为4，我们直接以4为归并段继续执行下一趟的归并就可以了)
 
-      <img src="./数据结构-image\image-20220901234939114.png" alt="image-20220901234939114" style="zoom:50%;" />
+      <img src=".\数据结构-image\image-20220901234939114.png" alt="image-20220901234939114" style="zoom:50%;" />
 
 #### 其他数据测试
 
@@ -91,23 +91,23 @@ ps：边界测试是每道题里面测试非常重要的一个组成部分
 
    0在里面扮演了空位的问题
 
-   <img src="./数据结构-image\image-20220902094457658.png" alt="image-20220902094457658" style="zoom:50%;" />
+   <img src=".\数据结构-image\image-20220902094457658.png" alt="image-20220902094457658" style="zoom:50%;" />
 
 > 环的分类
 >
-> <img src="./数据结构-image\image-20220902111012945.png" alt="image-20220902111012945" style="zoom:50%;" />
+> <img src=".\数据结构-image\image-20220902111012945.png" alt="image-20220902111012945" style="zoom:50%;" />
 >
 > 
 
 ### 习题-SWS.2 算法示例
 
-<img src="./数据结构-image\image-20220902111758466.png" alt="image-20220902111758466" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220902111758466.png" alt="image-20220902111758466" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220902112532941.png" alt="image-20220902112532941" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220902112532941.png" alt="image-20220902112532941" style="zoom:50%;" />
 
 对于不包含0的swap操作次数为n+1，包含0则是n-1次
 
-<img src="./数据结构-image\image-20220902112547320.png" alt="image-20220902112547320" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220902112547320.png" alt="image-20220902112547320" style="zoom:50%;" />
 
 ## 习题选讲 - Hashing - Hard Version
 
@@ -123,13 +123,13 @@ ps：边界测试是每道题里面测试非常重要的一个组成部分
 
 > 样例
 
-<img src="./数据结构-image\image-20220902113725989.png" alt="image-20220902113725989" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220902113725989.png" alt="image-20220902113725989" style="zoom:50%;" />
 
 限制：为了保证解是唯一的，当有几个元素都有可能是同时被插入的时候，我们是从小到大去插入的
 
 因为12模11，余数为1，所以跟12冲突，放在12下面。后面都是类型的操作
 
-依次输入顺序为<img src="./数据结构-image\image-20220902113843819.png" alt="image-20220902113843819" style="zoom:50%;" /> 
+依次输入顺序为<img src=".\数据结构-image\image-20220902113843819.png" alt="image-20220902113843819" style="zoom:50%;" /> 
 
 ## 串的模式匹配(KMP算法)
 
@@ -163,7 +163,7 @@ ps：边界测试是每道题里面测试非常重要的一个组成部分
 
 当我们文本是很长的时候，而指定的关键字也是一个很长的字符串的时候，模式匹配就不再是一件简单的事情了
 
-<img src="./数据结构-image\image-20220902115311611.png" alt="image-20220902115311611" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220902115311611.png" alt="image-20220902115311611" style="zoom:50%;" />
 
 ```c
 Position PatterMatch(char *string,char *pattern)//position指位置
@@ -198,7 +198,7 @@ int main()
 
 strstr的复杂度怎么样？要想知道这个问题我们就得了解一下strstr是怎么运行的
 
-<img src="./数据结构-image\image-20220902122153661.png" alt="image-20220902122153661" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220902122153661.png" alt="image-20220902122153661" style="zoom:50%;" />
 
 ```
 如上图，是两个指针指向两个变量的内容开头进行比对，第一个对上了对下一个，直到全部对上或者中途失败的时候将pattern的a与string下一个字符继续比对，一直循环下去，直到比对完都没成功或者中途成功了就退出循环
@@ -212,7 +212,7 @@ strstr的复杂度怎么样？要想知道这个问题我们就得了解一下st
 
 > 方法2：从末尾开始比
 
-<img src="./数据结构-image\image-20220902122725157.png" alt="image-20220902122725157" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220902122725157.png" alt="image-20220902122725157" style="zoom:50%;" />
 
 ```c
 时间复杂度：T = O(n)//仅仅是根据上方的例子进行的改动，如果pattern = "aab"换成"baa"一样要芭比Q
@@ -229,19 +229,19 @@ T = O(n+m)
 
 > 简单的往前错一位的比较是完全没有必要的没有意义的，如下图
 >
-> <img src="./数据结构-image\image-20220902213138406.png" alt="image-20220902213138406" style="zoom:50%;" />
+> <img src=".\数据结构-image\image-20220902213138406.png" alt="image-20220902213138406" style="zoom:50%;" />
 >
 > KMP算法的想法：
 >
-> <img src="./数据结构-image\image-20220902213251531.png" alt="image-20220902213251531" style="zoom:50%;" />
+> <img src=".\数据结构-image\image-20220902213251531.png" alt="image-20220902213251531" style="zoom:50%;" />
 >
 > 指针指向x不会回退(回溯)了，直接继续从x开始，继续往前比较
 >
-> <img src="./数据结构-image\image-20220902213429523.png" alt="image-20220902213429523" style="zoom:50%;" />
+> <img src=".\数据结构-image\image-20220902213429523.png" alt="image-20220902213429523" style="zoom:50%;" />
 
 **match的具体例子**
 
-<img src="./数据结构-image\image-20220902213628863.png" alt="image-20220902213628863" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220902213628863.png" alt="image-20220902213628863" style="zoom:50%;" />
 
 ```c
 下标从0到9
@@ -301,11 +301,11 @@ int main()
 
 #### KMP算法实现
 
-<img src="./数据结构-image\image-20220903190348366.png" alt="image-20220903190348366" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220903190348366.png" alt="image-20220903190348366" style="zoom:50%;" />
 
 一直走到指针不匹配
 
-<img src="./数据结构-image\image-20220903190416709.png" alt="image-20220903190416709" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220903190416709.png" alt="image-20220903190416709" style="zoom:50%;" />
 
 ```c
 Position KMP(char *string,char *pattern )
@@ -329,17 +329,17 @@ Position KMP(char *string,char *pattern )
 }
 ```
 
-<img src="./数据结构-image\image-20220903191526409.png" alt="image-20220903191526409" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220903191526409.png" alt="image-20220903191526409" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220903191718124.png" alt="image-20220903191718124" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220903191718124.png" alt="image-20220903191718124" style="zoom:50%;" />
 
 KMP的整体时间复杂度：T = O(n+m+Tm)
 
 ### KMP-4. BuildMatch 的实现原理
 
-<img src="./数据结构-image\image-20220903195432050.png" alt="image-20220903195432050" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220903195432050.png" alt="image-20220903195432050" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220903195522833.png" alt="image-20220903195522833" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220903195522833.png" alt="image-20220903195522833" style="zoom:50%;" />
 
 如果采用这种方法实现的话，时间复杂度将会达到Tm = O(m³)
 
@@ -347,23 +347,23 @@ KMP的整体时间复杂度：T = O(n+m+Tm)
 
 假如我们这是从0到j-1的字段
 
-<img src="./数据结构-image\image-20220903195814250.png" alt="image-20220903195814250" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220903195814250.png" alt="image-20220903195814250" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220903195902393.png" alt="image-20220903195902393" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220903195902393.png" alt="image-20220903195902393" style="zoom:50%;" />
 
 > match[j]	>=	match[j-1] + 1(是否正确？)
 
 如果 match[j-1]+1 这个位置上的字符与 j 位置上的字符相等，match[j] 会有可能比 match[j-1]+1 更大吗？**没可能**
 
-<img src="./数据结构-image\image-20220903200043175.png" alt="image-20220903200043175" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220903200043175.png" alt="image-20220903200043175" style="zoom:50%;" />
 
 >match[j]	=	match[j-1] + 1	(最多持平啦，利用反证法证明)
 >
->且能得到这个结果的前提是运行很好<img src="./数据结构-image\image-20220903200332283.png" alt="image-20220903200332283" style="zoom:33%;" />
+>且能得到这个结果的前提是运行很好<img src=".\数据结构-image\image-20220903200332283.png" alt="image-20220903200332283" style="zoom:33%;" />
 
 当 pattern[match[j-1]+1] != pattern[j] 时，下一个待与 pattern[j] 比较的元素下标是：match[match[j-1]]+1
 
-<img src="./数据结构-image\image-20220903200538879.png" alt="image-20220903200538879" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220903200538879.png" alt="image-20220903200538879" style="zoom:50%;" />
 
 ### KMP-5. BuildMatch的编程实现
 
@@ -384,4 +384,4 @@ void BuildMatch(char *pattern,int *match)
 }
 ```
 
-整个算法复杂度：<img src="./数据结构-image\image-20220903203859011.png" alt="image-20220903203859011" style="zoom:50%;" />
+整个算法复杂度：<img src=".\数据结构-image\image-20220903203859011.png" alt="image-20220903203859011" style="zoom:50%;" />

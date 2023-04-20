@@ -39,7 +39,7 @@
 
 - **如果直接在浏览器中运行代码，会报如下错误：**(不开启本地服务)
 
-![image-20230216011505749](./node_webpack_git_image\image-20230216011505749.png)
+![image-20230216011505749](.\node_webpack_git_image\image-20230216011505749.png)
 
 - **这个在MDN上面有给出解释：**
   -  https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Modules
@@ -207,7 +207,7 @@ import aaaa from "./xiaoyu"//这个aaaa是随便起的名字，由于是默认�
 
     `√`import函数返回一个Promise，可以通过then获取结果
 
-![image-20230216031045414](./node_webpack_git_image\image-20230216031045414.png)![image-20230216031049997](./node_webpack_git_image\image-20230216031049997.png)
+![image-20230216031045414](.\node_webpack_git_image\image-20230216031045414.png)![image-20230216031049997](.\node_webpack_git_image\image-20230216031049997.png)
 
 ```javascript
 const flag = "作者是xiaoYu"
@@ -241,9 +241,9 @@ if(flag){//满足逻辑
   - 阶段二：实例化（Instantiation），对模块记录进行实例化，并且分配内存空间，解析模块的导入和导出语句，把模块指向对应的内存地址(**模块环境记录Module environment record**)
   - 阶段三：运行（Evaluation），运行代码，计算值，并且将值填充到内存地址中
 
-![image-20230216033454547](./node_webpack_git_image\image-20230216033454547.png)
+![image-20230216033454547](.\node_webpack_git_image\image-20230216033454547.png)
 
-![image-20230216033655013](./node_webpack_git_image\image-20230216033655013.png)
+![image-20230216033655013](.\node_webpack_git_image\image-20230216033655013.png)
 
 ### 阶段一：构建阶段
 
@@ -253,7 +253,7 @@ if(flag){//满足逻辑
 >
 > MODULE MAP：映射关系
 
-![image-20230216033732820](./node_webpack_git_image\image-20230216033732820.png)
+![image-20230216033732820](.\node_webpack_git_image\image-20230216033732820.png)
 
 ### 阶段二和三：实例化阶段 – 求值阶段
 
@@ -270,7 +270,7 @@ if(flag){//满足逻辑
 > }
 > ```
 
-![image-20230216033745106](./node_webpack_git_image\image-20230216033745106.png)
+![image-20230216033745106](.\node_webpack_git_image\image-20230216033745106.png)
 
 # 包管理工具详解npm、yarn、cnpm、npx、pnpm
 
@@ -341,15 +341,15 @@ if(flag){//满足逻辑
 
 - npm init #创建时填写信息
   npm init -y # 所有信息使用默认的(比较简单)
-- ![image-20230216123127590](./node_webpack_git_image\image-20230216123127590.png)
+- ![image-20230216123127590](.\node_webpack_git_image\image-20230216123127590.png)
 
 - Vue CLI4创建的Vue3项目(Vue的脚手架)
 
-![image-20230216123254231](./node_webpack_git_image\image-20230216123254231.png)
+![image-20230216123254231](.\node_webpack_git_image\image-20230216123254231.png)
 
 - create-react-app创建的react17项目(react的脚手架)
 
-![image-20230216123307783](./node_webpack_git_image\image-20230216123307783.png)
+![image-20230216123307783](.\node_webpack_git_image\image-20230216123307783.png)
 
 ## (掌握)项目配置文件-基础字段
 
@@ -379,7 +379,7 @@ if(flag){//满足逻辑
 
   - 就引入的时候直接输入main的名字，而不是完整路径了(更加简洁，也是基本的操作)
 
-![image-20230216131234906](./node_webpack_git_image\image-20230216131234906.png)
+![image-20230216131234906](.\node_webpack_git_image\image-20230216131234906.png)
 
 ## (掌握)项目配置文件-项目依赖
 
@@ -424,7 +424,7 @@ if(flag){//满足逻辑
     npm install xxx --D//简写
     ```
 
-![image-20230216141255222](./node_webpack_git_image\image-20230216141255222.png)
+![image-20230216141255222](.\node_webpack_git_image\image-20230216141255222.png)
 
 - **peerDependencies属性**
   - 还有一种项目依赖关系是**对等依赖**，也就是**你依赖的一个包，它必须是以另外一个宿主包为前提**的
@@ -512,7 +512,7 @@ if(flag){//满足逻辑
 
 ### package-lock.json
 
-![image-20230217000634645](./node_webpack_git_image\image-20230217000634645.png)
+![image-20230217000634645](.\node_webpack_git_image\image-20230217000634645.png)
 
 - **package-lock.json文件解析：**
 
@@ -549,7 +549,7 @@ if(flag){//满足逻辑
 
   > 压缩到node_modules写错了，是将压缩包解压到node_modules
 
-![image-20230216234904935](./node_webpack_git_image\image-20230216234904935.png)
+![image-20230216234904935](.\node_webpack_git_image\image-20230216234904935.png)
 
 ### npm install 原理图解析
 
@@ -603,7 +603,7 @@ npm cache clean
   - 早期的npm存在很多的缺陷，比如**安装依赖速度很慢、版本依赖混乱**等等一系列的问题
   - 虽然从npm5版本开始，进行了很多的升级和改进，但是依然很多人喜欢使用yarn
 
-![image-20230217003028685](./node_webpack_git_image\image-20230217003028685.png)
+![image-20230217003028685](.\node_webpack_git_image\image-20230217003028685.png)
 
 ## (了解)cnpm和淘宝镜像的理解
 
@@ -729,7 +729,7 @@ cnpm config get registry # https://registry.npmmirror.com/
 - **什么是pnpm呢？我们来看一下官方的解释：**
   - pnpm：我们可以理解成是**performant npm**缩写；
 
-![image-20230217051629113](./node_webpack_git_image\image-20230217051629113.png)![image-20230217051634261](./node_webpack_git_image\image-20230217051634261.png)![image-20230217051639238](./node_webpack_git_image\image-20230217051639238.png)
+![image-20230217051629113](.\node_webpack_git_image\image-20230217051629113.png)![image-20230217051634261](.\node_webpack_git_image\image-20230217051634261.png)![image-20230217051639238](.\node_webpack_git_image\image-20230217051639238.png)
 
 - pnpm 是一种 JavaScript 包管理工具，它具有以下优点：
 
@@ -744,7 +744,7 @@ cnpm config get registry # https://registry.npmmirror.com/
 - **哪些公司在用呢？**
   - 包括**Vue在内的很多公司或者开源项目的包管理工具都切换到了pnpm**
 
-![image-20230217051711056](./node_webpack_git_image\image-20230217051711056.png)
+![image-20230217051711056](.\node_webpack_git_image\image-20230217051711056.png)
 
 ## (理解)操作系统-硬链接和软链接的概念
 
@@ -759,9 +759,9 @@ cnpm config get registry # https://registry.npmmirror.com/
   - **符号链接（软链接、Symbolic link）**是一类**特殊的文件**
   - 其**包含有一条以绝对路径或者相对路径的形式指向其它文件或者目录的引用**
 
-![image-20230217054540545](./node_webpack_git_image\image-20230217054540545.png)
+![image-20230217054540545](.\node_webpack_git_image\image-20230217054540545.png)
 
-![image-20230217055216818](./node_webpack_git_image\image-20230217055216818.png)
+![image-20230217055216818](.\node_webpack_git_image\image-20230217055216818.png)
 
 > 这个硬链接是真实指向硬盘上的数据的(你可以以各种形式的名字去访问)，如果修改了一个指向F：/audio/cba.mp4的文件的话，其实就是修改了data的内容，那其他指向F：/audio/cba.mp4的文件内容也会同时被修改。这个跟拷贝一份是不同的概念
 >
@@ -778,7 +778,7 @@ cnpm config get registry # https://registry.npmmirror.com/
   macos : cp foo.js foo_copy.js
   ```
 
-  ![image-20230217055847852](./node_webpack_git_image\image-20230217055847852.png)
+  ![image-20230217055847852](.\node_webpack_git_image\image-20230217055847852.png)
 
 - **文件的硬链接**
 
@@ -787,7 +787,7 @@ cnpm config get registry # https://registry.npmmirror.com/
   macos : ln foo.js foo_hard.js
   ```
 
-  ![image-20230217055927941](./node_webpack_git_image\image-20230217055927941.png)
+  ![image-20230217055927941](.\node_webpack_git_image\image-20230217055927941.png)
 
 - **文件的软连接：**
 
@@ -798,7 +798,7 @@ cnpm config get registry # https://registry.npmmirror.com/
   //删除掉源文件，这个软链接就打不开了。相当于下面图片中foo.js被删掉了。foo_soft.js和data之间的联系就断开了
   ```
 
-  ![image-20230217055951982](./node_webpack_git_image\image-20230217055951982.png)
+  ![image-20230217055951982](.\node_webpack_git_image\image-20230217055951982.png)
 
 ## (理解)pnpm的原理-项目多个包建立硬链接
 
@@ -812,7 +812,7 @@ cnpm config get registry # https://registry.npmmirror.com/
     1. 当安装软件包时， 其包含的所有文件都会硬链接到此位置，而不会占用 额外的硬盘空间
     2. 这让你可以在项目之间方便地共享相同版本的 依赖包
 
-![image-20230217061126747](./node_webpack_git_image\image-20230217061126747.png)
+![image-20230217061126747](.\node_webpack_git_image\image-20230217061126747.png)
 
 ## (理解)pnpm的创建非扁平化的node_module
 
@@ -822,11 +822,11 @@ cnpm config get registry # https://registry.npmmirror.com/
 
   - 其结果是，源码可以访问 本不属于当前项目所设定的依赖包(就是你安装了webpack的时候，同时会下载下来一堆webpack所需要的包，这些不是你主动下载的，但是你也可以访问到，但是这个问题在pnpm中将不复存在，你下载了webpack就只能看到webpack这个文件夹，其他的有真实地址，硬链接指向了磁盘空间，但是他没有创建软链接，你没办法通过软链接找到硬链接再找到硬盘里的内容去调用)
 
-  - ![image-20230217062449841](./node_webpack_git_image\image-20230217062449841.png)
+  - ![image-20230217062449841](.\node_webpack_git_image\image-20230217062449841.png)
 
     > 之所以是软链接，是因为真实的地址是由pnpm保管的，这里的只是指向真实地址的软链接，然后真实地址硬链接到硬盘中，这样重复使用的时候就创建软链接就行了，就不会因为多个项目使用重复的包而重复下载包造成的大量空间的浪费了
 
-![image-20230217061200531](./node_webpack_git_image\image-20230217061200531.png)
+![image-20230217061200531](.\node_webpack_git_image\image-20230217061200531.png)
 
 | 专业单词                                                     | 意思                       |
 | ------------------------------------------------------------ | -------------------------- |
@@ -863,7 +863,7 @@ cnpm config get registry # https://registry.npmmirror.com/
 
 - **在pnpm7.0之前，统一的存储位置是 ~/.pnpm-score中的**
 
-  ![image-20230217064026749](./node_webpack_git_image\image-20230217064026749.png)
+  ![image-20230217064026749](.\node_webpack_git_image\image-20230217064026749.png)
 
 - **在pnpm7.0之后，统一的存储位置进行了更改：<pnpm home directory>/store**
 
@@ -871,7 +871,7 @@ cnpm config get registry # https://registry.npmmirror.com/
   - 在 Windows 上： %LOCALAPPDATA%/pnpm/store
   - 在 macOS 上： ~/Library/pnpm/store
 
-  ![image-20230217064207746](./node_webpack_git_image\image-20230217064207746.png)
+  ![image-20230217064207746](.\node_webpack_git_image\image-20230217064207746.png)
 
 - **我们可以通过一些终端命令获取这个目录**：获取当前活跃的store目录
 

@@ -111,7 +111,7 @@ export default router//记得将路由暴露出去
   //newURL与oldURL，其实也就是新地址跟旧地址(此地址其实就是路由跳转的变化)
   ```
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221016231755871.png" alt="image-20221016231755871" style="zoom:50%;" />
+<img src=".\xmzs-images\image-20221016231755871.png" alt="image-20221016231755871" style="zoom:50%;" />
 
 > 在上面我们演示了哈希的原理，接下来我们看另外的一个常用的，也就是路径中不带#号的`History`的原理，是通过`popstate`来看的
 
@@ -1122,7 +1122,7 @@ Vue Router 提供了两个功能来查看现有的路由：
 >
 > **注意一个事项 vite 在使用动态路由的时候无法使用别名 @ 必须使用相对路径**
 
-<img src="D:\Desktop\文件夹统一存放\小余知识库\编程类笔记\编程笔记(小满系列)--原创\xmzs-images\image-20221018001603331.png" alt="image-20221018001603331" style="zoom:50%;" />
+<img src=".\xmzs-images\image-20221018001603331.png" alt="image-20221018001603331" style="zoom:50%;" />
 
 ```js
 const initRouter = async () => {

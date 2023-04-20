@@ -46,7 +46,7 @@ void PrintN ( int N )
 
 4. 例3：写程序计算给定多项式在给定点x处的值
 
-   ![image-20220626145149531](./数据结构-image\image-20220626145149531.png)
+   ![image-20220626145149531](.\数据结构-image\image-20220626145149531.png)
 
    ```c
    //直接翻译的结构
@@ -73,7 +73,7 @@ void PrintN ( int N )
 
    秦久邵的方法公式图
 
-   ![image-20220626145709436](./数据结构-image\image-20220626145709436.png)
+   ![image-20220626145709436](.\数据结构-image\image-20220626145709436.png)
 
 
 
@@ -101,7 +101,7 @@ int main()
 }
 ```
 
-![image-20220626151549866](./数据结构-image\image-20220626151549866.png)
+![image-20220626151549866](.\数据结构-image\image-20220626151549866.png)
 
 尝试计算这个图中的式子跑了多久
 
@@ -206,7 +206,7 @@ int main()
 
 1. 类型名称：矩阵(Matrix)
 
-<img src="./数据结构-image\image-20220626155802588.png" alt="image-20220626155802588" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220626155802588.png" alt="image-20220626155802588" style="zoom:50%;" />
 
  Multiply：乘的意思
 
@@ -298,7 +298,7 @@ double f( int n, double a[], double x)
 }//这里一共就运行了n次乘法        时间复杂度：T(n) = C *n
 ```
 
-<img src="./数据结构-image\image-20220626165535815.png" alt="image-20220626165535815" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220626165535815.png" alt="image-20220626165535815" style="zoom:50%;" />
 
 ### 复杂度的渐进表示法
 
@@ -306,15 +306,15 @@ double f( int n, double a[], double x)
 
 太大的上界跟太小的下界对我们分析算法的时候是没有太大的帮助的，尽可能跟它的真实情况贴得越近越好
 
-<img src="./数据结构-image\image-20220626170030324.png" alt="image-20220626170030324" style="zoom:67%;" />
+<img src=".\数据结构-image\image-20220626170030324.png" alt="image-20220626170030324" style="zoom:67%;" />
 
 当我们在取大O的时候，我们一般取的是最小的那个上界。当我们在取Ω的时候通常是写的我们能力范围内找到的最大的那个下界
 
-<img src="./数据结构-image\image-20220626170944925.png" alt="image-20220626170944925" style="zoom:67%;" />
+<img src=".\数据结构-image\image-20220626170944925.png" alt="image-20220626170944925" style="zoom:67%;" />
 
 
 
-<img src="./数据结构-image\image-20220626171628558.png" alt="image-20220626171628558" style="zoom:67%;" />
+<img src=".\数据结构-image\image-20220626171628558.png" alt="image-20220626171628558" style="zoom:67%;" />
 
 ### 复杂度分析窍门
 
@@ -334,7 +334,7 @@ if-else ：结构的复杂度取决于if的条件判断复杂度和两个分支�
 
 ## 1.3应用实例：最大子列和问题
 
-<img src="./数据结构-image\image-20220626172839932.png" alt="image-20220626172839932" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220626172839932.png" alt="image-20220626172839932" style="zoom:50%;" />
 
 ```c
 //这是一个从Ai到Aj连续的一段子列的和
@@ -450,11 +450,11 @@ int main() {
 }
 ```
 
-<img src="./数据结构-image\image-20220626180316692.png" alt="image-20220626180316692" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220626180316692.png" alt="image-20220626180316692" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220626180901926.png" alt="image-20220626180901926" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220626180901926.png" alt="image-20220626180901926" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220626181133741.png" alt="image-20220626181133741" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220626181133741.png" alt="image-20220626181133741" style="zoom:50%;" />
 
 当两个复杂度加在一起的时候，我们得到的是比较大的那项，所以我们取O弃N
 
@@ -524,7 +524,7 @@ int MaxSubseqSum3( int List[], int N )
 
 
 
-<img src="./数据结构-image\image-20220626195900466.png" alt="image-20220626195900466" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220626195900466.png" alt="image-20220626195900466" style="zoom:50%;" />
 
 ```c
 //算法4：在线处理

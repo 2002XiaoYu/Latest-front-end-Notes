@@ -14,7 +14,7 @@
 
   -  Node.js是一个基于**V8 JavaScript引擎**的**JavaScript运行时环境**。
 
-    ![image-20230214233812103](./node_webpack_git_image\image-20230214233812103.png)
+    ![image-20230214233812103](.\node_webpack_git_image\image-20230214233812103.png)
 
   - **也就是说Node.js基于V8引擎来执行JavaScript的代码，但是不仅仅只有V8引擎：**
 
@@ -27,7 +27,7 @@
 - **我们可以简单理解规划出Node.js和浏览器的差异：**
   - Node是用JS/C++/C语言编写的，调用API部分是JS，V8引擎部分是C++，中间层是C语言，关键的中间层(库)用来对底层操作系统进行调用
 
-![image-20230214234002064](./node_webpack_git_image\image-20230214234002064.png)
+![image-20230214234002064](.\node_webpack_git_image\image-20230214234002064.png)
 
 ### Node.js架构
 
@@ -36,7 +36,7 @@
   -  libuv（Unicorn Velociraptor—独角伶盗龙）是**使用C语言编写**的库
   -  libuv提供了**事件循环、文件系统读写、网络IO、线程池**等等内容
 
-![image-20230214235732886](./node_webpack_git_image\image-20230214235732886.png)
+![image-20230214235732886](.\node_webpack_git_image\image-20230214235732886.png)
 
 > 在APPLICATION中是自己的应用程序，用JS语言编写，然后经过V8引擎，对代码进行翻译，因为后面的中间层是看不懂JS的，然后通过Node.JS进行了中转，调用了Node.JS的API，然后经过了LIBUV，被这个中间层转化成操作系统能够听懂的语言
 >
@@ -75,7 +75,7 @@
   - **LTS版本**：（Long-term support, 长期支持）相对稳定一些，推荐线上环境使用该版本
   - **Current版本**：最新的Node版本，包含很多新特性
 
-![image-20230215002442161](./node_webpack_git_image\image-20230215002442161.png)
+![image-20230215002442161](.\node_webpack_git_image\image-20230215002442161.png)
 
 - **这些我们选择什么版本呢？**
   - 如果你是学习使用，可以选择current版本
@@ -105,7 +105,7 @@
   - 通过 **nvm list** 展示目前安装的所有版本
   - 通过 **nvm use** 切换版本(使用管理员身份运行)
 
-![image-20230215020516864](./node_webpack_git_image\image-20230215020516864.png)
+![image-20230215020516864](.\node_webpack_git_image\image-20230215020516864.png)
 
 ### 版本管理工具：n
 
@@ -157,7 +157,7 @@ n
 console.log("小余在呢")
 ```
 
-![image-20230215021811660](./node_webpack_git_image\image-20230215021811660.png)
+![image-20230215021811660](.\node_webpack_git_image\image-20230215021811660.png)
 
 ## (掌握)Node程序中的输入和输出
 
@@ -176,7 +176,7 @@ console.log("小余在呢")
   >
   > 退出REPL环境就输入.exit
 
-  ![image-20230215025443070](./node_webpack_git_image\image-20230215025443070.png)
+  ![image-20230215025443070](.\node_webpack_git_image\image-20230215025443070.png)
 
 ### Node程序传递参数
 
@@ -208,9 +208,9 @@ console.log("小余在呢")
 console.log(process.argv)//从进程中的程序获取
 ```
 
-![image-20230215023308338](./node_webpack_git_image\image-20230215023308338.png)
+![image-20230215023308338](.\node_webpack_git_image\image-20230215023308338.png)
 
-![image-20230215023706258](./node_webpack_git_image\image-20230215023706258.png)
+![image-20230215023706258](.\node_webpack_git_image\image-20230215023706258.png)
 
 ### 为什么叫argv呢？
 
@@ -238,7 +238,7 @@ process.argv.forEach(item => {
 });
 ```
 
-![image-20230215024113129](./node_webpack_git_image\image-20230215024113129.png)
+![image-20230215024113129](.\node_webpack_git_image\image-20230215024113129.png)
 
 ```javascript
 //单独获取，然后将获取到的内容传递到某个地方
@@ -247,7 +247,7 @@ console.log(process.argv[3]);
 node testFile.js env=development XiaoYu
 ```
 
-![image-20230215024245740](./node_webpack_git_image\image-20230215024245740.png)
+![image-20230215024245740](.\node_webpack_git_image\image-20230215024245740.png)
 
 ### Node的输出
 
@@ -288,7 +288,7 @@ console.log(global);//在node环境下类似在浏览器打印出来的window
 
     `√`比如Buffer后续会专门讲到
 
-![image-20230215030450368](./node_webpack_git_image\image-20230215030450368.png)
+![image-20230215030450368](.\node_webpack_git_image\image-20230215030450368.png)
 
 ### 特殊的全局对象
 
@@ -313,7 +313,7 @@ console.log(export);
 console.log(require);
 ```
 
-![image-20230215031310023](./node_webpack_git_image\image-20230215031310023.png)
+![image-20230215031310023](.\node_webpack_git_image\image-20230215031310023.png)
 
 ### 常见的全局对象
 
@@ -368,7 +368,7 @@ process.nextTick()
   - 类似于浏览器中的window
   - 在最新规范里面，node中的叫法跟浏览器的叫法进行了统一，叫做globalThis
 
-![image-20230215035804705](./node_webpack_git_image\image-20230215035804705.png)
+![image-20230215035804705](.\node_webpack_git_image\image-20230215035804705.png)
 
 ### global和window的区别
 
@@ -526,7 +526,7 @@ console.log(age);
 sayHello("ikun")
 ```
 
-![image-20230215062234160](./node_webpack_git_image\image-20230215062234160.png)
+![image-20230215062234160](.\node_webpack_git_image\image-20230215062234160.png)
 
 ```javascript
 //node实现CommonJS规范：导入导出
@@ -552,7 +552,7 @@ testFile.sayHello("小余",20)
 
   执行结果：小余今年20岁了
 
-![image-20230215064912309](./node_webpack_git_image\image-20230215064912309.png)
+![image-20230215064912309](.\node_webpack_git_image\image-20230215064912309.png)
 
 > 1. 除了可以直接获取导出的对象，从对象中获取属性(我们上面就是这么做的)
 > 2. 但还可以通过解构的方式去实现，会在使用的时候更加简便
@@ -571,11 +571,11 @@ testFile.sayHello("小余",20)
 
   > 在刚刚上面有demo实现（用得很少）
 
-![image-20230215065556429](./node_webpack_git_image\image-20230215065556429.png)
+![image-20230215065556429](.\node_webpack_git_image\image-20230215065556429.png)
 
 - **另外一个文件中可以导入：**
 
-![image-20230215065610423](./node_webpack_git_image\image-20230215065610423.png)
+![image-20230215065610423](.\node_webpack_git_image\image-20230215065610423.png)
 
 - **上面这行完成了什么操作呢？理解下面这句话，Node中的模块化一目了然**
   - **意味着main中的bar变量等于exports对象(指向同一个地方)**
@@ -583,7 +583,7 @@ testFile.sayHello("小余",20)
   - 并且将这个**exports对象赋值给了bar变量**
   - **bar变量就是exports对象**了
 
-![image-20230215084412425](./node_webpack_git_image\image-20230215084412425.png)
+![image-20230215084412425](.\node_webpack_git_image\image-20230215084412425.png)
 
 ```javascript
 //探讨本质
@@ -636,7 +636,7 @@ module.exports.age = age
 console.log(exports === module.exports)//true
 ```
 
-![image-20230215084635102](./node_webpack_git_image\image-20230215084635102.png)
+![image-20230215084635102](.\node_webpack_git_image\image-20230215084635102.png)
 
 ```javascript
 //真实开发中的写法，下面的图显示在内存中发生的改变
@@ -646,7 +646,7 @@ module.exports = {
 //那我们再修改exports.xxx = xxxx就没有用了，因为我们exports指向的0x100内存地址已经不同了，我们放东西的地方再0x200了
 ```
 
-![image-20230215192108489](./node_webpack_git_image\image-20230215192108489.png)
+![image-20230215192108489](.\node_webpack_git_image\image-20230215192108489.png)
 
 ## (掌握)Node中module的exports属性本质
 
@@ -718,7 +718,7 @@ console.log(utils.formaData())
   /Users/你的路径/main.js  中编写 require('why’)
   ```
 
-查找顺序(从上往下)：![image-20230215225811244](./node_webpack_git_image\image-20230215225811244.png)
+查找顺序(从上往下)：![image-20230215225811244](.\node_webpack_git_image\image-20230215225811244.png)
 
 - 如果上面的路径中都没有找到，那么报错：not found
 
@@ -749,7 +749,7 @@ console.log(utils.formaData())
 
 ### 模块的加载过程
 
-![image-20230215230104501](./node_webpack_git_image\image-20230215230104501.png)
+![image-20230215230104501](.\node_webpack_git_image\image-20230215230104501.png)
 
 - **结论一：模块在被第一次引入时，模块中的js代码会被运行一次**
 - **结论二：模块被多次引入时，会缓存，最终只加载（运行）一次**
@@ -816,7 +816,7 @@ const foo2 = require("./xxx")//不执行
   <script src="./lib/require.js" data-main="./index.js"></script>
   ```
 
-  ![image-20230216002236798](./node_webpack_git_image\image-20230216002236798.png)![image-20230216002240148](./node_webpack_git_image\image-20230216002240148.png)![image-20230216002247893](./node_webpack_git_image\image-20230216002247893.png)
+  ![image-20230216002236798](.\node_webpack_git_image\image-20230216002236798.png)![image-20230216002240148](.\node_webpack_git_image\image-20230216002240148.png)![image-20230216002247893](.\node_webpack_git_image\image-20230216002247893.png)
 
 ### CMD规范
 
@@ -834,4 +834,4 @@ const foo2 = require("./xxx")//不执行
 - **第二步：引入sea.js和使用主入口文件**
   - seajs是指定主入口文件的
 
-![image-20230216002540551](./node_webpack_git_image\image-20230216002540551.png)![image-20230216002548146](./node_webpack_git_image\image-20230216002548146.png)![image-20230216002557618](./node_webpack_git_image\image-20230216002557618.png)![image-20230216002604568](./node_webpack_git_image\image-20230216002604568.png)
+![image-20230216002540551](.\node_webpack_git_image\image-20230216002540551.png)![image-20230216002548146](.\node_webpack_git_image\image-20230216002548146.png)![image-20230216002557618](.\node_webpack_git_image\image-20230216002557618.png)![image-20230216002604568](.\node_webpack_git_image\image-20230216002604568.png)

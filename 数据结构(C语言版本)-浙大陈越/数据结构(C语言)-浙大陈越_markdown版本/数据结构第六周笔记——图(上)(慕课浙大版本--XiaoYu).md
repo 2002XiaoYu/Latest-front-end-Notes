@@ -49,9 +49,9 @@
 
 #### 怎么在程序中表示一个图
 
-1. <img src="./数据结构-image\image-20220715110405629.png" alt="image-20220715110405629" style="zoom:50%;" />
+1. <img src=".\数据结构-image\image-20220715110405629.png" alt="image-20220715110405629" style="zoom:50%;" />
 
-2. <img src="./数据结构-image\image-20220715110835844.png" alt="image-20220715110835844" style="zoom:50%;" />
+2. <img src=".\数据结构-image\image-20220715110835844.png" alt="image-20220715110835844" style="zoom:50%;" />
 
    #### 邻接矩阵——有什么好处？
 
@@ -80,7 +80,7 @@
 
 邻接表：G[N]为指针数组，对应矩阵每行一个的链表，只存非0元素
 
-<img src="./数据结构-image\image-20220715120351402.png" alt="image-20220715120351402" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220715120351402.png" alt="image-20220715120351402" style="zoom:50%;" />
 
 上图的顺序是无所谓的，可以随意排列。使用这个表需要足够稀疏才合算
 
@@ -129,13 +129,13 @@ void DFS(Vertex V)//从迷宫的节点出来
     用邻接矩阵存储图，有O(N²)//V对应的每个邻接点W都要访问一遍
 ```
 
-<img src="./数据结构-image\image-20220715122831029.png" alt="image-20220715122831029" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220715122831029.png" alt="image-20220715122831029" style="zoom:50%;" />
 
 ### 6.2.2 图的遍历——BFS
 
 #### 广度优先搜索(Breadth First Search,BFS)
 
-<img src="./数据结构-image\image-20220715122953905.png" alt="image-20220715122953905" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220715122953905.png" alt="image-20220715122953905" style="zoom:50%;" />
 
 ```c
 void BFS(Vertex V)
@@ -163,7 +163,7 @@ void BFS(Vertex V)
 
 下面进行说明：
 
-<img src="./数据结构-image\image-20220715124837990.png" alt="image-20220715124837990" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220715124837990.png" alt="image-20220715124837990" style="zoom:50%;" />
 
 
 第1步：访问A。
@@ -192,7 +192,7 @@ void BFS(Vertex V)
 
 换句话说，广度优先搜索遍历图的过程是以v为起点，由近至远，依次访问和v有路径相通且路径长度为1,2…的顶点。
 
-<img src="./数据结构-image\image-20220715124941418.png" alt="image-20220715124941418" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220715124941418.png" alt="image-20220715124941418" style="zoom:50%;" />
 
 第1步：访问A。
 
@@ -371,7 +371,7 @@ int BFS(Vertex V)
 }
 ```
 
-​                                     <img src="./数据结构-image\image-20220716095328150.png" alt="image-20220716095328150" style="zoom:50%;" />                                                                                                                                                                      
+​                                     <img src=".\数据结构-image\image-20220716095328150.png" alt="image-20220716095328150" style="zoom:50%;" />                                                                                                                                                                      
 
 ## 小白专场：如何建立图：C语言实现
 
@@ -577,9 +577,9 @@ void InsertEdge(LGraph Graph,Edge E)
 }
 ```
 
-![image-20220716114326873](./数据结构-image\image-20220716114326873.png)
+![image-20220716114326873](.\数据结构-image\image-20220716114326873.png)
 
-![image-20220716114644431](./数据结构-image\image-20220716114644431.png)
+![image-20220716114644431](.\数据结构-image\image-20220716114644431.png)
 
 **完整建立一个LGraph**
 

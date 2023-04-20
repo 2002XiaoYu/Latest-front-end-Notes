@@ -99,7 +99,7 @@ console.log(path.resolve("./----------","./XiaoYu.ts"));//D:\Desktop\Project\h5c
   >
   > Angular webpack的`build-webpack`
 
-![image-20230217163903547](./node_webpack_git_image\image-20230217163903547.png)
+![image-20230217163903547](.\node_webpack_git_image\image-20230217163903547.png)
 
 #### Webpack到底是什么呢？
 
@@ -122,7 +122,7 @@ console.log(path.resolve("./----------","./XiaoYu.ts"));//D:\Desktop\Project\h5c
 
 #### Webpack官方的图片
 
-![image-20230217164332434](./node_webpack_git_image\image-20230217164332434.png)
+![image-20230217164332434](.\node_webpack_git_image\image-20230217164332434.png)
 
 #### Vue项目加载的文件有哪些呢？
 
@@ -148,7 +148,7 @@ console.log(path.resolve("./----------","./XiaoYu.ts"));//D:\Desktop\Project\h5c
   -  所以我们需要先安装Node.js，并且同时会安装npm
   -  Node官方网站：https://nodejs.org/
 
-![image-20230217165858225](./node_webpack_git_image\image-20230217165858225.png)
+![image-20230217165858225](.\node_webpack_git_image\image-20230217165858225.png)
 
 #### Webpack的安装
 
@@ -159,7 +159,7 @@ console.log(path.resolve("./----------","./XiaoYu.ts"));//D:\Desktop\Project\h5c
   - 而webpack-cli中代码执行时，才是真正利用webpack进行编译和打包的过程
   - 所以在安装webpack时，我们需要同时安装webpack-cli（第三方的脚手架事实上是没有使用webpack-cli的，而是类似于自己的vue-service-cli的东西）
 
-![image-20230217170007986](./node_webpack_git_image\image-20230217170007986.png)
+![image-20230217170007986](.\node_webpack_git_image\image-20230217170007986.png)
 
 ```javascript
 npm install webpack webpack-cli –g # 全局安装
@@ -286,7 +286,7 @@ npm run build
 
     > loader：webpack默认情况下是只对我们的js进行打包，如果我们想要我们文件里面也包括了css文件、图片、字体等，就需要用到loader来解析了
 
-![image-20230218054615259](./node_webpack_git_image\image-20230218054615259.png)
+![image-20230218054615259](.\node_webpack_git_image\image-20230218054615259.png)
 
 > 图结构形式的打包
 
@@ -303,11 +303,11 @@ npm run build
     //之所以可以不用写from，是因为我们并不使用它，而是将css导入我们的依赖图中
     ```
 
-![image-20230218060057069](./node_webpack_git_image\image-20230218060057069.png)![image-20230218060104931](./node_webpack_git_image\image-20230218060104931.png)
+![image-20230218060057069](.\node_webpack_git_image\image-20230218060057069.png)![image-20230218060104931](.\node_webpack_git_image\image-20230218060104931.png)
 
 > 继续编译命令 npm run build
 
-![image-20230218060124730](./node_webpack_git_image\image-20230218060124730.png)
+![image-20230218060124730](.\node_webpack_git_image\image-20230218060124730.png)
 
 #### css-loader的使用
 
@@ -704,7 +704,7 @@ imports zznhImage form "./xxx/你的图片地址"
 
   - **方式二**：在Rule中，添加一个generator属性，并且设置filename
 
-  ![image-20230218131242819](./node_webpack_git_image\image-20230218131242819.png)![image-20230218131410465](./node_webpack_git_image\image-20230218131410465.png)
+  ![image-20230218131242819](.\node_webpack_git_image\image-20230218131242819.png)![image-20230218131410465](.\node_webpack_git_image\image-20230218131410465.png)
 
   - 我们这里介绍几个最常用的placeholder：
 
@@ -751,7 +751,7 @@ document.body.append(divBgEl)
 > //2.对于大一点的图片，单独的图片打包，形成url地址，单独的请求这个url图片
 > ```
 
-![image-20230218124039433](./node_webpack_git_image\image-20230218124039433.png)
+![image-20230218124039433](.\node_webpack_git_image\image-20230218124039433.png)
 
 #### url-loader的limit效果
 
@@ -849,7 +849,7 @@ npx babel src --out-dir dist --plugins=@babel/plugin-transform-arrow-functions
 
 > 然后就可以省略掉下面这部分
 
-![image-20230219024621104](./node_webpack_git_image\image-20230219024621104.png)
+![image-20230219024621104](.\node_webpack_git_image\image-20230219024621104.png)
 
 #### Babel的预设preset
 
@@ -929,13 +929,13 @@ npm install @babel/preset-env
 - 在开发中我们会编写Vue相关的代码，webpack可以对Vue代码进行解析：
   - 接下来我们编写自己的App.vue代码
 
-![image-20230219030207532](./node_webpack_git_image\image-20230219030207532.png)
+![image-20230219030207532](.\node_webpack_git_image\image-20230219030207532.png)
 
 #### App.vue的打包过程
 
 - 我们对代码打包会报错：我们需要合适的Loader来处理文件
 
-![image-20230219030855613](./node_webpack_git_image\image-20230219030855613.png)
+![image-20230219030855613](.\node_webpack_git_image\image-20230219030855613.png)
 
 - 这个时候我们需要使用vue-loader：
 
@@ -1060,7 +1060,7 @@ resolve:{//resolve用来解析模块的
 
   - Plugin可以用于**执行更加广泛的任务(能够贯穿整个webpack的周期)**，比如打包优化、资源管理、环境变量注入等
 
-![image-20230219042444190](./node_webpack_git_image\image-20230219042444190.png)
+![image-20230219042444190](.\node_webpack_git_image\image-20230219042444190.png)
 
 ### (掌握)webpack插件-Clean插件
 
@@ -1122,7 +1122,7 @@ module.exports = {
 - **我们会发现，现在自动在dist文件夹中，生成了一个index.html的文件：**
   - 该文件中也自动添加了我们打包的bundle.js文件
 
-![image-20230219045623450](./node_webpack_git_image\image-20230219045623450.png)
+![image-20230219045623450](.\node_webpack_git_image\image-20230219045623450.png)
 
 - **这个文件是如何生成的呢？**
   - 默认情况下是根据ejs的一个模板来生成的
@@ -1135,7 +1135,7 @@ module.exports = {
   - 比如在开发vue或者react项目时，我们需要一个可以挂载后续组件的根标签 <div id="app"></div>
 - 这个我们需要一个属于自己的index.html模块：
 
-![image-20230219045938341](./node_webpack_git_image\image-20230219045938341.png)
+![image-20230219045938341](.\node_webpack_git_image\image-20230219045938341.png)
 
 #### 自定义模板数据填充
 
@@ -1144,7 +1144,7 @@ module.exports = {
   - **template**：指定我们要使用的模块所在的路径
   - **title**：在进行htmlWebpackPlugin.options.title读取时，就会读到该信息(代码块在上面了)
 
-![image-20230219050026746](./node_webpack_git_image\image-20230219050026746.png)
+![image-20230219050026746](.\node_webpack_git_image\image-20230219050026746.png)
 
 ### (掌握)webpack插件-Define插件
 
@@ -1152,7 +1152,7 @@ module.exports = {
 
 -  **但是，这个时候编译还是会报错，因为在我们的模块中还使用到一个BASE_URL的常量：**
 
-![image-20230219050124488](./node_webpack_git_image\image-20230219050124488.png)
+![image-20230219050124488](.\node_webpack_git_image\image-20230219050124488.png)
 
 - **这是因为在编译template模块时，有一个BASE_URL：**
 
@@ -1211,17 +1211,17 @@ console.log(process.env.NODE_DNV)
 
 > 设置mode为'development'相当于设置了这些红色的部分
 
-![image-20230219062206137](./node_webpack_git_image\image-20230219062206137.png)
+![image-20230219062206137](.\node_webpack_git_image\image-20230219062206137.png)
 
 > 而当mode设置了'production'的时候，也相当设置了下面这些红色部分，是非常多的选项的
 
-![image-20230219062245527](./node_webpack_git_image\image-20230219062245527.png)
+![image-20230219062245527](.\node_webpack_git_image\image-20230219062245527.png)
 
 ## Webpack搭建本地服务器
 
 > 补充打包dist前会将之前的内容先清空的另一种新的方式
 
-![image-20230219062538577](./node_webpack_git_image\image-20230219062538577.png)
+![image-20230219062538577](.\node_webpack_git_image\image-20230219062538577.png)
 
 ### (掌握)webpack开启本地服务器
 
@@ -1296,7 +1296,7 @@ module.exports = {
 
 - **浏览器可以看到如下效果：**
 
-![image-20230219065234706](./node_webpack_git_image\image-20230219065234706.png)
+![image-20230219065234706](.\node_webpack_git_image\image-20230219065234706.png)
 
 - **但是你会发现，当我们修改了某一个模块的代码时，依然是刷新的整个页面：**
   - 这是因为我们需要去指定哪些模块发生更新时，进行HMR
@@ -1369,7 +1369,7 @@ if(module.hot){//判断有没有hot
 - **compress是否为静态文件开启gzip compression：**
   - 默认值是false，可以设置为true(压缩文件的)
 
-![image-20230219071809839](./node_webpack_git_image\image-20230219071809839.png)
+![image-20230219071809839](.\node_webpack_git_image\image-20230219071809839.png)
 
 #### Proxy（Vue项目学习）
 
@@ -1393,7 +1393,7 @@ if(module.hot){//判断有没有hot
   - 但是因为使用了代码，默认情况下它的值时 http://localhost:8000
   - 如果我们需要修改，那么可以将changeOrigin设置为true即可
 
-![image-20230219072208208](./node_webpack_git_image\image-20230219072208208.png)
+![image-20230219072208208](.\node_webpack_git_image\image-20230219072208208.png)
 
 #### historyApiFallback （Vue项目学习）
 

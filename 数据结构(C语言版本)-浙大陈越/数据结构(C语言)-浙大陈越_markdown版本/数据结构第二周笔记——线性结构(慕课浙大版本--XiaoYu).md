@@ -10,7 +10,7 @@
 
 #### 例子：一元多项式及其运算
 
-<img src="./数据结构-image\image-20220627134344443.png" alt="image-20220627134344443" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220627134344443.png" alt="image-20220627134344443" style="zoom:50%;" />
 
 主要运算：多项式相加、相减、相乘等
 
@@ -24,7 +24,7 @@
 
    **方法1**：顺序存储结构直接表示
 
-   <img src="./数据结构-image\image-20220627134953388.png" alt="image-20220627134953388" style="zoom:50%;" />
+   <img src=".\数据结构-image\image-20220627134953388.png" alt="image-20220627134953388" style="zoom:50%;" />
 
 注解：其实这个的意思就是从头加到尾，不管中间的答案有没有像0这种可以直接省略掉的值都会占一个位置。
 
@@ -32,11 +32,11 @@
 
 **方法2**：顺序存储结构表示非零项(按照指数大小有序存储，比如说指数大的排在前面，指数小的排在后面)
 
-<img src="./数据结构-image\image-20220627140021075.png" alt="image-20220627140021075" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220627140021075.png" alt="image-20220627140021075" style="zoom:50%;" />
 
 多项式相加过程：从头开始，比较两个多项式当前对应项的的指数  =>这样就能够做到指数递降运算
 
-<img src="./数据结构-image\image-20220627140719716.png" alt="image-20220627140719716" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220627140719716.png" alt="image-20220627140719716" style="zoom:50%;" />
 
 这里的(11，8)是(15，8)与(-4，8)的结合结果，因为指数一样，所以可以结合为一个
 
@@ -58,9 +58,9 @@ struct PolyNode{
 }
 ```
 
-<img src="./数据结构-image\image-20220627141534773.png" alt="image-20220627141534773" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220627141534773.png" alt="image-20220627141534773" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220627141555193.png" alt="image-20220627141555193" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220627141555193.png" alt="image-20220627141555193" style="zoom:50%;" />
 
 分别指向多项式的头，然后比较指数大小，大的输出；相等的话，系数相加
 
@@ -108,7 +108,7 @@ List PtrL;//还有一个变量PtrL
 	//线性表的长度：L.Last+1或PtrL->Last+1
 ```
 
-<img src="./数据结构-image\image-20220627191654197.png" alt="image-20220627191654197" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220627191654197.png" alt="image-20220627191654197" style="zoom:50%;" />
 
 “->”是一个整体，它是用于指向[结构体]子数据的指针，用来取子数据。
 
@@ -158,7 +158,7 @@ List PtrL;//还有一个变量PtrL
 
 2. 也就是先移动再插入，每个元素往后挪使用一个循环就可以解决了
 
-3. <img src="./数据结构-image\image-20220627200204195.png" alt="image-20220627200204195" style="zoom:50%;" />
+3. <img src=".\数据结构-image\image-20220627200204195.png" alt="image-20220627200204195" style="zoom:50%;" />
 
 4. 从后往前算(挪)，如果从前往后的话算法是不对的
 
@@ -245,7 +245,7 @@ struct Lnode L;
 List PtrL;
 ```
 
-<img src="./数据结构-image\image-20220627234839331.png" alt="image-20220627234839331" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220627234839331.png" alt="image-20220627234839331" style="zoom:50%;" />
 
 **主要操作的实现**
 
@@ -306,7 +306,7 @@ List PtrL;
    //答案：s->Next指向s,从而不能正确完成插入
    ```
 
-   <img src="./数据结构-image\image-20220628002106165.png" alt="image-20220628002106165" style="zoom:50%;" />
+   <img src=".\数据结构-image\image-20220628002106165.png" alt="image-20220628002106165" style="zoom:50%;" />
 
    ```c
    //malloc复习区域
@@ -400,15 +400,15 @@ List PtrL;
    //平均时间复杂度也是n/2
    ```
 
-   <img src="./数据结构-image\image-20220628010648646.png" alt="image-20220628010648646" style="zoom:50%;" />
+   <img src=".\数据结构-image\image-20220628010648646.png" alt="image-20220628010648646" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220628010948589.png" alt="image-20220628010948589" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220628010948589.png" alt="image-20220628010948589" style="zoom:50%;" />
 
 ### 2.1.6 广义表与多重链表
 
-<img src="./数据结构-image\image-20220628012708073.png" alt="image-20220628012708073" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220628012708073.png" alt="image-20220628012708073" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220628012841252.png" alt="image-20220628012841252" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220628012841252.png" alt="image-20220628012841252" style="zoom:50%;" />
 
 原本a,b,c所在的位置变成了指针，指向另一个一元多项式。这种就是广义表
 
@@ -439,7 +439,7 @@ List PtrL;
    
    ```
 
-   <img src="./数据结构-image\image-20220628013451554.png" alt="image-20220628013451554" style="zoom:50%;" />
+   <img src=".\数据结构-image\image-20220628013451554.png" alt="image-20220628013451554" style="zoom:50%;" />
 
 ### 多重链表
 
@@ -452,7 +452,7 @@ List PtrL;
 
 多重链表指的是它里面的这个链表的结点可能同时隶属于多个链表(意思就是表中的指针会有多个)
 
-<img src="./数据结构-image\image-20220628014523266.png" alt="image-20220628014523266" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220628014523266.png" alt="image-20220628014523266" style="zoom:50%;" />
 
 稀疏矩阵：矩阵中的0很多，会造成空间浪费
 
@@ -460,7 +460,7 @@ List PtrL;
 
 上图中就是用多重链表来表示稀疏矩阵的一种方法
 
-<img src="./数据结构-image\image-20220628015146123.png" alt="image-20220628015146123" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220628015146123.png" alt="image-20220628015146123" style="zoom:50%;" />
 
 上图中的行与列相互穿插在一起形成十字链表
 
@@ -468,7 +468,7 @@ Head是作为行这个链表的头结点，也作为列这个链表的头结点
 
 Tem：代表稀疏矩阵里面的非零的项
 
-<img src="./数据结构-image\image-20220628015420650.png" alt="image-20220628015420650" style="zoom:40%;" />
+<img src=".\数据结构-image\image-20220628015420650.png" alt="image-20220628015420650" style="zoom:40%;" />
 
 上图：4代表这个稀疏矩阵共有4行，总共有5列，非零项个数总共有7项
 
@@ -484,7 +484,7 @@ Tem：代表稀疏矩阵里面的非零的项
 
 2. 头节点的标识值为"Head"，矩阵非0元素结点的标识值为"Term"
 
-   <img src="./数据结构-image\image-20220628015932693.png" alt="image-20220628015932693" style="zoom:50%;" />
+   <img src=".\数据结构-image\image-20220628015932693.png" alt="image-20220628015932693" style="zoom:50%;" />
 
 经过union的串联在一起，他们共性都是有两个指针：一个Down，一个Right。他们不一样的地方在中间部分。所有我们可以把他们union在一起，形成(a)这个结构
 
@@ -494,7 +494,7 @@ Tem：代表稀疏矩阵里面的非零的项
 
 **计算机如何进行表达式求值？**
 
-<img src="./数据结构-image\image-20220628024357415.png" alt="image-20220628024357415" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220628024357415.png" alt="image-20220628024357415" style="zoom:50%;" />
 
 由两类对象构成的：
 
@@ -544,13 +544,13 @@ Tem：代表稀疏矩阵里面的非零的项
 5. ElementType Pop(Stack S)：删除并返回栈顶元素;(重点)相当于删除操作，需要判别堆栈有没有满或空。空了就不能删除了
 ```
 
-<img src="./数据结构-image\image-20220628032111469.png" alt="image-20220628032111469" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220628032111469.png" alt="image-20220628032111469" style="zoom:50%;" />
 
 **Push和Pop可以穿插交替进行**;
 
-<img src="./数据结构-image\image-20220628032222743.png" alt="image-20220628032222743" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220628032222743.png" alt="image-20220628032222743" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220628032242421.png" alt="image-20220628032242421" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220628032242421.png" alt="image-20220628032242421" style="zoom:50%;" />
 
 按ABC顺序入栈，可以产生CAB这样的出栈序列？不可以，是CBA序列
 
@@ -699,7 +699,7 @@ ElementType Pop (struct DStack *PtrS,int Tag )
     };
 ```
 
-<img src="./数据结构-image\image-20220628045906099.png" alt="image-20220628045906099" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220628045906099.png" alt="image-20220628045906099" style="zoom:50%;" />
 
 ```C
 Stack CreateStack()
@@ -717,7 +717,7 @@ int IsEmpty(Stack S)
 }
 ```
 
-<img src="./数据结构-image\image-20220628050006254.png" alt="image-20220628050006254" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220628050006254.png" alt="image-20220628050006254" style="zoom:50%;" />
 
 ```c
 void Push(ElementType item,Stack S)
@@ -737,7 +737,7 @@ void Push(ElementType item,Stack S)
 
 
 
-<img src="./数据结构-image\image-20220628050745839.png" alt="image-20220628050745839" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220628050745839.png" alt="image-20220628050745839" style="zoom:50%;" />
 
 ```c
 ElementType Pop(Stack S)
@@ -793,7 +793,7 @@ ElementType Pop(Stack S)
 T(N) = O(N)
 ```
 
-<img src="./数据结构-image\image-20220628210030460.png" alt="image-20220628210030460" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220628210030460.png" alt="image-20220628210030460" style="zoom:50%;" />
 
 请试试应用堆栈将中缀表达式2*(6/3+4)-5转换为后缀表达式。在这个转换过程中，堆栈元素最多时元素个数是多少？3个
 
@@ -809,7 +809,7 @@ T(N) = O(N)
 5.若各对象处理完毕，则把堆栈中存留的运算符一并输出
 ```
 
-<img src="./数据结构-image\image-20220628215153143.png" alt="image-20220628215153143" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220628215153143.png" alt="image-20220628215153143" style="zoom:50%;" />
 
 ```
 堆栈的其他应用：
@@ -924,7 +924,7 @@ typedef struct QNode *Queue;
 Queue PtrQ;
 ```
 
-<img src="./数据结构-image\image-20220629041503372.png" alt="image-20220629041503372" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220629041503372.png" alt="image-20220629041503372" style="zoom:50%;" />
 
 **不带头结点的链式队列出队操作的示例**
 
@@ -950,13 +950,13 @@ ElementType DeleteQ(Queue PtrQ)
 
 ## 2.4 多项式的加法运算实现
 
-<img src="./数据结构-image\image-20220629052314628.png" alt="image-20220629052314628" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220629052314628.png" alt="image-20220629052314628" style="zoom:50%;" />
 
 ```
 采用不带头结点的单项链表，按照指数递减的顺序排列各项
 ```
 
-<img src="./数据结构-image\image-20220629052450477.png" alt="image-20220629052450477" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220629052450477.png" alt="image-20220629052450477" style="zoom:50%;" />
 
 ```c
 具体实现代码(数据结构)
@@ -977,15 +977,15 @@ Polynomial P1,P2;
 当某一多项式处理完时，将另一个多项式的所有结点依次复制到结果多项式中去
 ```
 
-<img src="./数据结构-image\image-20220629060519985.png" alt="image-20220629060519985" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220629060519985.png" alt="image-20220629060519985" style="zoom:50%;" />
 
 演变过程------------------------分割线
 
-<img src="./数据结构-image\image-20220629060715728.png" alt="image-20220629060715728" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220629060715728.png" alt="image-20220629060715728" style="zoom:50%;" />
 
 接着是=>
 
-<img src="./数据结构-image\image-20220629060827486.png" alt="image-20220629060827486" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220629060827486.png" alt="image-20220629060827486" style="zoom:50%;" />
 
 ```c
 函数实现
@@ -1042,17 +1042,17 @@ void Attach(int c,int e,Polynomial*pRear)//传进来的是c跟e的系数跟指�
 }
 ```
 
-<img src="./数据结构-image\image-20220629070700010.png" alt="image-20220629070700010" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220629070700010.png" alt="image-20220629070700010" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220629070712967.png" alt="image-20220629070712967" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220629070712967.png" alt="image-20220629070712967" style="zoom:50%;" />
 
 ## 小白专场
 
-<img src="./数据结构-image\image-20220629071856844.png" alt="image-20220629071856844" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220629071856844.png" alt="image-20220629071856844" style="zoom:50%;" />
 
 #### 多项式的表示
 
-<img src="./数据结构-image\image-20220629072141892.png" alt="image-20220629072141892" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220629072141892.png" alt="image-20220629072141892" style="zoom:50%;" />
 
 ```c
 用链表进行表示
@@ -1132,15 +1132,15 @@ Rear初始值是多少？
 }
 ```
 
-<img src="./数据结构-image\image-20220629084605937.png" alt="image-20220629084605937" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220629084605937.png" alt="image-20220629084605937" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220629084915089.png" alt="image-20220629084915089" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220629084915089.png" alt="image-20220629084915089" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220629085051166.png" alt="image-20220629085051166" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220629085051166.png" alt="image-20220629085051166" style="zoom:50%;" />
 
 **处理方法2**
 
-<img src="./数据结构-image\image-20220629085848083.png" alt="image-20220629085848083" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220629085848083.png" alt="image-20220629085848083" style="zoom:50%;" />
 
 #### 读入多项式的完整程序
 
@@ -1163,7 +1163,7 @@ Polynomial ReadPoly()
 }
 ```
 
-<img src="./数据结构-image\image-20220629091612698.png" alt="image-20220629091612698" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220629091612698.png" alt="image-20220629091612698" style="zoom:50%;" />
 
 #### 如何将两个多项式相乘
 
@@ -1257,7 +1257,7 @@ while(t1){
 ........
 ```
 
-![image-20220629214627763](./数据结构-image\image-20220629214627763.png)
+![image-20220629214627763](.\数据结构-image\image-20220629214627763.png)
 
 **第三处省略**
 

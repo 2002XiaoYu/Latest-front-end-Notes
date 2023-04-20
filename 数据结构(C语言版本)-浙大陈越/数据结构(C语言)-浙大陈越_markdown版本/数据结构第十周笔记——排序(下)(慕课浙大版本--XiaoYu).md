@@ -15,7 +15,7 @@
 1. 分而治之
    1. 主元(pivot)=>中枢枢纽的意思
 
-<img src="./数据结构-image\image-20220818103011759.png" alt="image-20220818103011759" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220818103011759.png" alt="image-20220818103011759" style="zoom:50%;" />
 
 伪码描述
 
@@ -32,11 +32,11 @@ void Quicksort( ElementType A[],int N )
 
 什么是快速排序算法的最好情况？每次正好中分
 
-<img src="./数据结构-image\image-20220818103818288.png" alt="image-20220818103818288" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220818103818288.png" alt="image-20220818103818288" style="zoom:50%;" />
 
 ### 10.1.2 选主元
 
-<img src="./数据结构-image\image-20220819213549001.png" alt="image-20220819213549001" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220819213549001.png" alt="image-20220819213549001" style="zoom:50%;" />
 
 1. 随机取pivot?rand()函数不便宜=相当花费时间
 
@@ -68,16 +68,16 @@ void Quicksort( ElementType A[],int N )
 
 ### 10.1.3 子集划分
 
-<img src="./数据结构-image\image-20220819221831219.png" alt="image-20220819221831219" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220819221831219.png" alt="image-20220819221831219" style="zoom:50%;" />
 
 1. i和j不是C语言的指针意义，而是指向存放位置的意思
 2. 6是主元，被藏到了最右边的位置
 3. 将主元和i与j进行比较(比较完指针i与j当前的位置后向里靠)，发现大小符号相反的之后i与j当前的数值对调，如下图
-   1. <img src="./数据结构-image\image-20220819222228534.png" alt="image-20220819222228534" style="zoom:50%;" />
-   2. <img src="./数据结构-image\image-20220819222252440.png" alt="image-20220819222252440" style="zoom:50%;" />
-   3. <img src="./数据结构-image\image-20220819222420312.png" alt="image-20220819222420312" style="zoom:50%;" />
-   4. <img src="./数据结构-image\image-20220819222524423.png" alt="image-20220819222524423" style="zoom:50%;" />
-   5. <img src="./数据结构-image\image-20220819222539880.png" alt="image-20220819222539880" style="zoom:50%;" />
+   1. <img src=".\数据结构-image\image-20220819222228534.png" alt="image-20220819222228534" style="zoom:50%;" />
+   2. <img src=".\数据结构-image\image-20220819222252440.png" alt="image-20220819222252440" style="zoom:50%;" />
+   3. <img src=".\数据结构-image\image-20220819222420312.png" alt="image-20220819222420312" style="zoom:50%;" />
+   4. <img src=".\数据结构-image\image-20220819222524423.png" alt="image-20220819222524423" style="zoom:50%;" />
+   5. <img src=".\数据结构-image\image-20220819222539880.png" alt="image-20220819222539880" style="zoom:50%;" />
 
 以上就是快速排序为什么快的原因：
 
@@ -148,14 +148,14 @@ void Quick_Sort(ElementType A[], int N)
 间接排序：
 
 1. 不移动元素本身，只移动指针
-2. 定义一个指针数组作为"表"(table)<img src="./数据结构-image\image-20220820012809524.png" alt="image-20220820012809524" style="zoom:50%;" />
-3. 交换的只是table的整数(指针)，得到<img src="./数据结构-image\image-20220820013032729.png" alt="image-20220820013032729" style="zoom:50%;" />
+2. 定义一个指针数组作为"表"(table)<img src=".\数据结构-image\image-20220820012809524.png" alt="image-20220820012809524" style="zoom:50%;" />
+3. 交换的只是table的整数(指针)，得到<img src=".\数据结构-image\image-20220820013032729.png" alt="image-20220820013032729" style="zoom:50%;" />
 
 ### 10.2.2 物理排序
 
 N个数字的排列由若干个独立的环组成，意思如下：
 
-<img src="./数据结构-image\image-20220820210611116.png" alt="image-20220820210611116" style="zoom:50%;" />table值的3跳到1再跳到5最后跳到0形成一个环。而环与环之间是独立互不交集(不相干)的
+<img src=".\数据结构-image\image-20220820210611116.png" alt="image-20220820210611116" style="zoom:50%;" />table值的3跳到1再跳到5最后跳到0形成一个环。而环与环之间是独立互不交集(不相干)的
 
 **如何判断一个环的结束**？每访问一个空位i后，就令table[i]=i。当发现table[i]==i时，环就结束了。
 
@@ -175,11 +175,11 @@ N个数字的排列由若干个独立的环组成，意思如下：
 
 基数排序是桶排序的升级版
 
-<img src="./数据结构-image\image-20220821101651278.png" alt="image-20220821101651278" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220821101651278.png" alt="image-20220821101651278" style="zoom:50%;" />
 
 count是数组，这个数组的每一个元素都是一个指针，一开始被初始化为空链表的头指针，所以一开始有101个空链表(对应了101个空的桶 )
 
-假设一个学生考88分：先找到88这个桶，然后把学生信息插到这个链表的表头里<img src="./数据结构-image\image-20220821101749960.png" alt="image-20220821101749960" style="zoom:50%;" />
+假设一个学生考88分：先找到88这个桶，然后把学生信息插到这个链表的表头里<img src=".\数据结构-image\image-20220821101749960.png" alt="image-20220821101749960" style="zoom:50%;" />
 
 ```c
 伪码描述
@@ -201,7 +201,7 @@ void Bucket_Sort(ElementType A[],int N)
 
  如果M>>N的话怎么办？
 
-<img src="./数据结构-image\image-20220821102329119.png" alt="image-20220821102329119" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220821102329119.png" alt="image-20220821102329119" style="zoom:50%;" />
 
 值是0-999之间，最多一共就三位数。我们在考虑三位数的时候每一位数只有十种可能。
 
@@ -214,13 +214,13 @@ void Bucket_Sort(ElementType A[],int N)
     //比较先从个位数开始
 ```
 
-第一步：建立十个桶<img src="./数据结构-image\image-20220821111151812.png" alt="image-20220821111151812" style="zoom:50%;" />
+第一步：建立十个桶<img src=".\数据结构-image\image-20220821111151812.png" alt="image-20220821111151812" style="zoom:50%;" />
 
-第二步：根据**个位数**把他们放入相应的桶里面<img src="./数据结构-image\image-20220821111259360.png" alt="image-20220821111259360" style="zoom:50%;" />
+第二步：根据**个位数**把他们放入相应的桶里面<img src=".\数据结构-image\image-20220821111259360.png" alt="image-20220821111259360" style="zoom:50%;" />
 
- 第三步：根据十位数放入相应的桶里面：<img src="./数据结构-image\image-20220821111430643.png" alt="image-20220821111430643" style="zoom:50%;" />
+ 第三步：根据十位数放入相应的桶里面：<img src=".\数据结构-image\image-20220821111430643.png" alt="image-20220821111430643" style="zoom:50%;" />
 
-最后一步：根据百位数放入相应的桶里面：<img src="./数据结构-image\image-20220821112558973.png" alt="image-20220821112558973" style="zoom:50%;" />
+最后一步：根据百位数放入相应的桶里面：<img src=".\数据结构-image\image-20220821112558973.png" alt="image-20220821112558973" style="zoom:50%;" />
 
 设元素个数为N，整数进制为B，LSD的趟数为P，则最坏时间复杂度是：T=O(P(N+B))
 
@@ -239,7 +239,7 @@ void Bucket_Sort(ElementType A[],int N)
 
 基数排序不仅仅用于处理整数的基数，还可以用于处理有多关键字的排序
 
- <img src="./数据结构-image\image-20220821112839874.png" alt="image-20220821112839874" style="zoom:50%;" />
+ <img src=".\数据结构-image\image-20220821112839874.png" alt="image-20220821112839874" style="zoom:50%;" />
 
 ```c
 采用"主位优先"(Most Significant Digit)排序：为花色建4个桶
@@ -266,4 +266,4 @@ void Bucket_Sort(ElementType A[],int N)
 
 归并排序的缺点：需要一个额外的空间。当我们要排的数据量非常大的时候，归并排序会导致我们只能排一半的数据，本来可以排下的数据因为空间的问题而排不下。但好处在于稳定
 
-<img src="./数据结构-image\image-20220821114318866.png" alt="image-20220821114318866" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220821114318866.png" alt="image-20220821114318866" style="zoom:50%;" />

@@ -34,7 +34,7 @@
 
 3.学习c的过程主要是写练习代码
 
-![img](./C-image\1650212387908-16f4d788-e3f2-48c4-acfe-89b24a0dec74.jpeg)
+![img](.\C-image\1650212387908-16f4d788-e3f2-48c4-acfe-89b24a0dec74.jpeg)
 
 ### 四则运算
 
@@ -253,7 +253,7 @@ printf("%d和%d的平均数是:%f",a,b,c);
 
 ### 运算符优先级
 
-### ![img](./C-image\1650391544949-65250fa3-b907-44c4-aeba-fdfea2391080.jpeg)
+### ![img](.\C-image\1650391544949-65250fa3-b907-44c4-aeba-fdfea2391080.jpeg)
 
 ### 单目运算符
 
@@ -1843,7 +1843,7 @@ int main()
 
 ### 函数定义
 
-![img](./C-image\1656514795339-e392d227-554a-420b-bd91-8ddba8ac04e9.png)
+![img](.\C-image\1656514795339-e392d227-554a-420b-bd91-8ddba8ac04e9.png)
 
 ### 调用函数
 
@@ -4697,20 +4697,20 @@ void read(FILE*fp,int index)
 
 #### 按位与&
 
-<img src="./C-image\1651906325676-bfeeba49-131d-4bdb-9a40-9089f935045e.jpeg" style="zoom:50%;" />
+<img src=".\C-image\1651906325676-bfeeba49-131d-4bdb-9a40-9089f935045e.jpeg" style="zoom:50%;" />
 
 1. 其实就是两组二进制的数，对应的数字必须都为1，新形成的数对应的数才会是1，否则就是0
 2. F:1111 E:1110，FE的作用就是使得跟他对应形成新的数最低位为0
 
 #### 按位或|
 
-<img src="./C-image\1651906793603-4bbd63a1-bdbd-4637-96f6-185a8772f7a8.jpeg" style="zoom:50%;" />
+<img src=".\C-image\1651906793603-4bbd63a1-bdbd-4637-96f6-185a8772f7a8.jpeg" style="zoom:50%;" />
 
 1. 也是两组二进制的数，对应的数字必须都为0，新形成的数对应的数才会是0，否则就是1。跟上面那个相反
 
 #### 按位取反~
 
-<img src="./C-image\1651907013941-e2a8f1a4-ae26-4533-abc5-ff8033cfa46e.jpeg" style="zoom:50%;" />
+<img src=".\C-image\1651907013941-e2a8f1a4-ae26-4533-abc5-ff8033cfa46e.jpeg" style="zoom:50%;" />
 
 ```c
 #include<stdio.h>
@@ -4735,7 +4735,7 @@ int main(int argc,char const *argv[])
 
 #### 按位异或^
 
-<img src="./C-image\1651908671100-63c027d3-2140-4a69-a97a-6790a9ffdb9c.jpeg" style="zoom:50%;" />
+<img src=".\C-image\1651908671100-63c027d3-2140-4a69-a97a-6790a9ffdb9c.jpeg" style="zoom:50%;" />
 
 1. 两组二进制，上下位数值对应相等为0，上下不相等为1
 2. 做两次相同的异或运算数值就翻回去了
@@ -4989,7 +4989,7 @@ int*array_at(Array*a,int index)//在然后是进行该数组的访问和修改
 
 1. 这是为百度进来补充的图，翁恺的课程是没有静态的图，用动态进行演示的
 
-![img](./C-image\1651985888978-480d4532-2d99-493c-ad30-36489f6541ca.png)
+![img](.\C-image\1651985888978-480d4532-2d99-493c-ad30-36489f6541ca.png)
 
 ```c
 #include"node.h"

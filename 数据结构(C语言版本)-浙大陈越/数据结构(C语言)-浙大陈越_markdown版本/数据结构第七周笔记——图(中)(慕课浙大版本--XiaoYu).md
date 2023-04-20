@@ -15,7 +15,7 @@
 1. Push的顺序为先序遍历(pre)
 2. Pop的顺序给出中序遍历(in)
 
-<img src="./数据结构-image\image-20220728170236134.png" alt="image-20220728170236134" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220728170236134.png" alt="image-20220728170236134" style="zoom:50%;" />
 
 
 
@@ -23,9 +23,9 @@
 
 ### 树习题-TTA.2 核心算法
 
-<img src="./数据结构-image\image-20220728191451717.png" alt="image-20220728191451717" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220728191451717.png" alt="image-20220728191451717" style="zoom:50%;" />
 
-![image-20220728194407506](./数据结构-image\image-20220728194407506.png)
+![image-20220728194407506](.\数据结构-image\image-20220728194407506.png)
 
 
 
@@ -56,7 +56,7 @@ void solve(int preL,int inL,int n)
 
 #### 题意理解
 
-<img src="./数据结构-image\image-20220730184530957.png" alt="image-20220730184530957" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220730184530957.png" alt="image-20220730184530957" style="zoom:50%;" />
 
 ```
 题目要求：
@@ -65,7 +65,7 @@ void solve(int preL,int inL,int n)
 
 经过修改后的图片如下：
 
-<img src="./数据结构-image\image-20220730185418653.png" alt="image-20220730185418653" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220730185418653.png" alt="image-20220730185418653" style="zoom:50%;" />
 
 **树的表示法：链表 vs 数组**
 
@@ -95,11 +95,11 @@ void solve(int preL,int inL,int n)
 
 1. 给定n个数之后，完全二叉树的结构是固定的，可以非常准确的算出左边一共多少个结点
 2. 先给我们要输入的序列从小到大排一个序列。根据完全二叉树一共有多少个结点，通过导出的公式是可以精确计算他的左子树一共有多少个结点
-3. <img src="./数据结构-image\image-20220730200103573.png" alt="image-20220730200103573" style="zoom:50%;" />典型先序遍历的应用
+3. <img src=".\数据结构-image\image-20220730200103573.png" alt="image-20220730200103573" style="zoom:50%;" />典型先序遍历的应用
 
 #### 核心算法
 
-<img src="./数据结构-image\image-20220730215836941.png" alt="image-20220730215836941" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220730215836941.png" alt="image-20220730215836941" style="zoom:50%;" />
 
 TRoot是树T根结点所在的位置，那个元素的下标存在TRoot里面
 
@@ -151,29 +151,29 @@ int main()
 
 h是层数
 
-<img src="./数据结构-image\image-20220730232211145.png" alt="image-20220730232211145" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220730232211145.png" alt="image-20220730232211145" style="zoom:50%;" />
 
 真正计算H的时候X的出来的可能不是整数，但不要紧，X是多少都没有关系，求H的话可以忽略掉X然后的出来的答案向下取整即可。得到的H就是完美二叉树层数(H)，然后就可以反算出X了
 
-完美二叉树的左子树：<img src="./数据结构-image\image-20220730232601997.png" alt="image-20220730232601997" style="zoom:50%;" />
+完美二叉树的左子树：<img src=".\数据结构-image\image-20220730232601997.png" alt="image-20220730232601997" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220730232638342.png" alt="image-20220730232638342" style="zoom:33%;" />
+<img src=".\数据结构-image\image-20220730232638342.png" alt="image-20220730232638342" style="zoom:33%;" />
 
 如果X的个数蔓延到右子树那边去的话(就是最后一层的x跑到右边去，那上面左子树的式子就不能加上X)
 
 所以我们需要知道最下面一层x的最大值和最小值可以取多少
 
-1. 在这个式子中，最小值X要取到0(为什么不是1而是0呢？L是左子树哦)<img src="./数据结构-image\image-20220730233019880.png" alt="image-20220730233019880" style="zoom:33%;" />
+1. 在这个式子中，最小值X要取到0(为什么不是1而是0呢？L是左子树哦)<img src=".\数据结构-image\image-20220730233019880.png" alt="image-20220730233019880" style="zoom:33%;" />
 
    1. 因为在上述式子中H至少为2啦，H为1是根结点的位置层数，左子树至少从第二层开始，最少只有他自己一个
 
-2. 要使 ![img](./数据结构-image\6631369031884693815.jpeg) 得到正确结果，![img](./数据结构-image\1072982611321422975.jpeg)能取的最大值是 
+2. 要使 ![img](.\数据结构-image\6631369031884693815.jpeg) 得到正确结果，![img](.\数据结构-image\1072982611321422975.jpeg)能取的最大值是 
 
-   1. <img src="./数据结构-image\image-20220730233616555.png" alt="image-20220730233616555" style="zoom:33%;" />
+   1. <img src=".\数据结构-image\image-20220730233616555.png" alt="image-20220730233616555" style="zoom:33%;" />
 
 3. 完整步骤：
 
-   1. <img src="./数据结构-image\image-20220730233846536.png" alt="image-20220730233846536" style="zoom:50%;" />
+   1. <img src=".\数据结构-image\image-20220730233846536.png" alt="image-20220730233846536" style="zoom:50%;" />
 
    
 
@@ -185,9 +185,9 @@ Huffman编码不唯一
 
 **注意：最优编码不一定通过Huffman算法得到,但是Huffman算法一定能得到最优编码**
 
-<img src="./数据结构-image\image-20220731183340358.png" alt="image-20220731183340358" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220731183340358.png" alt="image-20220731183340358" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220731184926731.png" alt="image-20220731184926731" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220731184926731.png" alt="image-20220731184926731" style="zoom:50%;" />
 
 #### Huffman Codes 的特点
 
@@ -213,9 +213,9 @@ Huffman编码不唯一
 
 **注意：满足2、3可不一定有1!**
 
-<img src="./数据结构-image\image-20220731195452124.png" alt="image-20220731195452124" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220731195452124.png" alt="image-20220731195452124" style="zoom:50%;" />
 
-<img src="./数据结构-image\image-20220731195626707.png" alt="image-20220731195626707" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220731195626707.png" alt="image-20220731195626707" style="zoom:50%;" />
 
 上图中两边都符合2、3，但是右边才是最优编码。由此得出符合2、3的不一定是最优编码
 
@@ -247,14 +247,14 @@ Huffman编码不唯一
 
 ### 树习题-HC.3 检查编码
 
-<img src="./数据结构-image\image-20220801133232845.png" alt="image-20220801133232845" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220801133232845.png" alt="image-20220801133232845" style="zoom:50%;" />
 
 ```
 2与3冲突、100与1001，如果100的最后一个0是叶子结点，那他就不应该还能继续延伸下去
 1与4冲突、1011与101，1011最后一个1是叶子结点，101的最后一个1在内部结点上(因为"1011"相对于"101后面还有一个1，就是说后面还有一个右子树)就冲突了
 ```
 
-<img src="./数据结构-image\image-20220801132836279.png" alt="image-20220801132836279" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220801132836279.png" alt="image-20220801132836279" style="zoom:50%;" />
 
 ## 7.1 最短路径问题
 
@@ -291,10 +291,10 @@ a点到b点之间路径可达最短的一条线路就是最短路径
 ### 7.1.2 无权图的单源最短路
 
 1. 按照递增(非递减)的顺序找出到各个顶点的最短路
-2. <img src="./数据结构-image\image-20220801185718394.png" alt="image-20220801185718394" style="zoom:50%;" />
+2. <img src=".\数据结构-image\image-20220801185718394.png" alt="image-20220801185718394" style="zoom:50%;" />
 3. 这是一圈一圈向外扫描的(BFS广度优先搜索)，同时也就解决了James Bond从孤岛跳上岸，最少需要多少步
 
-<img src="./数据结构-image\image-20220801190113983.png" alt="image-20220801190113983" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220801190113983.png" alt="image-20220801190113983" style="zoom:50%;" />
 
 上图中if中判断的条件里的是BFS的，在这里是不需要的，这里需要的是：
 
@@ -304,7 +304,7 @@ dist[S] = 0//初始值是0，表示他到他自己的距离
 path[W] = S到W的路上经过的某顶点//记录路径，对每一个顶点W，把源点到w的路上一定要经过的某一个顶点存在这个path里面 
 ```
 
-<img src="./数据结构-image\image-20220801190047751.png" alt="image-20220801190047751" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220801190047751.png" alt="image-20220801190047751" style="zoom:50%;" />
 
 单源最短函数算法
 
@@ -332,7 +332,7 @@ void Unweighted ( Vertex S )//unweighted是无权的意思
 
 ### 7.2.2-s 无权图的单源最短路示例
 
-<img src="./数据结构-image\image-20220801223448836.png" alt="image-20220801223448836" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220801223448836.png" alt="image-20220801223448836" style="zoom:50%;" />
 
 ```c
 void Unweighted ( Vertex S )//unweighted是无权的意思
@@ -356,9 +356,9 @@ void Unweighted ( Vertex S )//unweighted是无权的意思
 
 ### 7.1.3 有权图的单源最短路
 
-<img src="./数据结构-image\image-20220801223914092.png" alt="image-20220801223914092" style="zoom:50%;" />由图得知从红色的位置到绿色的最短路径是哪条？
+<img src=".\数据结构-image\image-20220801223914092.png" alt="image-20220801223914092" style="zoom:50%;" />由图得知从红色的位置到绿色的最短路径是哪条？
 
-是这条啦：<img src="./数据结构-image\image-20220801224456016.png" alt="image-20220801224456016" style="zoom:50%;" />
+是这条啦：<img src=".\数据结构-image\image-20220801224456016.png" alt="image-20220801224456016" style="zoom:50%;" />
 
 有权图跟无权图最短路的区别：
 
@@ -367,9 +367,9 @@ void Unweighted ( Vertex S )//unweighted是无权的意思
 上图的最短路上的全重合时1加8等于9.但有权图的最短路是1+4+1=6(权重更低)
 ```
 
-如果路径上的权重还有负数的话，是不是最短路又会发生改变，比如这样：<img src="./数据结构-image\image-20220801225311696.png" alt="image-20220801225311696" style="zoom:50%;" />
+如果路径上的权重还有负数的话，是不是最短路又会发生改变，比如这样：<img src=".\数据结构-image\image-20220801225311696.png" alt="image-20220801225311696" style="zoom:50%;" />
 
-这个图我如果不停的循环，每圈赚5块，那无限转圈不就反而倒赚正无穷(美好的愿望hh)<img src="./数据结构-image\image-20220801225512626.png" alt="image-20220801225512626" style="zoom:50%;" />
+这个图我如果不停的循环，每圈赚5块，那无限转圈不就反而倒赚正无穷(美好的愿望hh)<img src=".\数据结构-image\image-20220801225512626.png" alt="image-20220801225512626" style="zoom:50%;" />
 
 这种情况叫做有一个**负值圈**叫做(negative-cost cycle)
 
@@ -398,7 +398,7 @@ void Unweighted ( Vertex S )//unweighted是无权的意思
 
    4. 增加一个v进去S，可能影响另外一个w的dist值：得到的两个重要的事实在下面的图中选项B里
 
-   5. <img src="./数据结构-image\image-20220801234849458.png" alt="image-20220801234849458" style="zoom:50%;" />
+   5. <img src=".\数据结构-image\image-20220801234849458.png" alt="image-20220801234849458" style="zoom:50%;" />
 
    6. ```
       1不仅在w的路径上，而且从v到w必定存在一条直接的边(意思就是收w一定是v的邻接点。况且v被收录进去能影响的也就他一圈的邻接点了，所以收录进去的时候看看这个值周围一圈邻接点看谁有没有比他更小的)
@@ -441,7 +441,7 @@ void Dijkstra(Vertex s)
     稀疏图：e跟V是同一个数量级的，不是V平方数量级的，复杂度就是vlogv
 ```
 
-<img src="./数据结构-image\image-20220802000630555.png" alt="image-20220802000630555" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220802000630555.png" alt="image-20220802000630555" style="zoom:50%;" />
 
 
 
@@ -467,27 +467,27 @@ void Dijkstra( Vertex s )
 下图中的dist表示源点到目标点之间的权重，path表示当前点的上一个点的下标
 ```
 
-刚开始：<img src="./数据结构-image\image-20220802135358543.png" alt="image-20220802135358543" style="zoom:50%;" />正式进入Dijkstra算法：<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20220802135529500.png" alt="image-20220802135529500" style="zoom:50%;" />进行邻接点排除前：<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20220802140507807.png" alt="image-20220802140507807" style="zoom:50%;" />
+刚开始：<img src=".\数据结构-image\image-20220802135358543.png" alt="image-20220802135358543" style="zoom:50%;" />正式进入Dijkstra算法：<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20220802135529500.png" alt="image-20220802135529500" style="zoom:50%;" />进行邻接点排除前：<img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/925/image-20220802140507807.png" alt="image-20220802140507807" style="zoom:50%;" />
 
-排除完后：<img src="./数据结构-image\image-20220802140800630.png" alt="image-20220802140800630" style="zoom:50%;" />
+排除完后：<img src=".\数据结构-image\image-20220802140800630.png" alt="image-20220802140800630" style="zoom:50%;" />
 
 ### 7.1.4 多源最短路算法
 
 方法1：直接将单源最短路算法调用|V|遍
 
-1. <img src="./数据结构-image\image-20220802162534649.png" alt="image-20220802162534649" style="zoom:50%;" />对稀疏图效果好
+1. <img src=".\数据结构-image\image-20220802162534649.png" alt="image-20220802162534649" style="zoom:50%;" />对稀疏图效果好
 
 方法2：Floyd算法
 
-1. <img src="./数据结构-image\image-20220802162637428.png" alt="image-20220802162637428" style="zoom:50%;" />对稠密图效果好
+1. <img src=".\数据结构-image\image-20220802162637428.png" alt="image-20220802162637428" style="zoom:50%;" />对稠密图效果好
 
 #### Floyd算法
 
 1. 只经过一部分顶点，只经过编号小于等于k的那些顶点
-2. <img src="./数据结构-image\image-20220802163030611.png" alt="image-20220802163030611" style="zoom:50%;" />最初的D负一次方是定义为连接矩阵
-3. <img src="./数据结构-image\image-20220802163007951.png" alt="image-20220802163007951" style="zoom:50%;" />
+2. <img src=".\数据结构-image\image-20220802163030611.png" alt="image-20220802163030611" style="zoom:50%;" />最初的D负一次方是定义为连接矩阵
+3. <img src=".\数据结构-image\image-20220802163007951.png" alt="image-20220802163007951" style="zoom:50%;" />
 4. 如果i和j之间没有直接的边，D[i] [j]应该定义为：正无穷(不是0也不是负无穷)
-5. <img src="./数据结构-image\image-20220802163903479.png" alt="image-20220802163903479" style="zoom:50%;" />
+5. <img src=".\数据结构-image\image-20220802163903479.png" alt="image-20220802163903479" style="zoom:50%;" />
    1. 这个说人话就是加入k如果导致i到j的最短路径发生了变化(其实就是这个k的加入导致更短的啦)，那么i到k和k到j必定是两段最短的路径
 
 **多源最短路算法**
@@ -521,7 +521,7 @@ void Floyd()
 
 ### 小白-HP.1 题意理解
 
-<img src="./数据结构-image\image-20220802215252987.png" alt="image-20220802215252987" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220802215252987.png" alt="image-20220802215252987" style="zoom:50%;" />
 
 ```
 样例第一列表示动物的个数(也就是顶点的个数)		第二列表示边的个数
@@ -558,7 +558,7 @@ int main()
 //FindMin是最小距离
 ```
 
-<img src="./数据结构-image\image-20220802224222941.png" alt="image-20220802224222941" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220802224222941.png" alt="image-20220802224222941" style="zoom:50%;" />
 
 ### 小白-HP.3 选择动物
 
@@ -610,7 +610,7 @@ WeightType FindMaxDist(WeightType D[][MaxVertexNum],Vertex i,int N)
 
 ### 小白-HP.4 模块的引用与裁剪
 
-<img src="./数据结构-image\image-20220803001249910.png" alt="image-20220803001249910" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220803001249910.png" alt="image-20220803001249910" style="zoom:50%;" />
 
 ```c
 #define MaxVertexNum 100//最大顶点数设置为100
@@ -732,4 +732,4 @@ bool Floyd(MGraph Graph ,WeightType D[][MaxVertexNum],Vertex path[][MaxVertexNum
 
 在本题中进行的改动部分：
 
-<img src="./数据结构-image\image-20220803005320198.png" alt="image-20220803005320198" style="zoom:50%;" />
+<img src=".\数据结构-image\image-20220803005320198.png" alt="image-20220803005320198" style="zoom:50%;" />
