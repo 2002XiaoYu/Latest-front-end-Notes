@@ -46,8 +46,9 @@ void PrintN ( int N )
 
 4. 例3：写程序计算给定多项式在给定点x处的值
 
-   ![image-20220626145149531](.\数据结构-image\image-20220626145149531.png)
+![image-20220626145149531](.\数据结构-image\image-20220626145149531.png)
 
+   ![image-20220626145149531](./数据结构-image/image-20220626145149531.png)
    ```c
    //直接翻译的结构
    double f( int n, double a[], double x)
