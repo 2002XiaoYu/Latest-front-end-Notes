@@ -67,7 +67,7 @@ Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本)
 
 [Storage存储-正则表达式(coderwhy版本)](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BE/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEmarkdown/JavaScript%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0/Storage%E5%AD%98%E5%82%A8-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F(coderwhy%E7%89%88%E6%9C%AC).md)
 
-[ES-Module使用-原理-包管理工具npm](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BE/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEmarkdown/node%E3%80%81webpack%E3%80%81git%E7%AC%94%E8%AE%B0(coderwhy%E7%89%88%E6%9C%AC)/ES%20Module%E4%BD%BF%E7%94%A8-%E5%8E%9F%E7%90%86-%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7npm.md)
+[ES-Module使用-原理-包管理工具npm、yarn、pnpm原理](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BE/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEmarkdown/node%E3%80%81webpack%E3%80%81git%E7%AC%94%E8%AE%B0(coderwhy%E7%89%88%E6%9C%AC)/ES%20Module%E4%BD%BF%E7%94%A8-%E5%8E%9F%E7%90%86-%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7npm.md)
 
 [Git版本控制工具详解](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BE/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEmarkdown/node%E3%80%81webpack%E3%80%81git%E7%AC%94%E8%AE%B0(coderwhy%E7%89%88%E6%9C%AC)/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7%E8%AF%A6%E8%A7%A3.md)
 
