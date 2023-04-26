@@ -14,7 +14,7 @@
 
 > 如果对你有帮助 请给作者一个star，作者会继续努力产出的
 
-**提醒：图片效果已经恢复(文件分类进行了合理重构)，React18的笔记延后，最近几天在写字节青训营的笔记，等青训营结束，笔记会以PDF和markdown的格式放入知识库中**
+**提醒：图片效果已经恢复(文件分类进行了合理重构)，React18的笔记延后，最近几天在写字节青训营的笔记，等青训营结束，笔记会以PDF和markdown的格式放入知识库中(目前已经存放了一部分，由于采用相对路径的时候，图片显示有些灵有些不灵，可以看PDF格式的或者下载到本地看markdown格式的)**
 
 ## 前端
 
@@ -86,6 +86,24 @@ Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本)
 ### 字节跳动掘金2023年4月份前端青训营笔记
 
 > 正在撰写，目前紧跟进度，青训营结束，对应的markdown跟PDF格式笔记就会上传，目前需要的可以访问我的掘金账号从专栏获取
+
+[Linux基础](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/字节前端训练营-2023年4月/字节前端青训营_markdown/Linux基础.md)
+
+[Shell脚本和编程](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/字节前端训练营-2023年4月/字节前端青训营_markdown/Shel脚本和编程.md)
+
+[前端语言串讲](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/字节前端训练营-2023年4月/字节前端青训营_markdown/前端语言串讲.md)
+
+[客户端容器 - web浏览器以及跨端方案](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/字节前端训练营-2023年4月/字节前端青训营_markdown/客户端容器 - web浏览器以及跨端方案.md)
+
+[理解CSS](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/字节前端训练营-2023年4月/字节前端青训营_markdown/理解CSS.md)
+
+[编程范式](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/字节前端训练营-2023年4月/字节前端青训营_markdown/编程范式.md#编程范式)
+
+[计算机网络概论](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/字节前端训练营-2023年4月/字节前端青训营_markdown/计算机网络概论.md)
+
+> 节省排列空间，由于文件夹位置已经进行了优化，这里直接给出文件夹对应的位置，PDF电子书系列的笔记位置如下：
+>
+> Latest-front-end-Notes/tree/main/字节前端训练营-2023年4月/字节前端青训营_PDF
 
 <br/><br/>
 
