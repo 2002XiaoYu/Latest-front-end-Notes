@@ -64,7 +64,7 @@
 
 - **我们通过一个计数器案例，来对比一下class组件和函数式组件结合hooks的对比：**
 
-```react
+```jsx
 //Class组件
 import React, {PureComponent} from 'react';
 class App extends PureComponent {
@@ -104,7 +104,7 @@ export default App;
 
 ```
 
-```react
+```jsx
 //hooks实现(未优化写法)
 import {useState} from "react";
 function Counter(props){
@@ -121,7 +121,7 @@ function Counter(props){
 export default Counter
 ```
 
-```react
+```jsx
 //hooks实现(优化写法)：
 import {useState} from "react";
 function Counter(props){
@@ -331,7 +331,7 @@ useEffect(()=>{
   - React 会在**组件更新和卸载的时候执行清除操作**
   - 正如之前学到的，**effect 在每次渲染的时候都会执行**
 
-```react
+```jsx
 import React, { useState, useEffect } from 'react';
 
 function Counter() {
