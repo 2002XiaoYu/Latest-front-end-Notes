@@ -1466,6 +1466,11 @@ const obj = MyRef<string>('customRef小余')
 
 收获：通过观看源码获知了ref跟shallowRef的区别在于.value后会不会进行一个判断，如果后面跟着数组对象之类的，ref会进行判断`return create(value,true)`创建一个Ref去继续接收，从而实现响应。shallowRef就不是true而是false，所以当shallowRef的value后面跟着东西的话，不会给他套上Ref的，也就是不会进行创建Ref，那value后面自然就不会是响应的了
 
+上面这部分内容和满哥视频里面讲的有一点出路，满哥新视频在 16分半钟左右讲解源码 ， ref 调用 createRef(value, false) , shallowRef 调用    createRef(value, true) ，上面好像写反了，
+createRef 通过三目运算符判断传递的第二个布尔值参数 ，shallowRef传递 true 的话直接返回 value ， ref 传递 false 然后调用 toReactive(value) 
+toReactive 这个方法接受 value 参数， 判断 value 是不是引用类型（数组或者对象），如果是引用类型 ， 调用 reactive 包裹 value ，如果不是引用类型 就直接返回 value （ref 定义数组对象内部会调用 reactive ， 定义数字、字符串之类的变量就是把值直接返回）
+shallowRef传递 true ，然后 createRef(value, true) 的话直接返回 value， 所以它 .value 之后是不会被响应的
+
 ## 第七章 — Reactive全家桶 & 源码讲解
 
 > ref支持所有类型，Reactive支持引用类型，Array，Object，Map，Set
