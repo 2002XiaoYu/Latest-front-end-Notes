@@ -59,6 +59,10 @@ Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本)
 
 #### markdown版本
 
+[JavaScript基础笔记-BOM](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BE/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEmarkdown/JavaScript%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/JS%E4%B8%AD%E7%9A%84BOM.md)
+
+[JavaScript基础笔记-DOM](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BE/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEmarkdown/JavaScript%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/JS%E4%B8%AD%E7%9A%84DOM.md)
+
 [JavaScript高级笔记-内存管理、闭包、作用域链、this详解、柯里化、面向对象详解、原型链继承关系](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BE/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEmarkdown/JavaScript%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0/JavaScript%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0-coderwhy%E7%89%88%E6%9C%AC.md)
 
 [JavaScript高级笔记-ES6-ES13](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BE/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEmarkdown/JavaScript%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0/JS%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0%20-%20coderwhy(ES6-ES13).md)
