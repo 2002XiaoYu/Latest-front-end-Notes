@@ -49,7 +49,7 @@ Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本)
 
 [PDF版本面试题](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/B%E7%AB%99UP%E4%B8%BB%E5%B0%8F%E6%BB%A1%E5%89%8D%E7%AB%AF%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B0(%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0)/PDF%E6%A0%BC%E5%BC%8F%E7%B3%BB%E5%88%97%E7%AC%94%E8%AE%B0/%E5%B0%8F%E6%BB%A1%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AD%94%E6%A1%88.pdf)
 
-> 上述中的前端常用英语PDF的显示补全问题已修复，下列的coderwhy课程笔记中的部分内容将会进行合并，需要内容分开的话可以自行进行拆分，后续我会将此类笔记更新在掘金平台分别放入专栏里面，方便进行拆分阅读，小满的视频笔记也是如此，晚上睡觉前就可以打开掘金复习一下再睡觉，体验也会更好
+> 上述中的前端常用英语PDF的显示补全问题已修复
 >
 > 掘金账号：[2002XiaoYu 的个人主页 - 动态 - 掘金 (juejin.cn)](https://juejin.cn/user/251124329220663)
 
@@ -58,6 +58,8 @@ Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本)
 ### coderwhy体系课系列课程笔记
 
 #### markdown版本
+
+> PDF版本的内容在对应的PDF文件夹中
 
 [JavaScript基础笔记-BOM](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BE/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEmarkdown/JavaScript%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/JS%E4%B8%AD%E7%9A%84BOM.md)
 
@@ -78,6 +80,8 @@ Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本)
 [Node-前端模块化](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BE/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEmarkdown/node%E3%80%81webpack%E3%80%81git%E7%AC%94%E8%AE%B0(coderwhy%E7%89%88%E6%9C%AC)/Node-%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96.md)
 
 [Webpack详解](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BE/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEmarkdown/node%E3%80%81webpack%E3%80%81git%E7%AC%94%E8%AE%B0(coderwhy%E7%89%88%E6%9C%AC)/Webpack%E8%AF%A6%E8%A7%A3.md)
+
+[TypeScript语法详解](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BE/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEmarkdown/TypeScript%E7%AC%94%E8%AE%B0/TypeScript%E8%AF%AD%E6%B3%95-coderwhy%E7%89%88%E6%9C%AC.md)
 
 #### React18系列-markdown
 
