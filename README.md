@@ -85,7 +85,7 @@ Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本)
 
 [TypeScript语法详解](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BE/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEmarkdown/TypeScript%E7%AC%94%E8%AE%B0/TypeScript%E8%AF%AD%E6%B3%95-coderwhy%E7%89%88%E6%9C%AC.md)
 
-[Node高级笔记]()
+[Node高级笔记](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BE/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEPDF/Node%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0.pdf)
 
 #### React18系列-markdown
 
