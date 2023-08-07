@@ -16,6 +16,8 @@
 
 **提醒：图片效果已经恢复(文件分类进行了合理重构)，React18的笔记延后，最近几天在写字节青训营的笔记，等青训营结束，笔记会以PDF和markdown的格式放入知识库中(目前已经存放了一部分，由于采用相对路径的时候，图片显示有些灵有些不灵，可以看PDF格式的或者下载到本地看markdown格式的)**
 
+> 最近是这么打算的，考虑到很多时候由于网络问题，无法访问GitHub，并且笔记虽然已经目录清晰了，但是想要寻找想要的内容和阅读感还是会差一点，后续会部署一个VitePress作为博客来放置笔记的内容，尽请期待
+
 ## 前端
 
 ### B站UP主小满zs全系列笔记(持续更新)
@@ -82,6 +84,8 @@ Vue3+TypeScript+vite+源码+pinia+Router的最新笔记-(PDF文档-小满版本)
 [Webpack详解](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BE/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEmarkdown/node%E3%80%81webpack%E3%80%81git%E7%AC%94%E8%AE%B0(coderwhy%E7%89%88%E6%9C%AC)/Webpack%E8%AF%A6%E8%A7%A3.md)
 
 [TypeScript语法详解](https://github.com/2002XiaoYu/Latest-front-end-Notes/blob/main/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BE/coderwhy%E4%BD%93%E7%B3%BB%E8%AF%BEmarkdown/TypeScript%E7%AC%94%E8%AE%B0/TypeScript%E8%AF%AD%E6%B3%95-coderwhy%E7%89%88%E6%9C%AC.md)
+
+[Node高级笔记]()
 
 #### React18系列-markdown
 
